@@ -100,6 +100,54 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // admin_default_index
+        if (rtrim($pathinfo, '/') === '/admin') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'admin_default_index');
+            }
+
+            return array (  '_controller' => 'AdminBundle\\Controller\\DefaultController::indexAction',  '_route' => 'admin_default_index',);
+        }
+
+        // stats_default_index
+        if (rtrim($pathinfo, '/') === '/stats') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'stats_default_index');
+            }
+
+            return array (  '_controller' => 'StatsBundle\\Controller\\DefaultController::indexAction',  '_route' => 'stats_default_index',);
+        }
+
+        // user_default_index
+        if (rtrim($pathinfo, '/') === '/user') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'user_default_index');
+            }
+
+            return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user_default_index',);
+        }
+
+        if (0 === strpos($pathinfo, '/for')) {
+            // forum_default_index
+            if (rtrim($pathinfo, '/') === '/forum') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'forum_default_index');
+                }
+
+                return array (  '_controller' => 'ForumBundle\\Controller\\DefaultController::indexAction',  '_route' => 'forum_default_index',);
+            }
+
+            // formation_default_index
+            if (rtrim($pathinfo, '/') === '/formation') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'formation_default_index');
+                }
+
+                return array (  '_controller' => 'FormationBundle\\Controller\\DefaultController::indexAction',  '_route' => 'formation_default_index',);
+            }
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

@@ -2,12 +2,147 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}NSZ{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block topbar %}
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class ="navbar-brand" alt="Brand" src="{{ asset('img/logoaigle.png') }}" >
+                <a class="navbar-brand" href="#">National Security Zero</a>
+                <p class="navbar-text">La sécurité avant tout, mais avant apéro !</p>
+
+            </div>
+            <div id="navbar" class="nav navbar-collapse collapse">
+                <div class="nav navbar-right navbar-correct">
+                    <img alt="Brand" src="{{ asset('img/users/default.jpg') }}">
+                    <a class="btn btn-default navbar-btn" href="#" role="button">Profil</a>
+                    <a class="btn btn-default navbar-btn" href="#" role="button">Logout</a>
+                </div>
+            </div><!--/.nav-collapse -->
+        </nav>
+        {% endblock %}
+
+        {% block sidebar %}
+            <div class="sidebar">
+                <div class="s-container">
+                    <ul>
+                        <li ><a href="#" class="menu-selected"><i class="glyphicon glyphicon-home"></i>Accueil</a></li>
+                        <li><a href="#" class="menu-unselected"><i class="glyphicon glyphicon-education"></i>Formations</a></li>
+                        <li><a href="#" class="menu-unselected"><i class="fa fa-th-list"></i>Forum</a></li>
+                        <li><a href="#" class="menu-unselected"><i class="fa fa-folder"></i>Fichiers</a></li>
+                        <li><a href="#" class="menu-unselected"><i class="fa fa-users"></i>Annuaire</a></li>
+                        <li><a href="#" class="menu-unselected"><i class="fa fa-area-chart"></i>Statistiques</a></li>
+                        <li><a href="#" class="menu-unselected"><i class="fa fa-server"></i>Admin</a></li>
+                    </ul>
+                    <hr>
+                    <div class="panel">
+                        <p class="s-title">NSZ en chiffres</p>
+                        <ul>
+                            <li><span class="label label-primary">2105</span> Employés  </li>
+                            <li><span class="label label-primary">36</span> Documents partagés</li>
+                            <li><span class="label label-primary">1</span> Balance</li>
+                            <li><span class="label label-primary">51</span> Formations</li>
+                            <li><span class="label label-primary">12</span> Admin/RH</li>
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <p class="s-title">Annuaire</p>
+                        <div class="s-people">
+                            <img src="{{ asset('img/users/default.jpg') }}"
+                                 alt="Ace">
+                            <div class="s-people-desc">
+                                <div>
+                                    <a href="#" >Ace Ventura</a>
+                                    <span>(Detective)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="s-people">
+                            <img src="{{ asset('img/users/default.jpg') }}"
+                                 alt="Ace">
+                            <div class="s-people-desc">
+                                <div>
+                                    <a href="#" >Holland</a>
+                                    <span>(Président)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="s-people">
+                            <img src="{{ asset('img/users/default.jpg') }}"
+                                 alt="Rambo">
+                            <div class="s-people-desc">
+                                <div>
+                                    <a href="#" >Rambo</a>
+                                    <span>(Casse tout)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="s-people">
+                            <img src="{{ asset('img/users/default.jpg') }}"
+                                 alt="Ace">
+                            <div class="s-people-desc">
+                                <div>
+                                    <a href="#" >Snowden</a>
+                                    <span>(Balance)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-xs btn-default">Voir l'annuaire complet</button>
+                    </div>
+                    <hr>
+                    <span class="fa-stack fa-md">
+                      <i class="fa fa-square fa-stack-2x"></i>
+                      <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span class="fa-stack fa-md">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-trello fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+
+            </div>
+        {% endblock %}
+
+        <div class="wrapper">
+            <div class="container white-shadow" style="padding-top: 10px;">
+                {% for flash_message in app.session.flashbag.get
+                ('info') %}
+                    <div class="alert alert-info">{{ flash_message
+                        }}</div>
+                {% endfor %}
+                {% for flash_message in app.session.flashbag.get
+                ('success') %}
+                    <div class="alert alert-success">{{ flash_message
+                        }}</div>
+                {% endfor %}
+                {% for flash_message in app.session.flashbag.get
+                ('warning') %}
+                    <div class="alert alert-warning">{{ flash_message
+                        }}</div>
+                {% endfor %}
+                {% for flash_message in app.session.flashbag.get
+                ('danger') %}
+                    <div class="alert alert-danger">{{ flash_message
+                        }}</div>
+                {% endfor %}
+            {% block body %}
+
+            {% endblock %}
+            </div>
+        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

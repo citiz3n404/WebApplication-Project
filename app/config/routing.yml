@@ -1,3 +1,28 @@
+admin:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+stats:
+    resource: "@StatsBundle/Controller/"
+    type:     annotation
+    prefix:   /stats
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /user
+
+forum:
+    resource: "@ForumBundle/Controller/"
+    type:     annotation
+    prefix:   /forum
+
+formation:
+    resource: "@FormationBundle/Controller/"
+    type:     annotation
+    prefix:   /formation
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
