@@ -19,7 +19,6 @@
 
 body{
     background-color: #f1f1f1;
-    /background-image: url(canvas-dark.png);
 }
 
 /* OVERRIDE*/
@@ -29,7 +28,7 @@ body{
 
 .white-shadow{
     background-color: white;
-    box-shadow: 0px 0px 3px 3px #d9d9d9; /*any color you want*/
+    border: solid 1px #e8e8e8;
 }
 
 .sidebar ul{

@@ -39,13 +39,28 @@
             <div class="sidebar">
                 <div class="s-container">
                     <ul>
-                        <li ><a href="#" class="menu-selected"><i class="glyphicon glyphicon-home"></i>Accueil</a></li>
-                        <li><a href="#" class="menu-unselected"><i class="glyphicon glyphicon-education"></i>Formations</a></li>
-                        <li><a href="#" class="menu-unselected"><i class="fa fa-th-list"></i>Forum</a></li>
+                        <li ><a href="/" class="menu-selected"><i
+                                        class="glyphicon glyphicon-home"></i>Accueil</a></li>
+                        <li><a href="{{ path('formation') }}"
+                               class="menu-unselected"><i
+                                        class="glyphicon glyphicon-education"></i>Formations</a></li>
+                        <li><a href="{{ path('forum') }}"
+                               class="menu-unselected"><i
+                                        class="fa
+                        fa-th-list"></i>Forum</a></li>
                         <li><a href="#" class="menu-unselected"><i class="fa fa-folder"></i>Fichiers</a></li>
-                        <li><a href="#" class="menu-unselected"><i class="fa fa-users"></i>Annuaire</a></li>
-                        <li><a href="#" class="menu-unselected"><i class="fa fa-area-chart"></i>Statistiques</a></li>
-                        <li><a href="#" class="menu-unselected"><i class="fa fa-server"></i>Admin</a></li>
+                        <li><a href="{{ path('user') }}"
+                               class="menu-unselected"><i
+                                        class="fa
+                        fa-users"></i>Annuaire</a></li>
+                        <li><a href="{{ path('stats') }}"
+                               class="menu-unselected"><i
+                                        class="fa
+                        fa-area-chart"></i>Statistiques</a></li>
+                        <li><a href="{{ path('admin') }}"
+                               class="menu-unselected"><i
+                                        class="fa
+                        fa-server"></i>Admin</a></li>
                     </ul>
                     <hr>
                     <div class="panel">
