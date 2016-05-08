@@ -118,13 +118,21 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'StatsBundle\\Controller\\DefaultController::indexAction',  '_route' => 'stats',);
         }
 
-        // user
-        if (rtrim($pathinfo, '/') === '/user') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'user');
+        if (0 === strpos($pathinfo, '/user')) {
+            // user
+            if (rtrim($pathinfo, '/') === '/user') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'user');
+                }
+
+                return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user',);
             }
 
-            return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user',);
+            // user_initaccounts_index
+            if ($pathinfo === '/user/initAccounts') {
+                return array (  '_controller' => 'UserBundle\\Controller\\InitAccountsController::indexAction',  '_route' => 'user_initaccounts_index',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/for')) {
