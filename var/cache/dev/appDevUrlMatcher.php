@@ -146,18 +146,33 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             if (0 === strpos($pathinfo, '/formation')) {
-                // createformation
-                if ($pathinfo === '/formation/create') {
-                    return array (  '_controller' => 'FormationBundle\\Controller\\CreateFormationController::createAction',  '_route' => 'createformation',);
-                }
-
                 // formation
                 if (rtrim($pathinfo, '/') === '/formation') {
                     if (substr($pathinfo, -1) !== '/') {
                         return $this->redirect($pathinfo.'/', 'formation');
                     }
 
-                    return array (  '_controller' => 'FormationBundle\\Controller\\DefaultController::indexAction',  '_route' => 'formation',);
+                    return array (  '_controller' => 'FormationBundle\\Controller\\FormationController::listAction',  '_route' => 'formation',);
+                }
+
+                // formationcreate
+                if ($pathinfo === '/formation/create') {
+                    return array (  '_controller' => 'FormationBundle\\Controller\\FormationController::createAction',  '_route' => 'formationcreate',);
+                }
+
+                // formationdetails
+                if (0 === strpos($pathinfo, '/formation/details') && preg_match('#^/formation/details/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'formationdetails')), array (  '_controller' => 'FormationBundle\\Controller\\FormationController::detailsAction',));
+                }
+
+                // formationremove
+                if (0 === strpos($pathinfo, '/formation/remove') && preg_match('#^/formation/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'formationremove')), array (  '_controller' => 'FormationBundle\\Controller\\FormationController::removeAction',));
+                }
+
+                // formationedit
+                if (0 === strpos($pathinfo, '/formation/edit') && preg_match('#^/formation/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'formationedit')), array (  '_controller' => 'FormationBundle\\Controller\\FormationController::editAction',));
                 }
 
             }

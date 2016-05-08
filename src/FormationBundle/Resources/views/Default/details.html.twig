@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a class="btn btn-default" href="/formation/">Back to  formation list</a>
+    <h2 class="page-header">{{ formation.title }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Category: {{ formation.cost }} euros</li>
+        <li class="list-group-item">Desc : {{ formation.description }}</li>
+        <li class="list-group-item">Date : {{ formation.begin|date('y-m-d')
+            }}</li>
+        <li class="list-group-item">Durée: {{ formation.duration }}
+            jours</li>
+    </ul>
+
+
+
+{% endblock %}
