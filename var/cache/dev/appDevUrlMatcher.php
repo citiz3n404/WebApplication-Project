@@ -145,13 +145,21 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'ForumBundle\\Controller\\DefaultController::indexAction',  '_route' => 'forum',);
             }
 
-            // formation
-            if (rtrim($pathinfo, '/') === '/formation') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'formation');
+            if (0 === strpos($pathinfo, '/formation')) {
+                // createformation
+                if ($pathinfo === '/formation/create') {
+                    return array (  '_controller' => 'FormationBundle\\Controller\\CreateFormationController::createAction',  '_route' => 'createformation',);
                 }
 
-                return array (  '_controller' => 'FormationBundle\\Controller\\DefaultController::indexAction',  '_route' => 'formation',);
+                // formation
+                if (rtrim($pathinfo, '/') === '/formation') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'formation');
+                    }
+
+                    return array (  '_controller' => 'FormationBundle\\Controller\\DefaultController::indexAction',  '_route' => 'formation',);
+                }
+
             }
 
         }
