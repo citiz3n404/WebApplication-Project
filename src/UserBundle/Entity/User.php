@@ -5,6 +5,7 @@ namespace UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -12,6 +13,23 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
+
+    /**
+     * @ORM\OneToMany(targetEntity="ForumBundle\Entity\Replies",
+     *     mappedBy="user")
+     */
+    private $replies;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ForumBundle\Entity\Topics", mappedBy="user")
+     */
+    private $topics;
+
+    public function __construct() {
+        parent::__construct();
+        $this->replies = new ArrayCollection();
+        $this->topics = new ArrayCollection();
+    }
 
     /**
      * @ORM\OneToOne(targetEntity="Salarie", inversedBy="user")
@@ -26,13 +44,6 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
-
 
     public function setId($id)
     {

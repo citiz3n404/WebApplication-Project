@@ -57,13 +57,13 @@ class FormationController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $formation->setTeacher($form['teacher']->getData());
-            $formation->setTitle($form['title']->getData());
-            $formation->setBegin($form['begin']->getData());
-            $formation->setCost($form['cost']->getData());
-            $formation->setImg($form['img']->getData());
-            $formation->setDescription($form['description']->getData());
-            $formation->setDuration($form['duration']->getData());
+            $formation->setTeacher      ($form['teacher']       ->getData());
+            $formation->setTitle        ($form['title']         ->getData());
+            $formation->setBegin        ($form['begin']         ->getData());
+            $formation->setCost         ($form['cost']          ->getData());
+            $formation->setImg          ($form['img']           ->getData());
+            $formation->setDescription  ($form['description']   ->getData());
+            $formation->setDuration     ($form['duration']      ->getData());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($formation);
@@ -136,13 +136,13 @@ class FormationController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $formation->setTeacher($form['teacher']->getData());
-            $formation->setTitle($form['title']->getData());
-            $formation->setBegin($form['begin']->getData());
-            $formation->setCost($form['cost']->getData());
-            $formation->setImg($form['img']->getData());
-            $formation->setDescription($form['description']->getData());
-            $formation->setDuration($form['duration']->getData());
+            $formation->setTeacher      ($form['teacher']       ->getData());
+            $formation->setTitle        ($form['title']         ->getData());
+            $formation->setBegin        ($form['begin']         ->getData());
+            $formation->setCost         ($form['cost']          ->getData());
+            $formation->setImg          ($form['img']           ->getData());
+            $formation->setDescription  ($form['description']   ->getData());
+            $formation->setDuration     ($form['duration']      ->getData());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($formation);
