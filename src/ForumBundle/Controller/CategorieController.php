@@ -105,4 +105,19 @@ class CategorieController extends Controller
         return $this->render('ForumBundle:Categorie:detail.html.twig', array
         ('categorie'=> $categorie));
     }
+
+    /**
+     * @Route("/categorie/{id}", name="listTopics")
+     */
+    public function listAction($id)
+    {
+        $topics = $this->getDoctrine()->getRepository('ForumBundle:Topics')
+            ->findByCategorie($id);
+
+        $categorie = $this->getDoctrine()->getRepository
+        ('ForumBundle:Categories')->find($id);
+
+        return $this->render('ForumBundle:Topic:listTopics.html.twig', array
+        ("topics" => $topics, "categorie" => $categorie));
+    }
 }

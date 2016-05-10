@@ -21,20 +21,20 @@ class __TwigTemplate_1e0fcdc7ebbbccc2c795c50ff8545041bbf1ea12dfd1d3510e2ea13c2a0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_74cd921d07a3f34a7e787f37f85f15bb991726712f862813a4d2b75b876b6cff = $this->env->getExtension("native_profiler");
-        $__internal_74cd921d07a3f34a7e787f37f85f15bb991726712f862813a4d2b75b876b6cff->enter($__internal_74cd921d07a3f34a7e787f37f85f15bb991726712f862813a4d2b75b876b6cff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:listTopics.html.twig"));
+        $__internal_3f351a644a2c68154137a8149aa0e5d4fb3c7bc586af01135c528ad382906d66 = $this->env->getExtension("native_profiler");
+        $__internal_3f351a644a2c68154137a8149aa0e5d4fb3c7bc586af01135c528ad382906d66->enter($__internal_3f351a644a2c68154137a8149aa0e5d4fb3c7bc586af01135c528ad382906d66_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:listTopics.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_74cd921d07a3f34a7e787f37f85f15bb991726712f862813a4d2b75b876b6cff->leave($__internal_74cd921d07a3f34a7e787f37f85f15bb991726712f862813a4d2b75b876b6cff_prof);
+        $__internal_3f351a644a2c68154137a8149aa0e5d4fb3c7bc586af01135c528ad382906d66->leave($__internal_3f351a644a2c68154137a8149aa0e5d4fb3c7bc586af01135c528ad382906d66_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_82282384c7b04d255e0cc6720523cb42287e87fcf6bed3f82f51cea98671a132 = $this->env->getExtension("native_profiler");
-        $__internal_82282384c7b04d255e0cc6720523cb42287e87fcf6bed3f82f51cea98671a132->enter($__internal_82282384c7b04d255e0cc6720523cb42287e87fcf6bed3f82f51cea98671a132_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_41a32885fb1a5aa5df7f63931d538726777f695a6479ab26007516d79648d758 = $this->env->getExtension("native_profiler");
+        $__internal_41a32885fb1a5aa5df7f63931d538726777f695a6479ab26007516d79648d758->enter($__internal_41a32885fb1a5aa5df7f63931d538726777f695a6479ab26007516d79648d758_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "    <h2 class=\"page-header\">";
@@ -71,21 +71,25 @@ class __TwigTemplate_1e0fcdc7ebbbccc2c795c50ff8545041bbf1ea12dfd1d3510e2ea13c2a0
             // line 20
             echo twig_escape_filter($this->env, $this->getAttribute($context["topic"], "id", array()), "html", null, true);
             echo "</th>
-                <td><a href=\"\"> ";
+                <td><a href=\"";
             // line 21
-            echo twig_escape_filter($this->env, $this->getAttribute($context["topic"], "subject", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("topicdisplay", array("id" => $this->getAttribute($context["topic"], "id", array()))), "html", null, true);
+            echo "\"> ";
+            echo twig_escape_filter($this->env, $this->getAttribute(            // line 22
+$context["topic"], "subject", array()), "html", null, true);
+            // line 23
             echo "</a></td>
                 <td></td>
                 <td><a href=\"";
-            // line 23
+            // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("edittopic", array("id" => $this->getAttribute($context["topic"], "id", array()))), "html", null, true);
             echo "\"
                        class=\"btn
                 btn-default\">Edit</a>
                     <a href=\"";
-            // line 26
+            // line 28
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("removetopic", array("id" => $this->getAttribute($context["topic"], "id", array()))), "html", null, true);
-            // line 27
+            // line 29
             echo "\" class=\"btn
                 btn-danger\">Remove</a>
                 </td>
@@ -95,12 +99,12 @@ class __TwigTemplate_1e0fcdc7ebbbccc2c795c50ff8545041bbf1ea12dfd1d3510e2ea13c2a0
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['topic'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 34
         echo "        </tbody>
     </table>
 ";
         
-        $__internal_82282384c7b04d255e0cc6720523cb42287e87fcf6bed3f82f51cea98671a132->leave($__internal_82282384c7b04d255e0cc6720523cb42287e87fcf6bed3f82f51cea98671a132_prof);
+        $__internal_41a32885fb1a5aa5df7f63931d538726777f695a6479ab26007516d79648d758->leave($__internal_41a32885fb1a5aa5df7f63931d538726777f695a6479ab26007516d79648d758_prof);
 
     }
 
@@ -116,7 +120,7 @@ class __TwigTemplate_1e0fcdc7ebbbccc2c795c50ff8545041bbf1ea12dfd1d3510e2ea13c2a0
 
     public function getDebugInfo()
     {
-        return array (  99 => 32,  89 => 27,  87 => 26,  81 => 23,  76 => 21,  72 => 20,  69 => 19,  65 => 18,  49 => 5,  45 => 4,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  103 => 34,  93 => 29,  91 => 28,  85 => 25,  81 => 23,  79 => 22,  76 => 21,  72 => 20,  69 => 19,  65 => 18,  49 => 5,  45 => 4,  40 => 3,  34 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -139,7 +143,9 @@ class __TwigTemplate_1e0fcdc7ebbbccc2c795c50ff8545041bbf1ea12dfd1d3510e2ea13c2a0
 /*         {% for topic in topics %}*/
 /*             <tr>*/
 /*                 <th scope="row">{{ topic.id }}</th>*/
-/*                 <td><a href=""> {{ topic.subject }}</a></td>*/
+/*                 <td><a href="{{ path('topicdisplay', {'id': topic.id}) }}"> {{*/
+/*                         topic.subject*/
+/*                         }}</a></td>*/
 /*                 <td></td>*/
 /*                 <td><a href="{{ path('edittopic', {'id': topic.id}) }}"*/
 /*                        class="btn*/

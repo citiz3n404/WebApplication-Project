@@ -21,63 +21,101 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bbe717ba787aee44d9eedf3139eb132dd719e6b2a971bfd18235780c82d05646 = $this->env->getExtension("native_profiler");
-        $__internal_bbe717ba787aee44d9eedf3139eb132dd719e6b2a971bfd18235780c82d05646->enter($__internal_bbe717ba787aee44d9eedf3139eb132dd719e6b2a971bfd18235780c82d05646_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:topic.html.twig"));
+        $__internal_b5d7a6c7970dec7d77ca2e672ad5b22a9b805148bd81050d529ef2f361aa69dc = $this->env->getExtension("native_profiler");
+        $__internal_b5d7a6c7970dec7d77ca2e672ad5b22a9b805148bd81050d529ef2f361aa69dc->enter($__internal_b5d7a6c7970dec7d77ca2e672ad5b22a9b805148bd81050d529ef2f361aa69dc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:topic.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_bbe717ba787aee44d9eedf3139eb132dd719e6b2a971bfd18235780c82d05646->leave($__internal_bbe717ba787aee44d9eedf3139eb132dd719e6b2a971bfd18235780c82d05646_prof);
+        $__internal_b5d7a6c7970dec7d77ca2e672ad5b22a9b805148bd81050d529ef2f361aa69dc->leave($__internal_b5d7a6c7970dec7d77ca2e672ad5b22a9b805148bd81050d529ef2f361aa69dc_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_25d719edd31b3ca64d45a0c1382e4484e8cff88aa40ff8320e9c6239ef867400 = $this->env->getExtension("native_profiler");
-        $__internal_25d719edd31b3ca64d45a0c1382e4484e8cff88aa40ff8320e9c6239ef867400->enter($__internal_25d719edd31b3ca64d45a0c1382e4484e8cff88aa40ff8320e9c6239ef867400_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_01f2e73e35c906c0b1c2303fcb175d2a167760d43565e54ee9446d30c0e396c8 = $this->env->getExtension("native_profiler");
+        $__internal_01f2e73e35c906c0b1c2303fcb175d2a167760d43565e54ee9446d30c0e396c8->enter($__internal_01f2e73e35c906c0b1c2303fcb175d2a167760d43565e54ee9446d30c0e396c8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "    <h2 class=\"page-header\">";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["topic"]) ? $context["topic"] : $this->getContext($context, "topic")), "subject", array()), "html", null, true);
         echo "</h2>
-    ";
+    <a class=\"btn btn-default\" href=\"";
         // line 4
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["topic"]) ? $context["topic"] : $this->getContext($context, "topic")), "date", array()), "y-m-d"), "html", null, true);
-        echo "
-    ";
+        echo $this->env->getExtension('routing')->getPath("forum");
+        echo "\">Back to Forum</a>
+    <a href=\"";
         // line 5
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["topic"]) ? $context["topic"] : $this->getContext($context, "topic")), "user", array()), "html", null, true);
-        echo "
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("topicreply", array("id" => $this->getAttribute((isset($context["topic"]) ? $context["topic"] : $this->getContext($context, "topic")), "id", array()))), "html", null, true);
+        echo "\"
+       class=\"btn btn-success\">Reply</a>
 
-    </hr>
-    ";
-        // line 8
+    <table class=\"table table-striped\">
+        <thead>
+        <tr>
+            <th>Author</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        ";
+        // line 18
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["topic"]) ? $context["topic"] : $this->getContext($context, "topic")), "replies", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["reply"]) {
-            // line 9
-            echo "        ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["reply"], "user", array()), "username", array()), "html", null, true);
-            echo "
-        ";
-            // line 10
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["reply"], "date", array()), "y-m-d"), "html", null, true);
-            echo "
-        ";
-            // line 11
+            // line 19
+            echo "            <tr>
+                <th scope=\"row\">
+                    ";
+            // line 21
+            if ( !(null === $this->getAttribute($context["reply"], "user", array()))) {
+                // line 22
+                echo "                        ";
+                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, $this->getAttribute($this->getAttribute($context["reply"], "user", array()), "username", array())), "html", null, true);
+                echo "
+                    ";
+            } else {
+                // line 24
+                echo "                        Anonymous
+                    ";
+            }
+            // line 26
+            echo "                </th>
+                <td>";
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($context["reply"], "content", array()), "html", null, true);
-            echo "
-        </hr>
-    ";
+            echo "</td>
+                <td>";
+            // line 28
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["reply"], "date", array()), "m/d/Y"), "html", null, true);
+            echo "</td>
+                <td><a href=\"";
+            // line 29
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("replyedit", array("id" => $this->getAttribute($context["reply"], "id", array()))), "html", null, true);
+            echo "\"
+                       class=\"btn
+                btn-default\">Edit</a>
+                    <a href=\"";
+            // line 32
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("replyremove", array("id" => $this->getAttribute($context["reply"], "id", array()))), "html", null, true);
+            // line 33
+            echo "\" class=\"btn
+                btn-danger\">Remove</a>
+                </td>
+            </tr>
+        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reply'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
-        echo "
+        // line 38
+        echo "        </tbody>
+    </table>
 ";
         
-        $__internal_25d719edd31b3ca64d45a0c1382e4484e8cff88aa40ff8320e9c6239ef867400->leave($__internal_25d719edd31b3ca64d45a0c1382e4484e8cff88aa40ff8320e9c6239ef867400_prof);
+        $__internal_01f2e73e35c906c0b1c2303fcb175d2a167760d43565e54ee9446d30c0e396c8->leave($__internal_01f2e73e35c906c0b1c2303fcb175d2a167760d43565e54ee9446d30c0e396c8_prof);
 
     }
 
@@ -93,21 +131,46 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
 
     public function getDebugInfo()
     {
-        return array (  77 => 14,  68 => 11,  64 => 10,  59 => 9,  55 => 8,  49 => 5,  45 => 4,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  114 => 38,  104 => 33,  102 => 32,  96 => 29,  92 => 28,  88 => 27,  85 => 26,  81 => 24,  75 => 22,  73 => 21,  69 => 19,  65 => 18,  49 => 5,  45 => 4,  40 => 3,  34 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* {% block body %}*/
 /*     <h2 class="page-header">{{ topic.subject }}</h2>*/
-/*     {{ topic.date|date('y-m-d') }}*/
-/*     {{ topic.user }}*/
+/*     <a class="btn btn-default" href="{{ path('forum') }}">Back to Forum</a>*/
+/*     <a href="{{ path('topicreply', {'id': topic.id}) }}"*/
+/*        class="btn btn-success">Reply</a>*/
 /* */
-/*     </hr>*/
-/*     {% for reply in topic.replies %}*/
-/*         {{ reply.user.username }}*/
-/*         {{ reply.date|date('y-m-d') }}*/
-/*         {{ reply.content }}*/
-/*         </hr>*/
-/*     {% endfor %}*/
-/* */
+/*     <table class="table table-striped">*/
+/*         <thead>*/
+/*         <tr>*/
+/*             <th>Author</th>*/
+/*             <th>Message</th>*/
+/*             <th>Date</th>*/
+/*             <th>Action</th>*/
+/*         </tr>*/
+/*         </thead>*/
+/*         <tbody>*/
+/*         {% for reply in topic.replies %}*/
+/*             <tr>*/
+/*                 <th scope="row">*/
+/*                     {% if reply.user is not null %}*/
+/*                         {{ reply.user.username|capitalize }}*/
+/*                     {% else %}*/
+/*                         Anonymous*/
+/*                     {% endif %}*/
+/*                 </th>*/
+/*                 <td>{{ reply.content }}</td>*/
+/*                 <td>{{ reply.date|date("m/d/Y")  }}</td>*/
+/*                 <td><a href="{{ path('replyedit', {'id': reply.id}) }}"*/
+/*                        class="btn*/
+/*                 btn-default">Edit</a>*/
+/*                     <a href="{{ path('replyremove', {'id': reply.id})*/
+/*                     }}" class="btn*/
+/*                 btn-danger">Remove</a>*/
+/*                 </td>*/
+/*             </tr>*/
+/*         {% endfor %}*/
+/*         </tbody>*/
+/*     </table>*/
 /* {% endblock %}*/

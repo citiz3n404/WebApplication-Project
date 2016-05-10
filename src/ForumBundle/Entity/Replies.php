@@ -106,5 +106,37 @@ class Replies
     {
         return $this->date;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTopic()
+    {
+        return $this->topic;
+    }
+
+    /**
+     * @param mixed $topic
+     */
+    public function setTopic($topic)
+    {
+        $this->topic = $topic;
+    }
 }
 

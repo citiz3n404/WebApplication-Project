@@ -167,6 +167,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                         return $this->mergeDefaults(array_replace($matches, array('_route' => 'detailcategorie')), array (  '_controller' => 'ForumBundle\\Controller\\CategorieController::detailAction',));
                     }
 
+                    // listTopics
+                    if (preg_match('#^/forum/categorie/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'listTopics')), array (  '_controller' => 'ForumBundle\\Controller\\CategorieController::listAction',));
+                    }
+
                 }
 
                 // forum
@@ -184,19 +189,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                         return $this->mergeDefaults(array_replace($matches, array('_route' => 'topicreply')), array (  '_controller' => 'ForumBundle\\Controller\\RepliesController::replyAction',));
                     }
 
+                    if (0 === strpos($pathinfo, '/forum/topic/re')) {
+                        // replyedit
+                        if (0 === strpos($pathinfo, '/forum/topic/reply/edit') && preg_match('#^/forum/topic/reply/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'replyedit')), array (  '_controller' => 'ForumBundle\\Controller\\RepliesController::editAction',));
+                        }
+
+                        // replyremove
+                        if (0 === strpos($pathinfo, '/forum/topic/remove') && preg_match('#^/forum/topic/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'replyremove')), array (  '_controller' => 'ForumBundle\\Controller\\RepliesController::removeAction',));
+                        }
+
+                    }
+
                     // topicdisplay
                     if (preg_match('#^/forum/topic/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                         return $this->mergeDefaults(array_replace($matches, array('_route' => 'topicdisplay')), array (  '_controller' => 'ForumBundle\\Controller\\TopicController::displayAction',));
                     }
 
-                }
-
-                // listTopics
-                if (0 === strpos($pathinfo, '/forum/categorie') && preg_match('#^/forum/categorie/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'listTopics')), array (  '_controller' => 'ForumBundle\\Controller\\TopicController::listAction',));
-                }
-
-                if (0 === strpos($pathinfo, '/forum/topic')) {
                     // createtopic
                     if (0 === strpos($pathinfo, '/forum/topic/create') && preg_match('#^/forum/topic/create/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                         return $this->mergeDefaults(array_replace($matches, array('_route' => 'createtopic')), array (  '_controller' => 'ForumBundle\\Controller\\TopicController::createAction',));

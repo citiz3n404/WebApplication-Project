@@ -18,7 +18,9 @@
         {% for topic in topics %}
             <tr>
                 <th scope="row">{{ topic.id }}</th>
-                <td><a href=""> {{ topic.subject }}</a></td>
+                <td><a href="{{ path('topicdisplay', {'id': topic.id}) }}"> {{
+                        topic.subject
+                        }}</a></td>
                 <td></td>
                 <td><a href="{{ path('edittopic', {'id': topic.id}) }}"
                        class="btn

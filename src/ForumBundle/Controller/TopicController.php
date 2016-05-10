@@ -23,20 +23,7 @@ class TopicController extends Controller
         ("topic" => $topic));
     }
 
-    /**
-     * @Route("/categorie/{id}", name="listTopics")
-     */
-    public function listAction($id)
-    {
-        $topics = $this->getDoctrine()->getRepository('ForumBundle:Topics')
-            ->findByCategorie($id);
-
-        $categorie = $this->getDoctrine()->getRepository
-        ('ForumBundle:Categories')->find($id);
-
-        return $this->render('ForumBundle:Topic:listTopics.html.twig', array
-        ("topics" => $topics, "categorie" => $categorie));
-    }
+    
 
     /**
      * @Route("/topic/create/{id}", name="createtopic")

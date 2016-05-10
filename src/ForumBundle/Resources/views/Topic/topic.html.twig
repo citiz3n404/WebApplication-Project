@@ -1,15 +1,40 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <h2 class="page-header">{{ topic.subject }}</h2>
-    {{ topic.date|date('y-m-d') }}
-    {{ topic.user }}
+    <a class="btn btn-default" href="{{ path('forum') }}">Back to Forum</a>
+    <a href="{{ path('topicreply', {'id': topic.id}) }}"
+       class="btn btn-success">Reply</a>
 
-    </hr>
-    {% for reply in topic.replies %}
-        {{ reply.user.username }}
-        {{ reply.date|date('y-m-d') }}
-        {{ reply.content }}
-        </hr>
-    {% endfor %}
-
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Author</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for reply in topic.replies %}
+            <tr>
+                <th scope="row">
+                    {% if reply.user is not null %}
+                        {{ reply.user.username|capitalize }}
+                    {% else %}
+                        Anonymous
+                    {% endif %}
+                </th>
+                <td>{{ reply.content }}</td>
+                <td>{{ reply.date|date("m/d/Y")  }}</td>
+                <td><a href="{{ path('replyedit', {'id': reply.id}) }}"
+                       class="btn
+                btn-default">Edit</a>
+                    <a href="{{ path('replyremove', {'id': reply.id})
+                    }}" class="btn
+                btn-danger">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

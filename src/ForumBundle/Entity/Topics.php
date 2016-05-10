@@ -133,5 +133,21 @@ class Topics
     {
         $this->categorie = $categorie;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getReplies()
+    {
+        return $this->replies;
+    }
+
+    /**
+     * @param mixed $replies
+     */
+    public function setReplies($replies)
+    {
+        $this->replies = $replies;
+    }
 }
 
