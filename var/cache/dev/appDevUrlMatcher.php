@@ -100,6 +100,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // annuaire_default_index
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'annuaire_default_index');
+            }
+
+            return array (  '_controller' => 'AnnuaireBundle\\Controller\\DefaultController::indexAction',  '_route' => 'annuaire_default_index',);
+        }
+
         // admin
         if (rtrim($pathinfo, '/') === '/admin') {
             if (substr($pathinfo, -1) !== '/') {
@@ -136,13 +145,52 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/for')) {
-            // forum
-            if (rtrim($pathinfo, '/') === '/forum') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'forum');
+            if (0 === strpos($pathinfo, '/forum')) {
+                if (0 === strpos($pathinfo, '/forum/categorie')) {
+                    // createcategorie
+                    if ($pathinfo === '/forum/categorie/create') {
+                        return array (  '_controller' => 'ForumBundle\\Controller\\CategorieController::createAction',  '_route' => 'createcategorie',);
+                    }
+
+                    // editcategorie
+                    if (0 === strpos($pathinfo, '/forum/categorie/edit') && preg_match('#^/forum/categorie/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'editcategorie')), array (  '_controller' => 'ForumBundle\\Controller\\CategorieController::editAction',));
+                    }
+
+                    // removecategorie
+                    if (0 === strpos($pathinfo, '/forum/categorie/remove') && preg_match('#^/forum/categorie/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'removecategorie')), array (  '_controller' => 'ForumBundle\\Controller\\CategorieController::removeAction',));
+                    }
+
+                    // detailcategorie
+                    if (0 === strpos($pathinfo, '/forum/categorie/detail') && preg_match('#^/forum/categorie/detail/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'detailcategorie')), array (  '_controller' => 'ForumBundle\\Controller\\CategorieController::detailAction',));
+                    }
+
                 }
 
-                return array (  '_controller' => 'ForumBundle\\Controller\\DefaultController::indexAction',  '_route' => 'forum',);
+                // forum
+                if (rtrim($pathinfo, '/') === '/forum') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'forum');
+                    }
+
+                    return array (  '_controller' => 'ForumBundle\\Controller\\DefaultController::indexAction',  '_route' => 'forum',);
+                }
+
+                if (0 === strpos($pathinfo, '/forum/topic')) {
+                    // topicreply
+                    if (preg_match('#^/forum/topic/(?P<id>[^/]++)/reply$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'topicreply')), array (  '_controller' => 'ForumBundle\\Controller\\RepliesController::replyAction',));
+                    }
+
+                    // topicdisplay
+                    if (preg_match('#^/forum/topic/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'topicdisplay')), array (  '_controller' => 'ForumBundle\\Controller\\TopicController::displayAction',));
+                    }
+
+                }
+
             }
 
             if (0 === strpos($pathinfo, '/formation')) {

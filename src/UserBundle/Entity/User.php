@@ -27,8 +27,8 @@ class User extends BaseUser
 
     public function __construct() {
         parent::__construct();
-        $this->replies = new ArrayCollection();
-        $this->topics = new ArrayCollection();
+        $this->replies  = new ArrayCollection();
+        $this->topics   = new ArrayCollection();
     }
 
     /**

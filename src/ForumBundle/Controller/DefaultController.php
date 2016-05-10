@@ -12,6 +12,10 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('ForumBundle:Default:index.html.twig');
+        $categories = $this->getDoctrine()->getRepository('ForumBundle:Categories')
+            ->findAll();
+        //affiche le forum (categories)
+        return $this->render('ForumBundle:Forum:forum.html.twig', array
+        ('categories' => $categories));
     }
 }

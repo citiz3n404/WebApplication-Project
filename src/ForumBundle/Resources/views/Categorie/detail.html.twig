@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <a class="btn btn-default" href="{{ path('forum') }}">Back to Forum</a>
+    <h2 class="page-header">{{ categorie.name }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Category: {{ categorie.name }}</li>
+        <li class="list-group-item">Desc : {{ categorie.description }}</li>
+        <li>
+            <a href="{{ path('editcategorie', {'id': categorie.id}) }}"
+               class="btn
+                btn-default">Edit</a>
+            <a href="{{ path('removecategorie', {'id': categorie.id}) }}"
+               class="btn
+                btn-danger">Remove</a></li>
+    </ul>
+
+{% endblock %}

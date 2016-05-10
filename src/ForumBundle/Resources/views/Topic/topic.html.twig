@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2 class="page-header">{{ topic.subject }}</h2>
+    {{ topic.date|date('y-m-d') }}
+    {{ topic.user }}
+
+    </hr>
+    {% for reply in topic.replies %}
+        {{ reply.user.username }}
+        {{ reply.date|date('y-m-d') }}
+        {{ reply.content }}
+        </hr>
+    {% endfor %}
+
+{% endblock %}
