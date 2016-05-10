@@ -191,6 +191,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
                 }
 
+                // listTopics
+                if (0 === strpos($pathinfo, '/forum/categorie') && preg_match('#^/forum/categorie/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'listTopics')), array (  '_controller' => 'ForumBundle\\Controller\\TopicController::listAction',));
+                }
+
+                if (0 === strpos($pathinfo, '/forum/topic')) {
+                    // createtopic
+                    if (0 === strpos($pathinfo, '/forum/topic/create') && preg_match('#^/forum/topic/create/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'createtopic')), array (  '_controller' => 'ForumBundle\\Controller\\TopicController::createAction',));
+                    }
+
+                    // edittopic
+                    if (0 === strpos($pathinfo, '/forum/topic/edit') && preg_match('#^/forum/topic/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'edittopic')), array (  '_controller' => 'ForumBundle\\Controller\\TopicController::editAction',));
+                    }
+
+                    // removetopic
+                    if (0 === strpos($pathinfo, '/forum/topic/remove') && preg_match('#^/forum/topic/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'removetopic')), array (  '_controller' => 'ForumBundle\\Controller\\TopicController::removeAction',));
+                    }
+
+                }
+
             }
 
             if (0 === strpos($pathinfo, '/formation')) {

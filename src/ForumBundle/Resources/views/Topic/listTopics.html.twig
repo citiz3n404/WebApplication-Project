@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2 class="page-header">{{ categorie.name }}</h2>
+    <a class="btn btn-default" href="{{ path('forum') }}">Back to Forum</a>
+    <a href="{{ path('createtopic', {'id': categorie.id}) }}"
+       class="btn btn-success">Create a new topic</a>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Topic</th>
+            <th>Replies</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for topic in topics %}
+            <tr>
+                <th scope="row">{{ topic.id }}</th>
+                <td><a href=""> {{ topic.subject }}</a></td>
+                <td></td>
+                <td><a href="{{ path('edittopic', {'id': topic.id}) }}"
+                       class="btn
+                btn-default">Edit</a>
+                    <a href="{{ path('removetopic', {'id': topic.id})
+                    }}" class="btn
+                btn-danger">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

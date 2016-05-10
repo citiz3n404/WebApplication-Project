@@ -21,23 +21,24 @@ class __TwigTemplate_1a076bdb3393f35e8f187c4ea580bc137cb8fbcb9f10f8a734df991e029
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_697eff84fa411d6912283b07fd9b3f18c4a7244c7a5aac9d61b2ae594b5a2a97 = $this->env->getExtension("native_profiler");
-        $__internal_697eff84fa411d6912283b07fd9b3f18c4a7244c7a5aac9d61b2ae594b5a2a97->enter($__internal_697eff84fa411d6912283b07fd9b3f18c4a7244c7a5aac9d61b2ae594b5a2a97_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Forum:forum.html.twig"));
+        $__internal_5b7d2eb1948feec2a5bcb8793f3ed066cfa188233ffbc1470fd392d7c32e904c = $this->env->getExtension("native_profiler");
+        $__internal_5b7d2eb1948feec2a5bcb8793f3ed066cfa188233ffbc1470fd392d7c32e904c->enter($__internal_5b7d2eb1948feec2a5bcb8793f3ed066cfa188233ffbc1470fd392d7c32e904c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Forum:forum.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_697eff84fa411d6912283b07fd9b3f18c4a7244c7a5aac9d61b2ae594b5a2a97->leave($__internal_697eff84fa411d6912283b07fd9b3f18c4a7244c7a5aac9d61b2ae594b5a2a97_prof);
+        $__internal_5b7d2eb1948feec2a5bcb8793f3ed066cfa188233ffbc1470fd392d7c32e904c->leave($__internal_5b7d2eb1948feec2a5bcb8793f3ed066cfa188233ffbc1470fd392d7c32e904c_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_f97f816b9a1a1fb941ad8a16e8f50181ed990e3fbfb7326cb5e239a3462571ec = $this->env->getExtension("native_profiler");
-        $__internal_f97f816b9a1a1fb941ad8a16e8f50181ed990e3fbfb7326cb5e239a3462571ec->enter($__internal_f97f816b9a1a1fb941ad8a16e8f50181ed990e3fbfb7326cb5e239a3462571ec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_1232207a8fbdf48f48bc2d1609084642d984af2c4af637a1872314b6d0197c1f = $this->env->getExtension("native_profiler");
+        $__internal_1232207a8fbdf48f48bc2d1609084642d984af2c4af637a1872314b6d0197c1f->enter($__internal_1232207a8fbdf48f48bc2d1609084642d984af2c4af637a1872314b6d0197c1f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "    <table class=\"table table-striped\">
+        echo "    <h2 class=\"page-header\">FORUM</h2>
+    <table class=\"table table-striped\">
         <thead>
         <tr>
             <th>#</th>
@@ -48,36 +49,40 @@ class __TwigTemplate_1a076bdb3393f35e8f187c4ea580bc137cb8fbcb9f10f8a734df991e029
         </thead>
         <tbody>
         ";
-        // line 13
+        // line 14
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) ? $context["categories"] : $this->getContext($context, "categories")));
         foreach ($context['_seq'] as $context["_key"] => $context["categorie"]) {
-            // line 14
+            // line 15
             echo "            <tr>
                 <th scope=\"row\">";
-            // line 15
+            // line 16
             echo twig_escape_filter($this->env, $this->getAttribute($context["categorie"], "id", array()), "html", null, true);
             echo "</th>
-                <td>";
-            // line 16
-            echo twig_escape_filter($this->env, $this->getAttribute($context["categorie"], "name", array()), "html", null, true);
-            echo "</td>
+                <td><a href=\"";
+            // line 17
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("listTopics", array("id" => $this->getAttribute($context["categorie"], "id", array()))), "html", null, true);
+            echo "\"> ";
+            echo twig_escape_filter($this->env, $this->getAttribute(            // line 18
+$context["categorie"], "name", array()), "html", null, true);
+            // line 19
+            echo "</a></td>
                 <td></td>
                 <td><a href=\"";
-            // line 18
+            // line 21
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("detailcategorie", array("id" => $this->getAttribute($context["categorie"], "id", array()))), "html", null, true);
             echo "\"
                        class=\"btn btn-success\">View</a>
                     <a href=\"";
-            // line 20
+            // line 23
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("editcategorie", array("id" => $this->getAttribute($context["categorie"], "id", array()))), "html", null, true);
             echo "\"
                        class=\"btn
                 btn-default\">Edit</a>
                     <a href=\"";
-            // line 23
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("removecategorie", array("id" => $this->getAttribute($context["categorie"], "id", array()))), "html", null, true);
-            // line 24
+            // line 27
             echo "\" class=\"btn
                 btn-danger\">Remove</a>
                 </td>
@@ -87,12 +92,12 @@ class __TwigTemplate_1a076bdb3393f35e8f187c4ea580bc137cb8fbcb9f10f8a734df991e029
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 32
         echo "        </tbody>
     </table>
 ";
         
-        $__internal_f97f816b9a1a1fb941ad8a16e8f50181ed990e3fbfb7326cb5e239a3462571ec->leave($__internal_f97f816b9a1a1fb941ad8a16e8f50181ed990e3fbfb7326cb5e239a3462571ec_prof);
+        $__internal_1232207a8fbdf48f48bc2d1609084642d984af2c4af637a1872314b6d0197c1f->leave($__internal_1232207a8fbdf48f48bc2d1609084642d984af2c4af637a1872314b6d0197c1f_prof);
 
     }
 
@@ -108,11 +113,12 @@ class __TwigTemplate_1a076bdb3393f35e8f187c4ea580bc137cb8fbcb9f10f8a734df991e029
 
     public function getDebugInfo()
     {
-        return array (  91 => 29,  81 => 24,  79 => 23,  73 => 20,  68 => 18,  63 => 16,  59 => 15,  56 => 14,  52 => 13,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  96 => 32,  86 => 27,  84 => 26,  78 => 23,  73 => 21,  69 => 19,  67 => 18,  64 => 17,  60 => 16,  57 => 15,  53 => 14,  40 => 3,  34 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* {% block body %}*/
+/*     <h2 class="page-header">FORUM</h2>*/
 /*     <table class="table table-striped">*/
 /*         <thead>*/
 /*         <tr>*/
@@ -126,7 +132,9 @@ class __TwigTemplate_1a076bdb3393f35e8f187c4ea580bc137cb8fbcb9f10f8a734df991e029
 /*         {% for categorie in categories %}*/
 /*             <tr>*/
 /*                 <th scope="row">{{ categorie.id }}</th>*/
-/*                 <td>{{ categorie.name }}</td>*/
+/*                 <td><a href="{{ path('listTopics', {'id': categorie.id}) }}"> {{*/
+/*                         categorie.name*/
+/*                         }}</a></td>*/
 /*                 <td></td>*/
 /*                 <td><a href="{{ path('detailcategorie', {'id': categorie.id}) }}"*/
 /*                        class="btn btn-success">View</a>*/

@@ -23,7 +23,8 @@ class CategorieController extends Controller
             ->add('description', TextareaType::class, array('attr' => array
             ('class' => 'form-control')))
             ->add('Save', SubmitType::class, array('label' => 'Add categorie',
-                'attr' => array('class' => 'btn btn-primary', 'style' => '')))
+                'attr' => array('class' => 'btn btn-primary', 'style' =>
+                    'margin-top: 10px;')))
             ->getForm();
 
         $form->handleRequest($request);
@@ -47,9 +48,37 @@ class CategorieController extends Controller
     /**
      * @Route("/categorie/edit/{id}", name="editcategorie")
      */
-    public function editAction($id)
+    public function editAction($id, Request $request)
     {
-        return $this->render('ForumBundle:Default:index.html.twig');
+        $categorie = $this->getDoctrine()->getRepository
+        ('ForumBundle:Categories')->find($id);
+
+        $form = $this->createFormBuilder($categorie)->add('name',
+            TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('description', TextareaType::class, array('attr' => array
+            ('class' => 'form-control')))
+            ->add('Save', SubmitType::class, array('label' => 'Edit categorie',
+                'attr' => array('class' => 'btn btn-primary', 'style' =>
+                    'margin-top: 10px;')))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $categorie->setName($form['name']->getData());
+            $categorie->setDescription(($form['description']->getData()));
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($categorie);
+            $em->flush();
+
+            $this->addFlash('success', 'La catégorie à été mise à jour avec 
+            succes');
+            return $this->redirectToRoute('forum');
+        }
+
+        return $this->render('ForumBundle:Categorie:edit.html.twig', array
+        ('form' => $form->createView()));
     }
 
     /**
@@ -57,7 +86,13 @@ class CategorieController extends Controller
      */
     public function removeAction($id)
     {
-        return $this->render('ForumBundle:Default:index.html.twig');
+        $em=$this->getDoctrine()->getManager();
+        $categorie = $em->getRepository('ForumBundle:Categories')->find($id);
+        $em->remove($categorie);
+        $em->flush();
+        $this->addFlash('danger', 'Categorie removed');
+        //nom de la route!
+        return $this->redirectToRoute('forum');
     }
 
     /**

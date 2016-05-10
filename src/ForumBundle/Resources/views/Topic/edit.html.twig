@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+    <a class="btn btn-default" href="{{ path('forum') }}">Back to Forum</a>
     <h2 class="page-header">Edit {{ topic.subject }}</h2>
     {{ form_start(form) }}
     {{ form_widget(form) }}

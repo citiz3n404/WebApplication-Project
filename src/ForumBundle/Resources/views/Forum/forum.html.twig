@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+    <h2 class="page-header">FORUM</h2>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -13,7 +14,9 @@
         {% for categorie in categories %}
             <tr>
                 <th scope="row">{{ categorie.id }}</th>
-                <td>{{ categorie.name }}</td>
+                <td><a href="{{ path('listTopics', {'id': categorie.id}) }}"> {{
+                        categorie.name
+                        }}</a></td>
                 <td></td>
                 <td><a href="{{ path('detailcategorie', {'id': categorie.id}) }}"
                        class="btn btn-success">View</a>
