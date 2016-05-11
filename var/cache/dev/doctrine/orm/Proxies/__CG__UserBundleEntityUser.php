@@ -64,10 +64,10 @@ class User extends \UserBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'replies', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'topics', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'salarie', 'id', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt'];
+            return ['__isInitialized__', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'replies', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'topics', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'inscriptions', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'salarie', 'id', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'replies', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'topics', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'salarie', 'id', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt'];
+        return ['__isInitialized__', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'replies', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'topics', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'inscriptions', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'salarie', 'id', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt'];
     }
 
     /**

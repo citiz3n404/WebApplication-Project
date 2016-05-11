@@ -8,10 +8,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="annuaire")
      */
-    public function indexAction()
+    public function listAction()
     {
-        return $this->render('AnnuaireBundle:Default:index.html.twig');
+        $users = $this->getDoctrine()->getRepository
+        ('UserBundle:User')->findAll();
+        return $this->render('AnnuaireBundle:Default:index.html.twig', array
+        ('users'=> $users));
     }
 }

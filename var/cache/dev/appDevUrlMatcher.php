@@ -100,22 +100,25 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // annuaire_default_index
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'annuaire_default_index');
+        if (0 === strpos($pathinfo, '/a')) {
+            // annuaire
+            if (rtrim($pathinfo, '/') === '/annuaire') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'annuaire');
+                }
+
+                return array (  '_controller' => 'AnnuaireBundle\\Controller\\DefaultController::listAction',  '_route' => 'annuaire',);
             }
 
-            return array (  '_controller' => 'AnnuaireBundle\\Controller\\DefaultController::indexAction',  '_route' => 'annuaire_default_index',);
-        }
+            // admin
+            if (rtrim($pathinfo, '/') === '/admin') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'admin');
+                }
 
-        // admin
-        if (rtrim($pathinfo, '/') === '/admin') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'admin');
+                return array (  '_controller' => 'AdminBundle\\Controller\\DefaultController::indexAction',  '_route' => 'admin',);
             }
 
-            return array (  '_controller' => 'AdminBundle\\Controller\\DefaultController::indexAction',  '_route' => 'admin',);
         }
 
         // stats

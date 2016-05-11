@@ -44,7 +44,7 @@ class InscriptionController extends Controller
             ->findBy(array('user'=>$user->getId(),'formation'=>
                 $formation->getId()));
 
-        // ICI vérifier que dans la formation choisie l'utilisateur n'est pas
+        // ICI vérifier que dans la formation choisi l'utilisateur n'est pas
         // inscrit
 
         if( !empty($inscr) ){

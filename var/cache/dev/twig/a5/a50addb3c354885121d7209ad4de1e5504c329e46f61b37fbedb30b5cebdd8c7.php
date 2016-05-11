@@ -21,24 +21,24 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_39061596dc78c72923c13a5bbf492e6960a51cf8e14ee83f4267c1881f42dd5c = $this->env->getExtension("native_profiler");
-        $__internal_39061596dc78c72923c13a5bbf492e6960a51cf8e14ee83f4267c1881f42dd5c->enter($__internal_39061596dc78c72923c13a5bbf492e6960a51cf8e14ee83f4267c1881f42dd5c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FormationBundle:Default:details.html.twig"));
+        $__internal_abe45c792ddb5f047f9817d0dde05a20f2d5851994f0173575d796fdc4e429f4 = $this->env->getExtension("native_profiler");
+        $__internal_abe45c792ddb5f047f9817d0dde05a20f2d5851994f0173575d796fdc4e429f4->enter($__internal_abe45c792ddb5f047f9817d0dde05a20f2d5851994f0173575d796fdc4e429f4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FormationBundle:Default:details.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_39061596dc78c72923c13a5bbf492e6960a51cf8e14ee83f4267c1881f42dd5c->leave($__internal_39061596dc78c72923c13a5bbf492e6960a51cf8e14ee83f4267c1881f42dd5c_prof);
+        $__internal_abe45c792ddb5f047f9817d0dde05a20f2d5851994f0173575d796fdc4e429f4->leave($__internal_abe45c792ddb5f047f9817d0dde05a20f2d5851994f0173575d796fdc4e429f4_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_cb473aa29a1da6e001784a093a5871cadf068f71e95fa06330ffd7bc3bf808c0 = $this->env->getExtension("native_profiler");
-        $__internal_cb473aa29a1da6e001784a093a5871cadf068f71e95fa06330ffd7bc3bf808c0->enter($__internal_cb473aa29a1da6e001784a093a5871cadf068f71e95fa06330ffd7bc3bf808c0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_19ae4561199cb3a1a92ac29023e5aac246dc9de72131034c24befa61aad173c1 = $this->env->getExtension("native_profiler");
+        $__internal_19ae4561199cb3a1a92ac29023e5aac246dc9de72131034c24befa61aad173c1->enter($__internal_19ae4561199cb3a1a92ac29023e5aac246dc9de72131034c24befa61aad173c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <a class=\"btn btn-default\" href=\"/formation/\">Back to  formation list</a>
-    <a class=\"btn btn-default\" href=\"";
+    <a class=\"btn btn-primary\" href=\"";
         // line 5
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationinscription", array("id" => $this->getAttribute(        // line 6
 (isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "id", array()))), "html", null, true);
@@ -70,7 +70,7 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
         // line 15
         if ($this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "locked", array())) {
             // line 16
-            echo "            Vérouillée
+            echo "            Verouillée
             ";
         } else {
             // line 18
@@ -134,7 +134,7 @@ $context["inscription"], "id", array()))), "html", null, true);
     </table>
 ";
         
-        $__internal_cb473aa29a1da6e001784a093a5871cadf068f71e95fa06330ffd7bc3bf808c0->leave($__internal_cb473aa29a1da6e001784a093a5871cadf068f71e95fa06330ffd7bc3bf808c0_prof);
+        $__internal_19ae4561199cb3a1a92ac29023e5aac246dc9de72131034c24befa61aad173c1->leave($__internal_19ae4561199cb3a1a92ac29023e5aac246dc9de72131034c24befa61aad173c1_prof);
 
     }
 
@@ -157,7 +157,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 /* */
 /* {% block body %}*/
 /*     <a class="btn btn-default" href="/formation/">Back to  formation list</a>*/
-/*     <a class="btn btn-default" href="{{ path('formationinscription', {'id':*/
+/*     <a class="btn btn-primary" href="{{ path('formationinscription', {'id':*/
 /*         formation.id}) }}">Inscription</a>*/
 /*     <h2 class="page-header">{{ formation.title }}</h2>*/
 /*     <ul class="list-group">*/
@@ -168,7 +168,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*         <li class="list-group-item">Durée: {{ formation.duration }} jours</li>*/
 /*         <li class="list-group-item">Status:*/
 /*             {% if formation.locked %}*/
-/*             Vérouillée*/
+/*             Verouillée*/
 /*             {% else %}*/
 /*             Ouverte*/
 /*             {% endif %}*/

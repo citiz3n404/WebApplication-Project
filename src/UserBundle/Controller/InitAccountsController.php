@@ -41,7 +41,7 @@ class InitAccountsController extends Controller
             $user->setEmail($prenom.".".$nom."@nsz.com");
             $user->setEnabled(true);
             $user->setPlainPassword(strtolower($nom));
-            $user->setRoles(array('ROLES_USER'));
+            $user->setRoles(array('ROLE_USER'));
             $user->setSalarie($salarie);
 
             $em = $this->getDoctrine()->getManager();

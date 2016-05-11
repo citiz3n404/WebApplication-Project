@@ -1,1 +1,34 @@
-Hello World!
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2 class="page-header">ANNUAIRE</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Sexe</th>
+            <th>Salaire</th>
+            <th>Contrat</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <th scope="row">{{ user.username }}</th>
+                <td>{{ user.salarie.nom }}</td>
+                <td>{{ user.salarie.prenom }}</td>
+                <td>{{ user.salarie.sexe }}</td>
+                <td>{{ user.salarie.salaire }} €</td>
+                <td>{{ user.salarie.typeContrat }}</td>
+                <td><a href=""   class="btn btn-success">Details</a>
+                    <a href=""  class="btn btn-default">Edit</a>
+                    <a href="" class="btn  btn-danger">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

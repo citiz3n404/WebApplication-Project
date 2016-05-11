@@ -2,7 +2,7 @@
 
 {% block body %}
     <a class="btn btn-default" href="/formation/">Back to  formation list</a>
-    <a class="btn btn-default" href="{{ path('formationinscription', {'id':
+    <a class="btn btn-primary" href="{{ path('formationinscription', {'id':
         formation.id}) }}">Inscription</a>
     <h2 class="page-header">{{ formation.title }}</h2>
     <ul class="list-group">
@@ -13,7 +13,7 @@
         <li class="list-group-item">Durée: {{ formation.duration }} jours</li>
         <li class="list-group-item">Status:
             {% if formation.locked %}
-            Vérouillée
+            Verouillée
             {% else %}
             Ouverte
             {% endif %}

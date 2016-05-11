@@ -1,7 +1,7 @@
 annuaire:
     resource: "@AnnuaireBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /annuaire
 
 admin:
     resource: "@AdminBundle/Controller/"
