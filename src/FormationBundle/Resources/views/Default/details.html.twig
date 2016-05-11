@@ -2,13 +2,48 @@
 
 {% block body %}
     <a class="btn btn-default" href="/formation/">Back to  formation list</a>
+    <a class="btn btn-default" href="{{ path('formationinscription', {'id':
+        formation.id}) }}">Inscription</a>
     <h2 class="page-header">{{ formation.title }}</h2>
     <ul class="list-group">
-        <li class="list-group-item">Category: {{ formation.cost }} euros</li>
-        <li class="list-group-item">Desc : {{ formation.description }}</li>
+        <li class="list-group-item">Prix: {{ formation.cost }} euros</li>
+        <li class="list-group-item">Description : {{ formation.description
+            }}</li>
         <li class="list-group-item">Date : {{ formation.begin|date('y-m-d')}}</li>
-        <li class="list-group-item">Durée: {{ formation.duration }}
-            jours</li>
+        <li class="list-group-item">Durée: {{ formation.duration }} jours</li>
+        <li class="list-group-item">Status:
+            {% if formation.locked %}
+            Vérouillée
+            {% else %}
+            Ouverte
+            {% endif %}
+        </li>
     </ul>
 
+
+    <h2 class="page-header">Paticipants</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for inscription in inscriptions %}
+            <tr>
+                <th scope="row">{{ inscription.id }}</th>
+                <td><a href=""> {{ inscription.user.username }}</a></td>
+                <td>
+                    {%  if inscription.validated != true %}
+                    <a href="{{ path('formationvalidateinscription', {'id':
+                        inscription.id }) }}"class="btn btn-success">Valider</a>
+                    {% endif %}
+                    <a href="{{ path('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

@@ -90,7 +90,6 @@ class RepliesController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $reply = $em->getRepository('ForumBundle:Replies')->find($id);
-        $categorie = $reply->getTopic()->getCategorie();
         $em->remove($reply);
         $em->flush();
         $this->addFlash('danger', 'Reply removed');

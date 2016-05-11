@@ -5,6 +5,7 @@ namespace FormationBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FormationBundle\Entity\Formation;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -64,6 +65,7 @@ class FormationController extends Controller
             $formation->setImg          ($form['img']           ->getData());
             $formation->setDescription  ($form['description']   ->getData());
             $formation->setDuration     ($form['duration']      ->getData());
+            $formation->setLocked       (false);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($formation);
@@ -71,7 +73,7 @@ class FormationController extends Controller
 
             $this->addFlash('success', 'Nouvelle formation ajoutée');
 
-            return $this->redirectToRoute('formationlist');
+            return $this->redirectToRoute('formation');
         }
 
         return $this->render('FormationBundle:Default:create.html.twig', array
@@ -86,8 +88,11 @@ class FormationController extends Controller
     {
         $formation = $this->getDoctrine()->getRepository
         ('FormationBundle:Formation')->find($id);
+        $inscriptions = $this->getDoctrine()->getRepository
+        ('FormationBundle:Inscription')->findByFormation($formation);
+
         return $this->render('FormationBundle:Default:details.html.twig', array
-            ('formation' => $formation)
+            ('formation' => $formation, 'inscriptions'=>$inscriptions)
         );
     }
 
@@ -102,6 +107,22 @@ class FormationController extends Controller
         $em->remove($formation);
         $em->flush();
         $this->addFlash('success', 'Formation removed');
+        //nom de la route!
+        return $this->redirectToRoute('formation');
+    }
+
+
+    /**
+     * @Route("/lock/{id}", name="formationlock")
+     */
+    public function lockAction($id)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $formation = $em->getRepository('FormationBundle:Formation')->find($id);
+        $formation->setLocked(True);
+        $em->persist($formation);
+        $em->flush();
+        $this->addFlash('success', 'Formation locked');
         //nom de la route!
         return $this->redirectToRoute('formation');
     }
@@ -129,6 +150,13 @@ class FormationController extends Controller
             ('class' => 'form-control', 'style' => '')))
             ->add('duration', IntegerType::class, array('attr' => array
             ('class' => 'form-control', 'style' => '')))
+            ->add('locked', ChoiceType::class, array(
+                'label' => 'Locked',
+                'choices' => array(1 => 'Oui', 0 => 'Non'),
+                'expanded' => true,
+                'multiple' => false,
+                'required' => true
+            ))
             ->add('Save', SubmitType::class, array('label' => 'Edit formation',
                 'attr' => array('class' => 'btn btn-primary', 'style' => '')))
             ->getForm();
@@ -143,7 +171,7 @@ class FormationController extends Controller
             $formation->setImg          ($form['img']           ->getData());
             $formation->setDescription  ($form['description']   ->getData());
             $formation->setDuration     ($form['duration']      ->getData());
-
+            $formation->setLocked       ($form['locked']        ->getData());
             $em = $this->getDoctrine()->getManager();
             $em->persist($formation);
             $em->flush();

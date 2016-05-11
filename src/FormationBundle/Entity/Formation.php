@@ -2,6 +2,7 @@
 
 namespace FormationBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,6 +13,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Formation
 {
+
+    /**
+     * @ORM\OneToMany(targetEntity="Inscription", mappedBy="formation")
+     */
+    private $inscriptions;
+
+    public function __construct() {
+        $this->inscriptions = new ArrayCollection();
+    }
+
     /**
      * @var int
      *
@@ -27,6 +38,13 @@ class Formation
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="locked", type="boolean")
+     */
+    private $locked;
 
     /**
      * @var string
@@ -247,6 +265,22 @@ class Formation
     public function getImg()
     {
         return $this->img;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isLocked()
+    {
+        return $this->locked;
+    }
+
+    /**
+     * @param boolean $locked
+     */
+    public function setLocked($locked)
+    {
+        $this->locked = $locked;
     }
 }
 

@@ -25,7 +25,7 @@
                     {% endif %}
                 </th>
                 <td>{{ reply.content }}</td>
-                <td>{{ reply.date|date("m/d/Y")  }}</td>
+                <td>{{ reply.date|date("d-m-Y H:i:s")  }}</td>
                 <td><a href="{{ path('replyedit', {'id': reply.id}) }}"
                        class="btn
                 btn-default">Edit</a>

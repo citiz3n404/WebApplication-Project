@@ -1,9 +1,41 @@
 {% extends 'base.html.twig' %}
-
 {% block body %}
-    <ul>
-       {% for formation in formations %}
-           <li>{{ formation.title }} id:{{ formation.id }}</li>
-       {% endfor %}
-    </ul>
+    <h2 class="page-header">FORMATIONS</h2>
+    <a href="{{ path('formationcreate') }}"
+       class="btn btn-success">Create a new formation</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Formation</th>
+            <th>Durée</th>
+            <th>Prix</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for formation in formations %}
+            <tr>
+                <th scope="row">{{ formation.id }}</th>
+                <td><a href="{{ path('formationdetails', {'id': formation.id}) }}"> {{
+                        formation.title
+                        }}</a></td>
+                <td>{{ formation.duration }} jours</td>
+                <td>{{ formation.cost }} euros</td>
+                <td><a href="{{ path('formationdetails', {'id': formation.id}) }}"
+                       class="btn btn-success">Details</a>
+                    <a href="{{ path('formationedit', {'id': formation.id}) }}"
+                       class="btn
+                btn-default">Edit</a>
+                    <a href="{{ path('formationlock', {'id': formation.id})
+                    }}" class="btn
+                btn-warning">Lock</a>
+                    <a href="{{ path('formationremove', {'id': formation.id})
+                    }}" class="btn
+                btn-danger">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

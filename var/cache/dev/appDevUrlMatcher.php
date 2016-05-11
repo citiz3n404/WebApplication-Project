@@ -251,9 +251,32 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'formationremove')), array (  '_controller' => 'FormationBundle\\Controller\\FormationController::removeAction',));
                 }
 
+                // formationlock
+                if (0 === strpos($pathinfo, '/formation/lock') && preg_match('#^/formation/lock/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'formationlock')), array (  '_controller' => 'FormationBundle\\Controller\\FormationController::lockAction',));
+                }
+
                 // formationedit
                 if (0 === strpos($pathinfo, '/formation/edit') && preg_match('#^/formation/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'formationedit')), array (  '_controller' => 'FormationBundle\\Controller\\FormationController::editAction',));
+                }
+
+                if (0 === strpos($pathinfo, '/formation/inscription')) {
+                    // formationinscription
+                    if (preg_match('#^/formation/inscription/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'formationinscription')), array (  '_controller' => 'FormationBundle\\Controller\\InscriptionController::inscriptionAction',));
+                    }
+
+                    // formationvalidateinscription
+                    if (0 === strpos($pathinfo, '/formation/inscription/validate') && preg_match('#^/formation/inscription/validate/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'formationvalidateinscription')), array (  '_controller' => 'FormationBundle\\Controller\\InscriptionController::validateAction',));
+                    }
+
+                    // formationremoveinscription
+                    if (0 === strpos($pathinfo, '/formation/inscription/remove') && preg_match('#^/formation/inscription/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'formationremoveinscription')), array (  '_controller' => 'FormationBundle\\Controller\\InscriptionController::removeAction',));
+                    }
+
                 }
 
             }

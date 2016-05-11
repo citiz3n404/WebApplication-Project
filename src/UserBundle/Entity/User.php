@@ -25,10 +25,17 @@ class User extends BaseUser
      */
     private $topics;
 
+    /**
+     * @ORM\OneToMany(targetEntity="FormationBundle\Entity\Inscription",
+     *     mappedBy="user")
+     */
+    private $inscriptions;
+
     public function __construct() {
         parent::__construct();
-        $this->replies  = new ArrayCollection();
-        $this->topics   = new ArrayCollection();
+        $this->replies          = new ArrayCollection();
+        $this->topics           = new ArrayCollection();
+        $this->inscriptions     = new ArrayCollection();
     }
 
     /**
