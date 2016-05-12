@@ -21,20 +21,20 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4cc4a870f94a5d9b698ff86840fe1e865b6f476c0ef64968ca274f5a81dae26f = $this->env->getExtension("native_profiler");
-        $__internal_4cc4a870f94a5d9b698ff86840fe1e865b6f476c0ef64968ca274f5a81dae26f->enter($__internal_4cc4a870f94a5d9b698ff86840fe1e865b6f476c0ef64968ca274f5a81dae26f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnnuaireBundle:Default:index.html.twig"));
+        $__internal_7a888af7b6721e52b18bdda3b4ebd058f2260e00e99642c13e80197fd616718e = $this->env->getExtension("native_profiler");
+        $__internal_7a888af7b6721e52b18bdda3b4ebd058f2260e00e99642c13e80197fd616718e->enter($__internal_7a888af7b6721e52b18bdda3b4ebd058f2260e00e99642c13e80197fd616718e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnnuaireBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_4cc4a870f94a5d9b698ff86840fe1e865b6f476c0ef64968ca274f5a81dae26f->leave($__internal_4cc4a870f94a5d9b698ff86840fe1e865b6f476c0ef64968ca274f5a81dae26f_prof);
+        $__internal_7a888af7b6721e52b18bdda3b4ebd058f2260e00e99642c13e80197fd616718e->leave($__internal_7a888af7b6721e52b18bdda3b4ebd058f2260e00e99642c13e80197fd616718e_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_a5af3ee3f5d0fbf1523696954429a71b554ea39169c6ba5b5f7eaa4693fedc91 = $this->env->getExtension("native_profiler");
-        $__internal_a5af3ee3f5d0fbf1523696954429a71b554ea39169c6ba5b5f7eaa4693fedc91->enter($__internal_a5af3ee3f5d0fbf1523696954429a71b554ea39169c6ba5b5f7eaa4693fedc91_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2513a49143e963df4625df66c5ffe4070f6b24b2ded6008417cc2ffcb14980ad = $this->env->getExtension("native_profiler");
+        $__internal_2513a49143e963df4625df66c5ffe4070f6b24b2ded6008417cc2ffcb14980ad->enter($__internal_2513a49143e963df4625df66c5ffe4070f6b24b2ded6008417cc2ffcb14980ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "    <h2 class=\"page-header\">ANNUAIRE</h2>
@@ -83,7 +83,12 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
             // line 25
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "typeContrat", array()), "html", null, true);
             echo "</td>
-                <td><a href=\"\"   class=\"btn btn-success\">Details</a>
+                <td><a href=\"";
+            // line 26
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
+            echo "\"
+                       class=\"btn
+                btn-success\">Details</a>
                     <a href=\"\"  class=\"btn btn-default\">Edit</a>
                     <a href=\"\" class=\"btn  btn-danger\">Remove</a>
                 </td>
@@ -93,12 +98,12 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 34
         echo "        </tbody>
     </table>
 ";
         
-        $__internal_a5af3ee3f5d0fbf1523696954429a71b554ea39169c6ba5b5f7eaa4693fedc91->leave($__internal_a5af3ee3f5d0fbf1523696954429a71b554ea39169c6ba5b5f7eaa4693fedc91_prof);
+        $__internal_2513a49143e963df4625df66c5ffe4070f6b24b2ded6008417cc2ffcb14980ad->leave($__internal_2513a49143e963df4625df66c5ffe4070f6b24b2ded6008417cc2ffcb14980ad_prof);
 
     }
 
@@ -114,7 +119,7 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
 
     public function getDebugInfo()
     {
-        return array (  97 => 32,  84 => 25,  80 => 24,  76 => 23,  72 => 22,  68 => 21,  64 => 20,  61 => 19,  57 => 18,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  102 => 34,  88 => 26,  84 => 25,  80 => 24,  76 => 23,  72 => 22,  68 => 21,  64 => 20,  61 => 19,  57 => 18,  40 => 3,  34 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -142,7 +147,9 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
 /*                 <td>{{ user.salarie.sexe }}</td>*/
 /*                 <td>{{ user.salarie.salaire }} €</td>*/
 /*                 <td>{{ user.salarie.typeContrat }}</td>*/
-/*                 <td><a href=""   class="btn btn-success">Details</a>*/
+/*                 <td><a href="{{ path('profiluser', {'id': user.id}) }}"*/
+/*                        class="btn*/
+/*                 btn-success">Details</a>*/
 /*                     <a href=""  class="btn btn-default">Edit</a>*/
 /*                     <a href="" class="btn  btn-danger">Remove</a>*/
 /*                 </td>*/

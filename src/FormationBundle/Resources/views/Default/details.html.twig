@@ -22,28 +22,69 @@
 
 
     <h2 class="page-header">Paticipants</h2>
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>User</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for inscription in inscriptions %}
+    <div class="panel panel-success">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Participants inscrits</div>
+        <table class="table table-striped">
+            <thead>
             <tr>
-                <th scope="row">{{ inscription.id }}</th>
-                <td><a href=""> {{ inscription.user.username }}</a></td>
-                <td>
-                    {%  if inscription.validated != true %}
-                    <a href="{{ path('formationvalidateinscription', {'id':
-                        inscription.id }) }}"class="btn btn-success">Valider</a>
-                    {% endif %}
-                    <a href="{{ path('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger">Remove</a>
-                </td>
+                <th>#</th>
+                <th>User</th>
+                <th>Action</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for inscription in inscriptions %}
+                {%  if inscription.validated == true %}
+                <tr>
+                    <th scope="row">{{ inscription.id }}</th>
+                    <td><a href="{{ path('profiluser', {'id': inscription
+                            .user.id })  }}"> {{ inscription.user.username }}</a></td>
+                    <td>
+                        {%  if inscription.validated != true %}
+                        <a href="{{ path('formationvalidateinscription', {'id':
+                            inscription.id }) }}"class="btn btn-success">Valider</a>
+                        {% endif %}
+                        <a href="{{ path('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="panel panel-danger">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Participants en attente de validation</div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>User</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for inscription in inscriptions %}
+                {% if inscription.validated == false %}
+                <tr>
+                    <th scope="row">{{ inscription.id }}</th>
+                    <td><a href="{{ path('profiluser', {'id': inscription
+                            .user.id })   }}"> {{ inscription
+                            .user.username
+                            }}</a></td>
+                    <td>
+                        {%  if inscription.validated != true %}
+                            <a href="{{ path('formationvalidateinscription', {'id':
+                                inscription.id }) }}"class="btn btn-success">Valider</a>
+                        {% endif %}
+                        <a href="{{ path('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

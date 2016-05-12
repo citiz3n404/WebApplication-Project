@@ -17,4 +17,15 @@ class DefaultController extends Controller
         return $this->render('AnnuaireBundle:Default:index.html.twig', array
         ('users'=> $users));
     }
+
+    /**
+     * @Route("/profile/{id}", name="profiluser")
+     */
+    public function profilAction($id)
+    {
+        $user = $this->getDoctrine()->getRepository
+        ('UserBundle:User')->find($id);
+        return $this->render('AnnuaireBundle:Default:profil.html.twig', array
+        ('user'=> $user));
+    }
 }

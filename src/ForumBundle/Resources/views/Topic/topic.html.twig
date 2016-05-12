@@ -5,6 +5,9 @@
     <a href="{{ path('topicreply', {'id': topic.id}) }}"
        class="btn btn-success">Reply</a>
 
+    <div class="panel panel-default"  style="margin-top: 20px;">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Replies</div>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -37,4 +40,7 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
+    <a href="{{ path('topicreply', {'id': topic.id}) }}"
+       class="btn btn-success">Reply to the topic</a>
 {% endblock %}

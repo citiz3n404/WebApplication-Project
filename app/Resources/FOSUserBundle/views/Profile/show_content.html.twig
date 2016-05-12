@@ -1,6 +1,36 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+<h2 class="page-header">{{ user.salarie.prenom|capitalize
+    }} {{ user.salarie.nom|upper }} <span class="label
+    label-info">{{ user.salarie.typeContrat }}</span></h2>
+
+<div class="panel panel-primary">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Informations de profil</div>
+
+    <!-- Table -->
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Sexe</th>
+            <th>Salaire</th>
+            <th>Contrat</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{ user.username }}</th>
+                <td>{{ user.email }}</td>
+                <td>{{ user.salarie.nom }}</td>
+                <td>{{ user.salarie.prenom }}</td>
+                <td>{{ user.salarie.sexe }}</td>
+                <td>{{ user.salarie.salaire }} €</td>
+                <td>{{ user.salarie.typeContrat }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

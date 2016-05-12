@@ -5,6 +5,9 @@
     <a href="{{ path('createtopic', {'id': categorie.id}) }}"
        class="btn btn-success">Create a new topic</a>
 
+    <div class="panel panel-default" style="margin-top: 20px;">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Topics</div>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -33,4 +36,5 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
 {% endblock %}

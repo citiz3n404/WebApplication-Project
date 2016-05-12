@@ -23,7 +23,9 @@
                 <td>{{ user.salarie.sexe }}</td>
                 <td>{{ user.salarie.salaire }} €</td>
                 <td>{{ user.salarie.typeContrat }}</td>
-                <td><a href=""   class="btn btn-success">Details</a>
+                <td><a href="{{ path('profiluser', {'id': user.id}) }}"
+                       class="btn
+                btn-success">Details</a>
                     <a href=""  class="btn btn-default">Edit</a>
                     <a href="" class="btn  btn-danger">Remove</a>
                 </td>

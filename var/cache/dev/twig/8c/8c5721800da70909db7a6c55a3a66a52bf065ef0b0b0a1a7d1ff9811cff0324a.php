@@ -21,38 +21,42 @@ class __TwigTemplate_734dc90a21283fda3311baee714599ff8b3c1202572d608fc0e7c62b0aa
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e52d9a3147d8bab09b4c2d07ac1e283de459cd41f0e2f5a6be0d92262cd10b23 = $this->env->getExtension("native_profiler");
-        $__internal_e52d9a3147d8bab09b4c2d07ac1e283de459cd41f0e2f5a6be0d92262cd10b23->enter($__internal_e52d9a3147d8bab09b4c2d07ac1e283de459cd41f0e2f5a6be0d92262cd10b23_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Categorie:create.html.twig"));
+        $__internal_c1f6039ed4f93086e3c59128beeb45281c0132a725b162a78bd3799620543424 = $this->env->getExtension("native_profiler");
+        $__internal_c1f6039ed4f93086e3c59128beeb45281c0132a725b162a78bd3799620543424->enter($__internal_c1f6039ed4f93086e3c59128beeb45281c0132a725b162a78bd3799620543424_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Categorie:create.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_e52d9a3147d8bab09b4c2d07ac1e283de459cd41f0e2f5a6be0d92262cd10b23->leave($__internal_e52d9a3147d8bab09b4c2d07ac1e283de459cd41f0e2f5a6be0d92262cd10b23_prof);
+        $__internal_c1f6039ed4f93086e3c59128beeb45281c0132a725b162a78bd3799620543424->leave($__internal_c1f6039ed4f93086e3c59128beeb45281c0132a725b162a78bd3799620543424_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_227f7c90069c12cdcbdb9a97c37fe4f4f836df4f946ffda0e1f1d2e37bd266d2 = $this->env->getExtension("native_profiler");
-        $__internal_227f7c90069c12cdcbdb9a97c37fe4f4f836df4f946ffda0e1f1d2e37bd266d2->enter($__internal_227f7c90069c12cdcbdb9a97c37fe4f4f836df4f946ffda0e1f1d2e37bd266d2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_02d60e83933a5649efd8f01d64fa155a098f2693cbb7cc9c5cffd679b2c0cf73 = $this->env->getExtension("native_profiler");
+        $__internal_02d60e83933a5649efd8f01d64fa155a098f2693cbb7cc9c5cffd679b2c0cf73->enter($__internal_02d60e83933a5649efd8f01d64fa155a098f2693cbb7cc9c5cffd679b2c0cf73_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h2 class=\"page-header\">Add Categorie</h2>
-    ";
+    <a class=\"btn btn-default\" href=\"";
         // line 5
+        echo $this->env->getExtension('routing')->getPath("forum");
+        echo "\">Back to Forum</a>
+    ";
+        // line 6
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
     ";
-        // line 6
+        // line 7
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
     ";
-        // line 7
+        // line 8
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
 ";
         
-        $__internal_227f7c90069c12cdcbdb9a97c37fe4f4f836df4f946ffda0e1f1d2e37bd266d2->leave($__internal_227f7c90069c12cdcbdb9a97c37fe4f4f836df4f946ffda0e1f1d2e37bd266d2_prof);
+        $__internal_02d60e83933a5649efd8f01d64fa155a098f2693cbb7cc9c5cffd679b2c0cf73->leave($__internal_02d60e83933a5649efd8f01d64fa155a098f2693cbb7cc9c5cffd679b2c0cf73_prof);
 
     }
 
@@ -68,13 +72,14 @@ class __TwigTemplate_734dc90a21283fda3311baee714599ff8b3c1202572d608fc0e7c62b0aa
 
     public function getDebugInfo()
     {
-        return array (  51 => 7,  47 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  55 => 8,  51 => 7,  47 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
 /*     <h2 class="page-header">Add Categorie</h2>*/
+/*     <a class="btn btn-default" href="{{ path('forum') }}">Back to Forum</a>*/
 /*     {{ form_start(form) }}*/
 /*     {{ form_widget(form) }}*/
 /*     {{ form_end(form) }}*/

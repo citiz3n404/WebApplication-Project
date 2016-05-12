@@ -9,6 +9,11 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block headscript %}
+            <script type="text/javascript" src="{{ asset('js/Chart.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/ChartBundle.js')
+            }}"></script>
+        {% endblock %}
     </head>
     <body>
         {% block topbar %}
@@ -28,10 +33,15 @@
             <div id="navbar" class="nav navbar-collapse collapse">
                 <div class="nav navbar-right navbar-correct">
                     <img alt="Brand" src="{{ asset('img/users/default.jpg') }}">
+                    {% if app.user is not null %}
                     <a class="btn btn-default navbar-btn" href="/profile"
                        role="button">Profil</a>
                     <a class="btn btn-default navbar-btn" href="/logout"
                        role="button">Logout</a>
+                    {% else %}
+                    <a class="btn btn-default navbar-btn" href="/login"
+                       role="button">Login</a>
+                    {% endif %}
                 </div>
             </div><!--/.nav-collapse -->
         </nav>
