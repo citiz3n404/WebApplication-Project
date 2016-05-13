@@ -1,4 +1,8 @@
 {% extends 'base.html.twig' %}
+{% block breadcrumbs %}
+    {{ parent() }}
+    <li><a href="{{ path('annuaireempty') }}">Annuaire</a></li>
+{% endblock %}
 {% block body %}
     <h2 class="page-header">ANNUAIRE</h2>
 

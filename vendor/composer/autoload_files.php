@@ -13,4 +13,10 @@ return array(
     'bd9634f2d41831496de0d3dfe4c94881' => $vendorDir . '/symfony/polyfill-php56/bootstrap.php',
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
     '6a47392539ca2329373e0d33e1dba053' => $vendorDir . '/symfony/polyfill-intl-icu/bootstrap.php',
+    '75d4b1647cdbc77a59f72bcb74df0995' => $vendorDir . '/spipu/html2pdf/html2pdf.class.php',
+    '766ddebdb359eb94f1ba3ece4f768b10' => $vendorDir . '/spipu/html2pdf/_class/exception.class.php',
+    '585b118af784f8bbcc53fec65bb600cd' => $vendorDir . '/spipu/html2pdf/_class/locale.class.php',
+    '4148c0c72e9cb9146c3692e138ddcedc' => $vendorDir . '/spipu/html2pdf/_class/myPdf.class.php',
+    '24a5693ab78636f7a23448ee74523987' => $vendorDir . '/spipu/html2pdf/_class/parsingHtml.class.php',
+    '30eee86291d721c2174ad40239331e78' => $vendorDir . '/spipu/html2pdf/_class/parsingCss.class.php',
 );
