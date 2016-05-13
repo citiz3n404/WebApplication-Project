@@ -21,20 +21,20 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7a888af7b6721e52b18bdda3b4ebd058f2260e00e99642c13e80197fd616718e = $this->env->getExtension("native_profiler");
-        $__internal_7a888af7b6721e52b18bdda3b4ebd058f2260e00e99642c13e80197fd616718e->enter($__internal_7a888af7b6721e52b18bdda3b4ebd058f2260e00e99642c13e80197fd616718e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnnuaireBundle:Default:index.html.twig"));
+        $__internal_566ca6d07111b1d1172130a11beecec5404020249039f85f7908f2fd61fa9359 = $this->env->getExtension("native_profiler");
+        $__internal_566ca6d07111b1d1172130a11beecec5404020249039f85f7908f2fd61fa9359->enter($__internal_566ca6d07111b1d1172130a11beecec5404020249039f85f7908f2fd61fa9359_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnnuaireBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_7a888af7b6721e52b18bdda3b4ebd058f2260e00e99642c13e80197fd616718e->leave($__internal_7a888af7b6721e52b18bdda3b4ebd058f2260e00e99642c13e80197fd616718e_prof);
+        $__internal_566ca6d07111b1d1172130a11beecec5404020249039f85f7908f2fd61fa9359->leave($__internal_566ca6d07111b1d1172130a11beecec5404020249039f85f7908f2fd61fa9359_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_2513a49143e963df4625df66c5ffe4070f6b24b2ded6008417cc2ffcb14980ad = $this->env->getExtension("native_profiler");
-        $__internal_2513a49143e963df4625df66c5ffe4070f6b24b2ded6008417cc2ffcb14980ad->enter($__internal_2513a49143e963df4625df66c5ffe4070f6b24b2ded6008417cc2ffcb14980ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2bd779a1081fd351da8e169c808d026c754ed842d5466ab39110d6d199f197d9 = $this->env->getExtension("native_profiler");
+        $__internal_2bd779a1081fd351da8e169c808d026c754ed842d5466ab39110d6d199f197d9->enter($__internal_2bd779a1081fd351da8e169c808d026c754ed842d5466ab39110d6d199f197d9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "    <h2 class=\"page-header\">ANNUAIRE</h2>
@@ -101,9 +101,83 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
         // line 34
         echo "        </tbody>
     </table>
+
+    <nav>
+        <ul class=\"pagination\">
+            <li
+                ";
+        // line 40
+        if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) == 1)) {
+            // line 41
+            echo "                    class=\"disabled\"
+                ";
+        }
+        // line 43
+        echo "            >
+                <a href=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => ((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) - 1))), "html", null, true);
+        echo "\"
+                   aria-label=\"Previous\"
+                >
+                    <span aria-hidden=\"true\">&laquo;</span>
+                </a>
+            </li>
+            ";
+        // line 50
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["maxpage"]) ? $context["maxpage"] : $this->getContext($context, "maxpage"))));
+        foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+            // line 51
+            echo "                ";
+            if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) == $context["i"])) {
+                // line 52
+                echo "                    <li class=\"active\"><a href=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => $context["i"])), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                // line 53
+                echo "</a></li>
+                ";
+            } else {
+                // line 55
+                echo "                    <li><a href=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => $context["i"])), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                echo "<span class=\"sr-only\">(current) </span></a></li>
+                ";
+            }
+            // line 57
+            echo "            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 58
+        echo "            <li
+                ";
+        // line 59
+        if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) == (isset($context["maxpage"]) ? $context["maxpage"] : $this->getContext($context, "maxpage")))) {
+            // line 60
+            echo "                    class=\"disabled\"
+                ";
+        }
+        // line 62
+        echo "            >
+                <a href=\"";
+        // line 63
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => ((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) + 1))), "html", null, true);
+        echo "\"
+                   aria-label=\"Next\">
+                    <span aria-hidden=\"true\">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 ";
         
-        $__internal_2513a49143e963df4625df66c5ffe4070f6b24b2ded6008417cc2ffcb14980ad->leave($__internal_2513a49143e963df4625df66c5ffe4070f6b24b2ded6008417cc2ffcb14980ad_prof);
+        $__internal_2bd779a1081fd351da8e169c808d026c754ed842d5466ab39110d6d199f197d9->leave($__internal_2bd779a1081fd351da8e169c808d026c754ed842d5466ab39110d6d199f197d9_prof);
 
     }
 
@@ -119,7 +193,7 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
 
     public function getDebugInfo()
     {
-        return array (  102 => 34,  88 => 26,  84 => 25,  80 => 24,  76 => 23,  72 => 22,  68 => 21,  64 => 20,  61 => 19,  57 => 18,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  170 => 63,  167 => 62,  163 => 60,  161 => 59,  158 => 58,  152 => 57,  144 => 55,  140 => 53,  135 => 52,  132 => 51,  128 => 50,  119 => 44,  116 => 43,  112 => 41,  110 => 40,  102 => 34,  88 => 26,  84 => 25,  80 => 24,  76 => 23,  72 => 22,  68 => 21,  64 => 20,  61 => 19,  57 => 18,  40 => 3,  34 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -157,4 +231,38 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
 /*         {% endfor %}*/
 /*         </tbody>*/
 /*     </table>*/
+/* */
+/*     <nav>*/
+/*         <ul class="pagination">*/
+/*             <li*/
+/*                 {% if page == 1 %}*/
+/*                     class="disabled"*/
+/*                 {% endif %}*/
+/*             >*/
+/*                 <a href="{{ path('annuaire', {'page': page-1}) }}"*/
+/*                    aria-label="Previous"*/
+/*                 >*/
+/*                     <span aria-hidden="true">&laquo;</span>*/
+/*                 </a>*/
+/*             </li>*/
+/*             {% for i in 1..maxpage %}*/
+/*                 {% if page == i %}*/
+/*                     <li class="active"><a href="{{ path('annuaire', {'page': i}) }}">{{ i*/
+/*                             }}</a></li>*/
+/*                 {% else %}*/
+/*                     <li><a href="{{ path('annuaire', {'page': i}) }}">{{ i }}<span class="sr-only">(current) </span></a></li>*/
+/*                 {% endif %}*/
+/*             {% endfor %}*/
+/*             <li*/
+/*                 {% if page == maxpage %}*/
+/*                     class="disabled"*/
+/*                 {% endif %}*/
+/*             >*/
+/*                 <a href="{{ path('annuaire', {'page': page+1}) }}"*/
+/*                    aria-label="Next">*/
+/*                     <span aria-hidden="true">&raquo;</span>*/
+/*                 </a>*/
+/*             </li>*/
+/*         </ul>*/
+/*     </nav>*/
 /* {% endblock %}*/

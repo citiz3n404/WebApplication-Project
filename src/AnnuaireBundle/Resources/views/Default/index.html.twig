@@ -33,4 +33,38 @@
         {% endfor %}
         </tbody>
     </table>
+
+    <nav>
+        <ul class="pagination">
+            <li
+                {% if page == 1 %}
+                    class="disabled"
+                {% endif %}
+            >
+                <a href="{{ path('annuaire', {'page': page-1}) }}"
+                   aria-label="Previous"
+                >
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {% for i in 1..maxpage %}
+                {% if page == i %}
+                    <li class="active"><a href="{{ path('annuaire', {'page': i}) }}">{{ i
+                            }}</a></li>
+                {% else %}
+                    <li><a href="{{ path('annuaire', {'page': i}) }}">{{ i }}<span class="sr-only">(current) </span></a></li>
+                {% endif %}
+            {% endfor %}
+            <li
+                {% if page == maxpage %}
+                    class="disabled"
+                {% endif %}
+            >
+                <a href="{{ path('annuaire', {'page': page+1}) }}"
+                   aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 {% endblock %}

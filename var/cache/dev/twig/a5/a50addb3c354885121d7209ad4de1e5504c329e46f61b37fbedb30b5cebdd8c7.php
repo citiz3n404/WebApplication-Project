@@ -21,20 +21,20 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5ba5a52f6b898bfa7f35458c912c4241ca72c95899b4fe1beb3fb65913ade98a = $this->env->getExtension("native_profiler");
-        $__internal_5ba5a52f6b898bfa7f35458c912c4241ca72c95899b4fe1beb3fb65913ade98a->enter($__internal_5ba5a52f6b898bfa7f35458c912c4241ca72c95899b4fe1beb3fb65913ade98a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FormationBundle:Default:details.html.twig"));
+        $__internal_85818e1b8884c31b21a2a5921824bc99bcc8a6ba1fb61c51970234caf371a4a9 = $this->env->getExtension("native_profiler");
+        $__internal_85818e1b8884c31b21a2a5921824bc99bcc8a6ba1fb61c51970234caf371a4a9->enter($__internal_85818e1b8884c31b21a2a5921824bc99bcc8a6ba1fb61c51970234caf371a4a9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FormationBundle:Default:details.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5ba5a52f6b898bfa7f35458c912c4241ca72c95899b4fe1beb3fb65913ade98a->leave($__internal_5ba5a52f6b898bfa7f35458c912c4241ca72c95899b4fe1beb3fb65913ade98a_prof);
+        $__internal_85818e1b8884c31b21a2a5921824bc99bcc8a6ba1fb61c51970234caf371a4a9->leave($__internal_85818e1b8884c31b21a2a5921824bc99bcc8a6ba1fb61c51970234caf371a4a9_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d440063ff6571b211edfff790263a12d8056f2bb2e42a3c6d9109fdc2c9c03d2 = $this->env->getExtension("native_profiler");
-        $__internal_d440063ff6571b211edfff790263a12d8056f2bb2e42a3c6d9109fdc2c9c03d2->enter($__internal_d440063ff6571b211edfff790263a12d8056f2bb2e42a3c6d9109fdc2c9c03d2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2405f48aeed646260ee424125c8f0732147e38fc19ec20b22b0345bb9371cc57 = $this->env->getExtension("native_profiler");
+        $__internal_2405f48aeed646260ee424125c8f0732147e38fc19ec20b22b0345bb9371cc57->enter($__internal_2405f48aeed646260ee424125c8f0732147e38fc19ec20b22b0345bb9371cc57_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <a class=\"btn btn-default\" href=\"/formation/\">Back to  formation list</a>
@@ -47,171 +47,239 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
         // line 7
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "title", array()), "html", null, true);
         echo "</h2>
-    <ul class=\"list-group\">
-        <li class=\"list-group-item\">Prix: ";
-        // line 9
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "cost", array()), "html", null, true);
-        echo " euros</li>
-        <li class=\"list-group-item\">Description : ";
-        // line 10
+
+    <div class=\"col-md-12\">
+    <div class=\"panel panel-default\">
+        <!-- Default panel contents -->
+        <div class=\"panel-heading\">Informations sur la formation</div>
+        <table class=\"table table-striped\">
+            <tbody>
+                    <tr>
+                        <th scope=\"row\">Description</th>
+                        <td>";
+        // line 17
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "description", array()), "html", null, true);
-        // line 11
-        echo "</li>
-        <li class=\"list-group-item\">Date : ";
-        // line 12
+        echo "</td>
+                    </tr>
+                    <tr>
+                        <th scope=\"row\">Date</th>
+                        <td>";
+        // line 21
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "begin", array()), "y-m-d"), "html", null, true);
-        echo "</li>
-        <li class=\"list-group-item\">Durée: ";
-        // line 13
+        echo "</td>
+                    </tr>
+                    <tr>
+                        <th scope=\"row\">Durée</th>
+                        <td>";
+        // line 25
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "duration", array()), "html", null, true);
-        echo " jours</li>
-        <li class=\"list-group-item\">Status:
-            ";
-        // line 15
+        echo " jours</td>
+                    </tr>
+                    <tr>
+                        <th scope=\"row\">Status</th>
+                        <td>";
+        // line 29
         if ($this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "locked", array())) {
-            // line 16
-            echo "            Verouillée
-            ";
+            // line 30
+            echo "                                Verouillée
+                            ";
         } else {
-            // line 18
-            echo "            Ouverte
-            ";
+            // line 32
+            echo "                                Ouverte
+                            ";
         }
-        // line 20
-        echo "        </li>
-    </ul>
+        // line 33
+        echo "</td>
+                    </tr>
+                    <tr>
+                        <th scope=\"row\">Coût</th>
+                        <td>";
+        // line 37
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "cost", array()), "html", null, true);
+        echo " euros</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
 
 
     <h2 class=\"page-header\">Paticipants</h2>
-    <div class=\"panel panel-success\">
-        <!-- Default panel contents -->
-        <div class=\"panel-heading\">Participants inscrits</div>
-        <table class=\"table table-striped\">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>User</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            ";
-        // line 37
+    <div class=\"col-md-6\">
+        <div class=\"panel panel-success\">
+            <!-- Default panel contents -->
+            <div class=\"panel-heading\">Participants inscrits</div>
+            <table class=\"table table-striped\">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>User</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                ";
+        // line 58
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["inscriptions"]) ? $context["inscriptions"] : $this->getContext($context, "inscriptions")));
+        $context['loop'] = array(
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        );
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["inscription"]) {
-            // line 38
-            echo "                ";
+            // line 59
+            echo "                    ";
             if (($this->getAttribute($context["inscription"], "validated", array()) == true)) {
-                // line 39
-                echo "                <tr>
-                    <th scope=\"row\">";
-                // line 40
-                echo twig_escape_filter($this->env, $this->getAttribute($context["inscription"], "id", array()), "html", null, true);
+                // line 60
+                echo "                        <tr>
+                            <th scope=\"row\">";
+                // line 61
+                echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index", array()), "html", null, true);
                 echo "</th>
-                    <td><a href=\"";
-                // line 41
+                            <td><a href=\"";
+                // line 62
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "id", array()))), "html", null, true);
-                // line 42
+                // line 63
                 echo "\"> ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "username", array()), "html", null, true);
                 echo "</a></td>
-                    <td>
-                        ";
-                // line 44
+                            <td>
+                                ";
+                // line 65
                 if (($this->getAttribute($context["inscription"], "validated", array()) != true)) {
-                    // line 45
-                    echo "                        <a href=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                    // line 46
+                    // line 66
+                    echo "                                    <a href=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                    // line 67
 $context["inscription"], "id", array()))), "html", null, true);
                     echo "\"class=\"btn btn-success\">Valider</a>
-                        ";
+                                ";
                 }
-                // line 48
-                echo "                        <a href=\"";
+                // line 69
+                echo "                                <a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute($context["inscription"], "id", array()))), "html", null, true);
                 echo "\"class=\"btn btn-danger\">Remove</a>
-                    </td>
-                </tr>
-                ";
+                            </td>
+                        </tr>
+                    ";
             }
-            // line 52
-            echo "            ";
+            // line 73
+            echo "                ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['inscription'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
-        echo "            </tbody>
-        </table>
+        // line 74
+        echo "                </tbody>
+            </table>
+        </div>
     </div>
 
-    <div class=\"panel panel-danger\">
-        <!-- Default panel contents -->
-        <div class=\"panel-heading\">Participants en attente de validation</div>
-        <table class=\"table table-striped\">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>User</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            ";
-        // line 69
+    <div class=\"col-md-6\">
+        <div class=\"panel panel-danger\">
+            <!-- Default panel contents -->
+            <div class=\"panel-heading\">Participants en attente de validation</div>
+            <table class=\"table table-striped\">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>User</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                ";
+        // line 92
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["inscriptions"]) ? $context["inscriptions"] : $this->getContext($context, "inscriptions")));
+        $context['loop'] = array(
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        );
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["inscription"]) {
-            // line 70
-            echo "                ";
+            // line 93
+            echo "                    ";
             if (($this->getAttribute($context["inscription"], "validated", array()) == false)) {
-                // line 71
-                echo "                <tr>
-                    <th scope=\"row\">";
-                // line 72
-                echo twig_escape_filter($this->env, $this->getAttribute($context["inscription"], "id", array()), "html", null, true);
+                // line 94
+                echo "                        <tr>
+                            <th scope=\"row\">";
+                // line 95
+                echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index", array()), "html", null, true);
                 echo "</th>
-                    <td><a href=\"";
-                // line 73
+                            <td><a href=\"";
+                // line 96
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "id", array()))), "html", null, true);
-                // line 74
+                // line 97
                 echo "\"> ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "username", array()), "html", null, true);
-                // line 76
+                // line 99
                 echo "</a></td>
-                    <td>
-                        ";
-                // line 78
+                            <td>
+                                ";
+                // line 101
                 if (($this->getAttribute($context["inscription"], "validated", array()) != true)) {
-                    // line 79
-                    echo "                            <a href=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                    // line 80
+                    // line 102
+                    echo "                                    <a href=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                    // line 103
 $context["inscription"], "id", array()))), "html", null, true);
                     echo "\"class=\"btn btn-success\">Valider</a>
-                        ";
+                                ";
                 }
-                // line 82
-                echo "                        <a href=\"";
+                // line 105
+                echo "                                <a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute($context["inscription"], "id", array()))), "html", null, true);
                 echo "\"class=\"btn btn-danger\">Remove</a>
-                    </td>
-                </tr>
-                ";
+                            </td>
+                        </tr>
+                    ";
             }
-            // line 86
-            echo "            ";
+            // line 109
+            echo "                ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['inscription'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 87
-        echo "            </tbody>
-        </table>
+        // line 110
+        echo "                </tbody>
+            </table>
+        </div>
     </div>
+
 ";
         
-        $__internal_d440063ff6571b211edfff790263a12d8056f2bb2e42a3c6d9109fdc2c9c03d2->leave($__internal_d440063ff6571b211edfff790263a12d8056f2bb2e42a3c6d9109fdc2c9c03d2_prof);
+        $__internal_2405f48aeed646260ee424125c8f0732147e38fc19ec20b22b0345bb9371cc57->leave($__internal_2405f48aeed646260ee424125c8f0732147e38fc19ec20b22b0345bb9371cc57_prof);
 
     }
 
@@ -227,7 +295,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 
     public function getDebugInfo()
     {
-        return array (  209 => 87,  203 => 86,  195 => 82,  190 => 80,  188 => 79,  186 => 78,  182 => 76,  179 => 74,  177 => 73,  173 => 72,  170 => 71,  167 => 70,  163 => 69,  145 => 53,  139 => 52,  131 => 48,  126 => 46,  124 => 45,  122 => 44,  116 => 42,  114 => 41,  110 => 40,  107 => 39,  104 => 38,  100 => 37,  81 => 20,  77 => 18,  73 => 16,  71 => 15,  66 => 13,  62 => 12,  59 => 11,  57 => 10,  53 => 9,  48 => 7,  44 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  275 => 110,  261 => 109,  253 => 105,  248 => 103,  246 => 102,  244 => 101,  240 => 99,  237 => 97,  235 => 96,  231 => 95,  228 => 94,  225 => 93,  208 => 92,  188 => 74,  174 => 73,  166 => 69,  161 => 67,  159 => 66,  157 => 65,  151 => 63,  149 => 62,  145 => 61,  142 => 60,  139 => 59,  122 => 58,  98 => 37,  92 => 33,  88 => 32,  84 => 30,  82 => 29,  75 => 25,  68 => 21,  61 => 17,  48 => 7,  44 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -237,86 +305,111 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*     <a class="btn btn-primary" href="{{ path('formationinscription', {'id':*/
 /*         formation.id}) }}">Inscription</a>*/
 /*     <h2 class="page-header">{{ formation.title }}</h2>*/
-/*     <ul class="list-group">*/
-/*         <li class="list-group-item">Prix: {{ formation.cost }} euros</li>*/
-/*         <li class="list-group-item">Description : {{ formation.description*/
-/*             }}</li>*/
-/*         <li class="list-group-item">Date : {{ formation.begin|date('y-m-d')}}</li>*/
-/*         <li class="list-group-item">Durée: {{ formation.duration }} jours</li>*/
-/*         <li class="list-group-item">Status:*/
-/*             {% if formation.locked %}*/
-/*             Verouillée*/
-/*             {% else %}*/
-/*             Ouverte*/
-/*             {% endif %}*/
-/*         </li>*/
-/*     </ul>*/
+/* */
+/*     <div class="col-md-12">*/
+/*     <div class="panel panel-default">*/
+/*         <!-- Default panel contents -->*/
+/*         <div class="panel-heading">Informations sur la formation</div>*/
+/*         <table class="table table-striped">*/
+/*             <tbody>*/
+/*                     <tr>*/
+/*                         <th scope="row">Description</th>*/
+/*                         <td>{{ formation.description}}</td>*/
+/*                     </tr>*/
+/*                     <tr>*/
+/*                         <th scope="row">Date</th>*/
+/*                         <td>{{ formation.begin|date('y-m-d') }}</td>*/
+/*                     </tr>*/
+/*                     <tr>*/
+/*                         <th scope="row">Durée</th>*/
+/*                         <td>{{ formation.duration }} jours</td>*/
+/*                     </tr>*/
+/*                     <tr>*/
+/*                         <th scope="row">Status</th>*/
+/*                         <td>{% if formation.locked %}*/
+/*                                 Verouillée*/
+/*                             {% else %}*/
+/*                                 Ouverte*/
+/*                             {% endif %}</td>*/
+/*                     </tr>*/
+/*                     <tr>*/
+/*                         <th scope="row">Coût</th>*/
+/*                         <td>{{ formation.cost }} euros</td>*/
+/*                     </tr>*/
+/*             </tbody>*/
+/*         </table>*/
+/*     </div>*/
 /* */
 /* */
 /*     <h2 class="page-header">Paticipants</h2>*/
-/*     <div class="panel panel-success">*/
-/*         <!-- Default panel contents -->*/
-/*         <div class="panel-heading">Participants inscrits</div>*/
-/*         <table class="table table-striped">*/
-/*             <thead>*/
-/*             <tr>*/
-/*                 <th>#</th>*/
-/*                 <th>User</th>*/
-/*                 <th>Action</th>*/
-/*             </tr>*/
-/*             </thead>*/
-/*             <tbody>*/
-/*             {% for inscription in inscriptions %}*/
-/*                 {%  if inscription.validated == true %}*/
+/*     <div class="col-md-6">*/
+/*         <div class="panel panel-success">*/
+/*             <!-- Default panel contents -->*/
+/*             <div class="panel-heading">Participants inscrits</div>*/
+/*             <table class="table table-striped">*/
+/*                 <thead>*/
 /*                 <tr>*/
-/*                     <th scope="row">{{ inscription.id }}</th>*/
-/*                     <td><a href="{{ path('profiluser', {'id': inscription*/
-/*                             .user.id })  }}"> {{ inscription.user.username }}</a></td>*/
-/*                     <td>*/
-/*                         {%  if inscription.validated != true %}*/
-/*                         <a href="{{ path('formationvalidateinscription', {'id':*/
-/*                             inscription.id }) }}"class="btn btn-success">Valider</a>*/
-/*                         {% endif %}*/
-/*                         <a href="{{ path('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger">Remove</a>*/
-/*                     </td>*/
+/*                     <th>#</th>*/
+/*                     <th>User</th>*/
+/*                     <th>Action</th>*/
 /*                 </tr>*/
-/*                 {% endif %}*/
-/*             {% endfor %}*/
-/*             </tbody>*/
-/*         </table>*/
+/*                 </thead>*/
+/*                 <tbody>*/
+/*                 {% for inscription in inscriptions %}*/
+/*                     {%  if inscription.validated == true %}*/
+/*                         <tr>*/
+/*                             <th scope="row">{{ loop.index }}</th>*/
+/*                             <td><a href="{{ path('profiluser', {'id': inscription*/
+/*                                     .user.id })  }}"> {{ inscription.user.username }}</a></td>*/
+/*                             <td>*/
+/*                                 {%  if inscription.validated != true %}*/
+/*                                     <a href="{{ path('formationvalidateinscription', {'id':*/
+/*                                         inscription.id }) }}"class="btn btn-success">Valider</a>*/
+/*                                 {% endif %}*/
+/*                                 <a href="{{ path('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger">Remove</a>*/
+/*                             </td>*/
+/*                         </tr>*/
+/*                     {% endif %}*/
+/*                 {% endfor %}*/
+/*                 </tbody>*/
+/*             </table>*/
+/*         </div>*/
 /*     </div>*/
 /* */
-/*     <div class="panel panel-danger">*/
-/*         <!-- Default panel contents -->*/
-/*         <div class="panel-heading">Participants en attente de validation</div>*/
-/*         <table class="table table-striped">*/
-/*             <thead>*/
-/*             <tr>*/
-/*                 <th>#</th>*/
-/*                 <th>User</th>*/
-/*                 <th>Action</th>*/
-/*             </tr>*/
-/*             </thead>*/
-/*             <tbody>*/
-/*             {% for inscription in inscriptions %}*/
-/*                 {% if inscription.validated == false %}*/
+/*     <div class="col-md-6">*/
+/*         <div class="panel panel-danger">*/
+/*             <!-- Default panel contents -->*/
+/*             <div class="panel-heading">Participants en attente de validation</div>*/
+/*             <table class="table table-striped">*/
+/*                 <thead>*/
 /*                 <tr>*/
-/*                     <th scope="row">{{ inscription.id }}</th>*/
-/*                     <td><a href="{{ path('profiluser', {'id': inscription*/
-/*                             .user.id })   }}"> {{ inscription*/
-/*                             .user.username*/
-/*                             }}</a></td>*/
-/*                     <td>*/
-/*                         {%  if inscription.validated != true %}*/
-/*                             <a href="{{ path('formationvalidateinscription', {'id':*/
-/*                                 inscription.id }) }}"class="btn btn-success">Valider</a>*/
-/*                         {% endif %}*/
-/*                         <a href="{{ path('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger">Remove</a>*/
-/*                     </td>*/
+/*                     <th>#</th>*/
+/*                     <th>User</th>*/
+/*                     <th>Action</th>*/
 /*                 </tr>*/
-/*                 {% endif %}*/
-/*             {% endfor %}*/
-/*             </tbody>*/
-/*         </table>*/
+/*                 </thead>*/
+/*                 <tbody>*/
+/*                 {% for inscription in inscriptions %}*/
+/*                     {% if inscription.validated == false %}*/
+/*                         <tr>*/
+/*                             <th scope="row">{{ loop.index }}</th>*/
+/*                             <td><a href="{{ path('profiluser', {'id': inscription*/
+/*                                     .user.id })   }}"> {{ inscription*/
+/*                                     .user.username*/
+/*                                     }}</a></td>*/
+/*                             <td>*/
+/*                                 {%  if inscription.validated != true %}*/
+/*                                     <a href="{{ path('formationvalidateinscription', {'id':*/
+/*                                         inscription.id }) }}"class="btn btn-success">Valider</a>*/
+/*                                 {% endif %}*/
+/*                                 <a href="{{ path('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger">Remove</a>*/
+/*                             </td>*/
+/*                         </tr>*/
+/*                     {% endif %}*/
+/*                 {% endfor %}*/
+/*                 </tbody>*/
+/*             </table>*/
+/*         </div>*/
 /*     </div>*/
+/* */
 /* {% endblock %}*/

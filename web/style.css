@@ -1,3 +1,5 @@
+
+
 .sidebar{
     position:fixed;
     height: 100%;
@@ -74,7 +76,7 @@ body{
     margin-bottom: 7px;
 }
 
-div .stripes h4 {
+.stripes h4 {
     display: inline-block;
     font-size: 14px;
     font-style: Normal;

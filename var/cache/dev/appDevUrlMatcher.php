@@ -103,12 +103,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         if (0 === strpos($pathinfo, '/a')) {
             if (0 === strpos($pathinfo, '/annuaire')) {
                 // annuaire
+                if (preg_match('#^/annuaire/(?P<page>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'annuaire')), array (  '_controller' => 'AnnuaireBundle\\Controller\\DefaultController::listAction',));
+                }
+
+                // annuaireempty
                 if (rtrim($pathinfo, '/') === '/annuaire') {
                     if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', 'annuaire');
+                        return $this->redirect($pathinfo.'/', 'annuaireempty');
                     }
 
-                    return array (  '_controller' => 'AnnuaireBundle\\Controller\\DefaultController::listAction',  '_route' => 'annuaire',);
+                    return array (  '_controller' => 'AnnuaireBundle\\Controller\\DefaultController::redirAction',  '_route' => 'annuaireempty',);
                 }
 
                 // profiluser

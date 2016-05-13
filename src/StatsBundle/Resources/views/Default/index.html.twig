@@ -1,44 +1,119 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <h2 class="page-header">STATISTIQUES</h2>
-    <canvas id="myChart" width="400" height="400" class="col-md-4"
-            style="max-width: 400px;"></canvas>
-    <canvas id="myChart2" width="400" height="400" class="col-md-4" style="max-width: 400px;"></canvas>
+
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Chiffres clés</div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Information</th>
+                        <th>Valeur</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Nombre de membres</th>
+                        <td>{{ stats.Users.TotalUsers }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Salaire moyen des employés</th>
+                        <td>{{ stats.Users.SalaireAVG }} euros</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Coût moyen d'une formation</th>
+                        <td>{{ stats.Formations.CoutMoyen }} euros</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre de formation disponibles</th>
+                        <td>{{ stats.Formations.Total }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Durée moyenne d'une formation</th>
+                        <td>{{ stats.Formations.Duree }} jours</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre de catégorie dans le
+                            forum</th>
+                        <td>{{ stats.Forum.NBCategories }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre de topics dans le
+                            forum</th>
+                        <td>{{ stats.Forum.NBTopics }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre de réponses dans le
+                            forum</th>
+                        <td>{{ stats.Forum.NBReplies }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Salaire Moyen H/F</div>
+            <div class="panel-body">
+                <canvas id="chartSalaireAvg"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Nombre employé H/F</div>
+            <div class="panel-body">
+                <canvas id="chartNBEmploye"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Repartition Contrats</div>
+            <div class="panel-body">
+                <canvas id="chartContrats"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Contrats Homme/Femme</div>
+            <div class="panel-body">
+                <canvas id="chartContratsH"
+                ></canvas>
+            </div>
+        </div>
+    </div>
+
     <script>
         Chart.defaults.global.responsive = true;
-        var ctx = document.getElementById("myChart");
-        var ctx2 = document.getElementById("myChart2");
-
-        var data = {
-            labels: ["Eating", "Drinking", "Sleeping", "{{ app.user.username }}",
-                "Coding", "Cycling", "Running"],
+        var ctxSalaireAvg = document.getElementById("chartSalaireAvg");
+        var dataSalaireAvg = {
+            labels: ["Femmes", "Hommes"],
             datasets: [
                 {
-                    label: "My First dataset",
-                    backgroundColor: "rgba(179,181,198,0.2)",
-                    borderColor: "rgba(179,181,198,1)",
-                    pointBackgroundColor: "rgba(179,181,198,1)",
-                    pointBorderColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: "rgba(179,181,198,1)",
-                    data: [65, 59, 90, 81, 56, 55, 40]
-                },
-                {
-                    label: "My Second dataset",
+                    label: "Euros",
                     backgroundColor: "rgba(255,99,132,0.2)",
                     borderColor: "rgba(255,99,132,1)",
-                    pointBackgroundColor: "rgba(255,99,132,1)",
-                    pointBorderColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: "rgba(255,99,132,1)",
-                    data: [28, 48, 40, 19, 96, 27, 100]
+                    borderWidth: 1,
+                    hoverBackgroundColor: "rgba(255,99,132,0.4)",
+                    hoverBorderColor: "rgba(255,99,132,1)",
+                    data: [{{ stats.Users.SalaireAVGF }}, {{ stats.Users
+                    .SalaireAVGH }}],
                 }
             ]
         };
-
-        var myChart = new Chart(ctx, {
-            type: 'radar',
-            data: data,
+        var charSalaireAvg = new Chart(ctxSalaireAvg, {
+            type: 'bar',
+            data: dataSalaireAvg,
             options: {
                 scales: {
                     yAxes: [{
@@ -49,17 +124,116 @@
                 }
             }
         });
-        var myChart2 = new Chart(ctx2, {
+
+        var ctxSContrats = document.getElementById("chartContrats");
+        var data = {
+            labels: [
+                "CDI",
+                "CDD",
+                "Stage",
+                "Volontaire"
+            ],
+            datasets: [
+                {
+                    data: [{{ stats.Contrats.TotalCDI }}, {{ stats.Contrats
+                    .TotalCDD }}, {{ stats.Contrats.TotalSTA }}, {{ stats
+                    .Contrats.TotalVOL }}],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ],
+                    hoverBackgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ]
+                }]
+        };
+        var ContratsChart = new Chart(ctxSContrats, {
+            type: 'doughnut',
+            data: data,
+            options: {
+
+            }
+        });
+
+
+        var ctxSContratsH = document.getElementById("chartContratsH");
+        var data = {
+            labels: [
+                "CDI",
+                "CDD",
+                "Stage",
+                "Volontaire"
+            ],
+            datasets: [
+                {
+                    label: "Hommes",
+                    backgroundColor: "rgba(179,181,198,0.2)",
+                    borderColor: "rgba(179,181,198,1)",
+                    pointBackgroundColor: "rgba(179,181,198,1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(179,181,198,1)",
+                    data: [{{ stats.Contrats.CDIHommes }}, {{ stats.Contrats
+                    .CDDHommes
+                    }}, {{ stats.Contrats.STAHommes }}, {{ stats.Contrats
+                    .VOLHommes
+                    }}]
+                },
+                {
+                    label: "Femmes",
+                    backgroundColor: "rgba(255,99,132,0.2)",
+                    borderColor: "rgba(255,99,132,1)",
+                    pointBackgroundColor: "rgba(255,99,132,1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(255,99,132,1)",
+                    data: [{{ stats.Contrats.CDIFemmes }}, {{ stats.Contrats
+                    .CDDFemmes
+                    }}, {{ stats.Contrats.STAFemmes }}, {{ stats.Contrats
+                    .VOLFemmes
+                    }}]
+                }
+            ]
+        };
+        var ContratsChartH = new Chart(ctxSContratsH, {
             type: 'radar',
             data: data,
             options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
-                    }]
-                }
+
+            }
+        });
+
+
+        var ctxSNBEmploye = document.getElementById("chartNBEmploye");
+        var data = {
+            labels: [
+                "Femmes",
+                "Hommes",
+            ],
+            datasets: [
+                {
+                    data: [{{ stats.Users.NBFemmes }}, {{ stats.Users.NBHommes
+                    }}],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ],
+                    hoverBackgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ]
+                }]
+        };
+        var NbEmployeChart = new Chart(ctxSNBEmploye, {
+            type: 'doughnut',
+            data: data,
+            options: {
+
             }
         });
     </script>
