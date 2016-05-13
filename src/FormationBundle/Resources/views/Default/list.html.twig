@@ -3,39 +3,44 @@
     <h2 class="page-header">FORMATIONS</h2>
     <a href="{{ path('formationcreate') }}"
        class="btn btn-success">Create a new formation</a>
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Formation</th>
-            <th>Durée</th>
-            <th>Prix</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for formation in formations %}
-            <tr>
-                <th scope="row">{{ formation.id }}</th>
-                <td><a href="{{ path('formationdetails', {'id': formation.id}) }}"> {{
-                        formation.title
-                        }}</a></td>
-                <td>{{ formation.duration }} jours</td>
-                <td>{{ formation.cost }} euros</td>
-                <td><a href="{{ path('formationdetails', {'id': formation.id}) }}"
-                       class="btn btn-success">Details</a>
-                    <a href="{{ path('formationedit', {'id': formation.id}) }}"
-                       class="btn
-                btn-default">Edit</a>
+
+    <div class="row">
+    {% for formation in formations %}
+        <div class="col-sm-3">
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-title">{{ formation.title }}</h4>
+                </div>
+                <img class="card-img-top" src="{{ asset('img/' ~ formation
+                    .img )
+                }}"
+                     alt="Card image cap">
+                <div class="card-block">
+                    <p class="card-text">{{ formation.description }}</p>
+                    <a href="{{ path('formationdetails', {'id': formation.id}) }}" class="btn btn-primary" style="width: 100%;
+                    ">En savoir plus</a>
+                </div>
+                <div class="card-footer text-muted">
+                    {{ formation.duration }} jours <span class="label
+                    label-success"
+                                 style="float:right;">{{ formation.cost }} euros</span>
+                    <p class="card-text"><small class="text-muted">With
+                            {{ formation.teacher }}</small></p>
+
+                    <a href="{{ path('formationedit', {'id': formation.id}) }}">
+                        <span class="label label-info" >Edit</span></a>
+
+
                     <a href="{{ path('formationlock', {'id': formation.id})
-                    }}" class="btn
-                btn-warning">Lock</a>
+                        }}"><span class="label label-warning"><i class="fa fa-lock" aria-hidden="true"></i></span></a>
+
                     <a href="{{ path('formationremove', {'id': formation.id})
-                    }}" class="btn
-                btn-danger">Remove</a>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                    }}" ><span class="label label-danger" ><i class="fa fa-trash" aria-hidden="true"></i></span></a>
+
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+    </div>
 {% endblock %}

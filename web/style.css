@@ -1,5 +1,3 @@
-
-
 .sidebar{
     position:fixed;
     height: 100%;
@@ -76,7 +74,7 @@ body{
     margin-bottom: 7px;
 }
 
-.stripes h4 {
+div .stripes h4 {
     display: inline-block;
     font-size: 14px;
     font-style: Normal;
@@ -410,7 +408,6 @@ body{
 
 
 .text-hide {
-  font: "0/0" a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
