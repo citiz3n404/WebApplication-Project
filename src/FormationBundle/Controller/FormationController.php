@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FormationBundle\Entity\Formation;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -44,10 +45,10 @@ class FormationController extends Controller
             ->add('description', TextareaType::class, array('attr' => array
             ('class' => 'form-control', 'style' => '')))
             ->add('begin', DateTimeType::class, array('attr' => array
-            ('class' => 'form-control', 'style' => '')))
+            ('class' => '', 'style' => '')))
             ->add('cost', NumberType::class, array('attr' => array
             ('class' => 'form-control', 'style' => '')))
-            ->add('img', TextType::class, array('attr' => array
+            ->add('img', FileType::class, array('attr' => array
             ('class' => 'form-control', 'style' => '')))
             ->add('duration', IntegerType::class, array('attr' => array
             ('class' => 'form-control', 'style' => '')))
@@ -62,10 +63,17 @@ class FormationController extends Controller
             $formation->setTitle        ($form['title']         ->getData());
             $formation->setBegin        ($form['begin']         ->getData());
             $formation->setCost         ($form['cost']          ->getData());
-            $formation->setImg          ($form['img']           ->getData());
             $formation->setDescription  ($form['description']   ->getData());
             $formation->setDuration     ($form['duration']      ->getData());
             $formation->setLocked       (false);
+
+            //$formation->setImg          ($form['img']           ->getData());
+
+            $file = $formation->getImg();
+            $fileName =  md5(uniqid()).'.'.$file->guessExtension();
+            $fileDir = $this->container->getParameter('kernel.root_dir').'/../web/img/formations/';
+            $file->move($fileDir, $fileName);
+            $formation->setImg($fileName);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($formation);
@@ -146,8 +154,8 @@ class FormationController extends Controller
             ('class' => 'form-control', 'style' => '')))
             ->add('cost', NumberType::class, array('attr' => array
             ('class' => 'form-control', 'style' => '')))
-            ->add('img', TextType::class, array('attr' => array
-            ('class' => 'form-control', 'style' => '')))
+            ->add('img', FileType::class, array('attr' => array
+            ('class' => 'form-control', 'style' => ''), 'data_class'=> null))
             ->add('duration', IntegerType::class, array('attr' => array
             ('class' => 'form-control', 'style' => '')))
             ->add('locked', ChoiceType::class, array(
@@ -168,10 +176,17 @@ class FormationController extends Controller
             $formation->setTitle        ($form['title']         ->getData());
             $formation->setBegin        ($form['begin']         ->getData());
             $formation->setCost         ($form['cost']          ->getData());
-            $formation->setImg          ($form['img']           ->getData());
             $formation->setDescription  ($form['description']   ->getData());
             $formation->setDuration     ($form['duration']      ->getData());
             $formation->setLocked       ($form['locked']        ->getData());
+
+
+            $file = $formation->getImg();
+            $fileName =  md5(uniqid()).'.'.$file->guessExtension();
+            $fileDir = $this->container->getParameter('kernel.root_dir').'/../web/img/formations/';
+            $file->move($fileDir, $fileName);
+            $formation->setImg($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($formation);
             $em->flush();

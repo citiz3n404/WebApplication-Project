@@ -6,6 +6,9 @@
 {% block body %}
     <h2 class="page-header">ANNUAIRE</h2>
 
+    <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Annuaire</div>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -29,15 +32,15 @@
                 <td>{{ user.salarie.typeContrat }}</td>
                 <td><a href="{{ path('profiluser', {'id': user.id}) }}"
                        class="btn
-                btn-success">Details</a>
-                    <a href=""  class="btn btn-default">Edit</a>
-                    <a href="" class="btn  btn-danger">Remove</a>
+                btn-info btn-sm">Details</a>
+                    <a href=""  class="btn btn-default btn-sm">Edit</a>
+                    <a href="" class="btn  btn-danger btn-sm">Remove</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
+</div>
     <nav>
         <ul class="pagination">
             <li

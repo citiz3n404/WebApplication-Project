@@ -4,14 +4,15 @@
     <a class="btn btn-default" href="/formation/">Back to  formation list</a>
     <a class="btn btn-primary" href="{{ path('formationinscription', {'id':
         formation.id}) }}">Inscription</a>
-    <h2 class="page-header">{{ formation.title }}</h2>
+    <h2 class="page-header">{{ formation.title }} <small>{{ formation.teacher
+            }}</small></h2>
 
     <div class="row">
         <div class="col-md-4">
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading">Illustration formation</div>
-                    <img class="card-img-top" src="{{ asset('img/' ~ formation
+                    <img class="card-img-top" src="{{ asset('img/formations/' ~ formation
                     .img )
                     }}" alt="Card image cap">
 
@@ -86,14 +87,15 @@
                         {%  if inscription.validated == true %}
                             <tr>
                                 <th scope="row">{{ loop.index }}</th>
-                                <td><a href="{{ path('profiluser', {'id': inscription
-                                        .user.id })  }}"> {{ inscription.user.username }}</a></td>
+                                <td><a href="{{ path('profiluser', {'id': inscription.user.id })  }}"> {{ inscription.user.username }}</a></td>
                                 <td>
                                     {%  if inscription.validated != true %}
                                         <a href="{{ path('formationvalidateinscription', {'id':
-                                            inscription.id }) }}"class="btn btn-success">Valider</a>
+                                            inscription.id }) }}"class="btn
+                                            btn-success btn-sm ">Valider</a>
                                     {% endif %}
-                                    <a href="{{ path('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger">Remove</a>
+                                    <a href="{{ path
+                                    ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm">Remove</a>
                                 </td>
                             </tr>
                         {% endif %}
@@ -121,15 +123,16 @@
                             <tr>
                                 <th scope="row">{{ loop.index }}</th>
                                 <td><a href="{{ path('profiluser', {'id': inscription
-                                        .user.id })   }}"> {{ inscription
-                                        .user.username
+                                        .user.id })   }}"> {{ inscription.user.username
                                         }}</a></td>
                                 <td>
                                     {%  if inscription.validated != true %}
                                         <a href="{{ path('formationvalidateinscription', {'id':
-                                            inscription.id }) }}"class="btn btn-success">Valider</a>
+                                            inscription.id }) }}"class="btn
+                                            btn-success btn-sm">Valider</a>
                                     {% endif %}
-                                    <a href="{{ path('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger">Remove</a>
+                                    <a href="{{ path
+                                    ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm">Remove</a>
                                 </td>
                             </tr>
                         {% endif %}

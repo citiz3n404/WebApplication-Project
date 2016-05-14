@@ -20,7 +20,7 @@ class DefaultController extends Controller
         $qb->select('count(user.id)');
         $qb->from('UserBundle:User','user');
         $totalUsers = (int)  $qb->getQuery()->getSingleScalarResult();
-        $nbUserPerPage = 10;
+        $nbUserPerPage = 15;
 
         $qb = $em->createQueryBuilder();
         $qb->select('user');

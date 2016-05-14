@@ -51,4 +51,22 @@ class InitAccountsController extends Controller
 
         return $this->render('UserBundle:Default:index.html.twig');
     }
+
+    /**
+     * @Route("/updateRoles")
+     */
+    public function changeStatusAction()
+    {
+        set_time_limit(1200);
+        $users = $this->getDoctrine()->getRepository('UserBundle:User')
+            ->findAll();
+        foreach ($users as $user){
+            $user->setRoles(array('ROLE_USER'));
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+        }
+
+        return $this->render('UserBundle:Default:index.html.twig');
+    }
 }

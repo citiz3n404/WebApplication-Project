@@ -158,6 +158,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'UserBundle\\Controller\\InitAccountsController::indexAction',  '_route' => 'user_initaccounts_index',);
             }
 
+            // user_initaccounts_changestatus
+            if ($pathinfo === '/user/updateRoles') {
+                return array (  '_controller' => 'UserBundle\\Controller\\InitAccountsController::changeStatusAction',  '_route' => 'user_initaccounts_changestatus',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/for')) {

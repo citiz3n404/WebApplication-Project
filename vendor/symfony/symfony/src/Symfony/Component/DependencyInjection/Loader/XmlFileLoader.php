@@ -292,6 +292,10 @@ class XmlFileLoader extends FileLoader
                 if ($services = $this->getChildren($node, 'service')) {
                     $definitions[$id] = array($services[0], $file, false);
                     $services[0]->setAttribute('id', $id);
+
+                    // anonymous services are always private
+                    // we could not use the constant false here, because of XML parsing
+                    $services[0]->setAttribute('public', 'false');
                 }
             }
         }
@@ -302,21 +306,13 @@ class XmlFileLoader extends FileLoader
                 // give it a unique name
                 $id = sprintf('%s_%d', hash('sha256', $file), ++$count);
                 $node->setAttribute('id', $id);
-
-                if ($services = $this->getChildren($node, 'service')) {
-                    $definitions[$id] = array($node, $file, true);
-                    $services[0]->setAttribute('id', $id);
-                }
+                $definitions[$id] = array($node, $file, true);
             }
         }
 
         // resolve definitions
         krsort($definitions);
         foreach ($definitions as $id => list($domElement, $file, $wild)) {
-            // anonymous services are always private
-            // we could not use the constant false here, because of XML parsing
-            $domElement->setAttribute('public', 'false');
-
             if (null !== $definition = $this->parseDefinition($domElement, $file)) {
                 $this->container->setDefinition($id, $definition);
             }
