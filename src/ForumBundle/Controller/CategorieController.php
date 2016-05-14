@@ -106,6 +106,8 @@ class CategorieController extends Controller
         ('categorie'=> $categorie));
     }
 
+    
+
     /**
      * @Route("/categorie/{id}", name="listTopics")
      */

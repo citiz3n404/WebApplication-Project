@@ -116,9 +116,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'AnnuaireBundle\\Controller\\DefaultController::redirAction',  '_route' => 'annuaireempty',);
                 }
 
-                // profiluser
-                if (0 === strpos($pathinfo, '/annuaire/profile') && preg_match('#^/annuaire/profile/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'profiluser')), array (  '_controller' => 'AnnuaireBundle\\Controller\\DefaultController::profilAction',));
+                if (0 === strpos($pathinfo, '/annuaire/profile')) {
+                    // profiluser
+                    if (preg_match('#^/annuaire/profile/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'profiluser')), array (  '_controller' => 'AnnuaireBundle\\Controller\\DefaultController::profilAction',));
+                    }
+
+                    // editprofil
+                    if (0 === strpos($pathinfo, '/annuaire/profile/edit') && preg_match('#^/annuaire/profile/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'editprofil')), array (  '_controller' => 'AnnuaireBundle\\Controller\\ProfilController::editAction',));
+                    }
+
                 }
 
             }

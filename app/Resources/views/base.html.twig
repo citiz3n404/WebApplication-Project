@@ -32,14 +32,18 @@
             </div>
             <div id="navbar" class="nav navbar-collapse collapse">
                 <div class="nav navbar-right navbar-correct">
-                    <img alt="Brand" src="{{ asset('img/users/default.jpg') }}">
+
                     {% if app.user is not null %}
-                    <a class="btn btn-default navbar-btn" href="/profile"
+                        <img alt="Brand" src="{{ asset('img/users/' ~ app.user
+                        .salarie.img )
+                        }}">
+                    <a class="btn btn-default navbar-btn btn-sm" href="{{ path
+                    ('profiluser', {'id': app.user.id}) }}"
                        role="button">Profil</a>
-                    <a class="btn btn-default navbar-btn" href="/logout"
+                    <a class="btn btn-default navbar-btn btn-sm" href="/logout"
                        role="button">Logout</a>
                     {% else %}
-                    <a class="btn btn-default navbar-btn" href="/login"
+                    <a class="btn btn-default navbar-btn btn-sm" href="/login"
                        role="button">Login</a>
                     {% endif %}
                 </div>

@@ -23,9 +23,18 @@
             <tr>
                 <th scope="row">
                     {% if reply.user is not null %}
-                        {{ reply.user.username|capitalize }}
+                        <div class="avatarForum">
+                            <span>{{ reply.user.username|capitalize }}</span>
+                            <img alt="Brand" src="{{ asset('img/users/' ~ reply.user.salarie.img )
+                            }}">
+                        </div>
+
                     {% else %}
-                        Anonymous
+                        <div class="avatarForum">
+                            <span>Anonymous</span>
+                            <img alt="Brand" src="{{ asset('img/users/default.png')
+                            }}">
+                        </div>
                     {% endif %}
                 </th>
                 <td>{{ reply.content }}</td>

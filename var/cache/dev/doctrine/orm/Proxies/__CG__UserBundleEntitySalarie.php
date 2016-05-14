@@ -64,10 +64,10 @@ class Salarie extends \UserBundle\Entity\Salarie implements \Doctrine\ORM\Proxy\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'user', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'id', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'nom', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'prenom', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dateNaissance', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'sexe', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dateEntre', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'typeContrat', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dureeContrat', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'salaire', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'superieurHierarchique'];
+            return ['__isInitialized__', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'user', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'id', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'nom', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'prenom', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'img', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dateNaissance', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'sexe', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dateEntre', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'typeContrat', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dureeContrat', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'salaire', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'superieurHierarchique'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'user', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'id', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'nom', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'prenom', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dateNaissance', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'sexe', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dateEntre', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'typeContrat', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dureeContrat', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'salaire', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'superieurHierarchique'];
+        return ['__isInitialized__', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'user', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'id', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'nom', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'prenom', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'img', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dateNaissance', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'sexe', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dateEntre', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'typeContrat', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'dureeContrat', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'salaire', '' . "\0" . 'UserBundle\\Entity\\Salarie' . "\0" . 'superieurHierarchique'];
     }
 
     /**
@@ -406,6 +406,28 @@ class Salarie extends \UserBundle\Entity\Salarie implements \Doctrine\ORM\Proxy\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSuperieurHierarchique', []);
 
         return parent::getSuperieurHierarchique();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImg()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImg', []);
+
+        return parent::getImg();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImg($img)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImg', [$img]);
+
+        return parent::setImg($img);
     }
 
 }

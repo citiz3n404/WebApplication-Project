@@ -40,6 +40,13 @@ class Salarie
     private $prenom;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="img", type="string", length=255)
+     */
+    private $img;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateNaissance", type="date")
@@ -66,6 +73,8 @@ class Salarie
      * @ORM\Column(name="typeContrat", type="string", length=3)
      */
     private $typeContrat;
+
+
 
     /**
      * @var int
@@ -338,6 +347,22 @@ class Salarie
     public function getSuperieurHierarchique()
     {
         return $this->superieurHierarchique;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param string $img
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
     }
 }
 

@@ -17,19 +17,22 @@
         <tbody>
         {% for categorie in categories %}
             <tr>
-                <th scope="row">{{ categorie.id }}</th>
+                <th scope="row"><div class="bigIconForum"><span
+                                class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></div></th>
                 <td><a href="{{ path('listTopics', {'id': categorie.id}) }}"> {{
                         categorie.name
-                        }}</a></td>
+                        }}</a>
+                    <p style="font-size: 12px;">{{ categorie.description }}</p>
+                </td>
                 <td></td>
                 <td><a href="{{ path('detailcategorie', {'id': categorie.id}) }}"
-                       class="btn btn-success">View</a>
+                       class="btn btn-success btn-sm">View</a>
                     <a href="{{ path('editcategorie', {'id': categorie.id}) }}"
                        class="btn
-                btn-default">Edit</a>
+                btn-default btn-sm">Edit</a>
                     <a href="{{ path('removecategorie', {'id': categorie.id})
                     }}" class="btn
-                btn-danger">Remove</a>
+                btn-danger btn-sm">Remove</a>
                 </td>
             </tr>
         {% endfor %}

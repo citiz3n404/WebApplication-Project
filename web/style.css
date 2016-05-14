@@ -406,6 +406,37 @@ div .stripes h4 {
   }
 }
 
+.bigIconForum{
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid lightgrey;
+    padding-top: 7px;
+}
+
+.littleIconForum{
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid lightgrey;
+    padding-top: 3px;
+}
+
+.avatarForum img{
+    width: 100%;
+    hight: 100%;
+    max-width: 75px;
+}
+
+.avatarForum span{
+    display: block;
+}
 
 .text-hide {
   color: transparent;

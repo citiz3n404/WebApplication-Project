@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h2 class="page-header">{{ categorie.name }}</h2>
+    <h2 class="page-header">{{ categorie.name }}<small> ({{ categorie
+            .description
+            }})</small></h2>
     <a class="btn btn-default" href="{{ path('forum') }}">Back to Forum</a>
     <a href="{{ path('createtopic', {'id': categorie.id}) }}"
        class="btn btn-success">Create a new topic</a>
@@ -21,7 +23,8 @@
         <tbody>
         {% for topic in topics %}
             <tr>
-                <th scope="row">{{ topic.id }}</th>
+                <th scope="row"><div class="littleIconForum"><span
+                                class="glyphicon glyphicon-comment" aria-hidden="true"></span></div></th>
                 <td><a href="{{ path('topicdisplay', {'id': topic.id}) }}"> {{
                         topic.subject
                         }}</a></td>
