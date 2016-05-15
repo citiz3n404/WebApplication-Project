@@ -21,20 +21,20 @@ class __TwigTemplate_c64fca4f8895d2d679bd11877e590d0b20f215fcec7330313c13896fc86
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c041b16539c46d8e46458a2ca7377151b2cc005d14c1166525bf6e2224eb1431 = $this->env->getExtension("native_profiler");
-        $__internal_c041b16539c46d8e46458a2ca7377151b2cc005d14c1166525bf6e2224eb1431->enter($__internal_c041b16539c46d8e46458a2ca7377151b2cc005d14c1166525bf6e2224eb1431_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FichierBundle:Fichiers:listFichiers.html.twig"));
+        $__internal_62a93df3b8b7a7a2fb8594229dd18c318005aa0e470230b0d045e232078e20d6 = $this->env->getExtension("native_profiler");
+        $__internal_62a93df3b8b7a7a2fb8594229dd18c318005aa0e470230b0d045e232078e20d6->enter($__internal_62a93df3b8b7a7a2fb8594229dd18c318005aa0e470230b0d045e232078e20d6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FichierBundle:Fichiers:listFichiers.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c041b16539c46d8e46458a2ca7377151b2cc005d14c1166525bf6e2224eb1431->leave($__internal_c041b16539c46d8e46458a2ca7377151b2cc005d14c1166525bf6e2224eb1431_prof);
+        $__internal_62a93df3b8b7a7a2fb8594229dd18c318005aa0e470230b0d045e232078e20d6->leave($__internal_62a93df3b8b7a7a2fb8594229dd18c318005aa0e470230b0d045e232078e20d6_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_7caf6242f5a00abda7784d6b8a34f480edd4a1232653f601465c27bdf2c81bed = $this->env->getExtension("native_profiler");
-        $__internal_7caf6242f5a00abda7784d6b8a34f480edd4a1232653f601465c27bdf2c81bed->enter($__internal_7caf6242f5a00abda7784d6b8a34f480edd4a1232653f601465c27bdf2c81bed_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_3183fd439323c8ccc24424b16c77936ec4dbfa4950ca2bfbb5f67cdf10848d1a = $this->env->getExtension("native_profiler");
+        $__internal_3183fd439323c8ccc24424b16c77936ec4dbfa4950ca2bfbb5f67cdf10848d1a->enter($__internal_3183fd439323c8ccc24424b16c77936ec4dbfa4950ca2bfbb5f67cdf10848d1a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h2 class=\"page-header\">";
@@ -108,7 +108,7 @@ $context["fichier"], "type", array()) == "rar"))) {
             }
             // line 42
             echo "                        <a href=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("img/uploads/" . $this->getAttribute($context["fichier"], "fichier", array()))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("uploads/" . $this->getAttribute($context["fichier"], "fichier", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["fichier"], "name", array()), "html", null, true);
             echo "</a></th>
@@ -132,7 +132,7 @@ $context["fichier"], "type", array()) == "rar"))) {
     </div>
 ";
         
-        $__internal_7caf6242f5a00abda7784d6b8a34f480edd4a1232653f601465c27bdf2c81bed->leave($__internal_7caf6242f5a00abda7784d6b8a34f480edd4a1232653f601465c27bdf2c81bed_prof);
+        $__internal_3183fd439323c8ccc24424b16c77936ec4dbfa4950ca2bfbb5f67cdf10848d1a->leave($__internal_3183fd439323c8ccc24424b16c77936ec4dbfa4950ca2bfbb5f67cdf10848d1a_prof);
 
     }
 
@@ -192,7 +192,7 @@ $context["fichier"], "type", array()) == "rar"))) {
 /*                         {% else %}*/
 /*                             <i class="fa fa-file-o" aria-hidden="true"></i>*/
 /*                         {% endif %}*/
-/*                         <a href="{{ asset('img/uploads/' ~ fichier.fichier ) }}">{{ fichier.name }}</a></th>*/
+/*                         <a href="{{ asset('uploads/' ~ fichier.fichier ) }}">{{ fichier.name }}</a></th>*/
 /*                     <td>{{ fichier.type }}</td>*/
 /*                     <td>{{ fichier.size }} octets</td>*/
 /*                 </tr>*/

@@ -39,7 +39,7 @@
                         {% else %}
                             <i class="fa fa-file-o" aria-hidden="true"></i>
                         {% endif %}
-                        <a href="{{ asset('img/uploads/' ~ fichier.fichier ) }}">{{ fichier.name }}</a></th>
+                        <a href="{{ asset('uploads/' ~ fichier.fichier ) }}">{{ fichier.name }}</a></th>
                     <td>{{ fichier.type }}</td>
                     <td>{{ fichier.size }} octets</td>
                 </tr>

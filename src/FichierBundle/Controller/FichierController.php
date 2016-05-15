@@ -61,7 +61,7 @@ class FichierController extends Controller
 
             $file = $fichier->getFichier();
             $fileName =  md5(uniqid()).'.'.$file->guessExtension();
-            $fileDir = $this->container->getParameter('kernel.root_dir').'/../web/img/uploads/';
+            $fileDir = $this->container->getParameter('kernel.root_dir').'/../web/uploads/';
             $file->move($fileDir, $fileName);
             $fichier->setFichier($fileName);
 

@@ -2,39 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71bd8dca-f337-4e5d-b293-9a7f537be4c6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FichierBundle/Controller/DossierController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FichierBundle/Controller/FichierController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FichierBundle/Resources/views/Dossier/create.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FichierBundle/Resources/views/Fichiers/listFichiers.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FichierBundle/Resources/views/Fichiers/upload.html.twig" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/var/sessions/dev/sess_p9agbaath08equnlc4sqa1fvj1" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/profiler/16/e8/14e816" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/16/e8/14e816" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/sessions/dev/sess_684qe9unhuh37eatns4cdmcc57" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_684qe9unhuh37eatns4cdmcc57" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AnnuaireBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/AnnuaireBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FormationBundle/Resources/views/Default/details.html.twig" afterPath="$PROJECT_DIR$/src/FormationBundle/Resources/views/Default/details.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ForumBundle/Resources/views/Topic/listTopics.html.twig" afterPath="$PROJECT_DIR$/src/ForumBundle/Resources/views/Topic/listTopics.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ForumBundle/Resources/views/Topic/topic.html.twig" afterPath="$PROJECT_DIR$/src/ForumBundle/Resources/views/Topic/topic.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/var/cache/dev/appDevUrlGenerator.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevUrlMatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/var/cache/dev/appDevUrlMatcher.php.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FichierBundle/Controller/FichierController.php" afterPath="$PROJECT_DIR$/src/FichierBundle/Controller/FichierController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FichierBundle/Resources/views/Fichiers/listFichiers.html.twig" afterPath="$PROJECT_DIR$/src/FichierBundle/Resources/views/Fichiers/listFichiers.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/0f/5b5b435d4669636869657242756e646c655c436f6e74726f6c6c65725c46696368696572436f6e74726f6c6c65722375706c6f6164416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/0f/5b5b435d4669636869657242756e646c655c436f6e74726f6c6c65725c46696368696572436f6e74726f6c6c65722375706c6f6164416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/37/5b5b435d4669636869657242756e646c655c436f6e74726f6c6c65725c46696368696572436f6e74726f6c6c6572236c697374416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/37/5b5b435d4669636869657242756e646c655c436f6e74726f6c6c65725c46696368696572436f6e74726f6c6c6572236c697374416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/5d/5b5b435d4669636869657242756e646c655c436f6e74726f6c6c65725c46696368696572436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/5d/5b5b435d4669636869657242756e646c655c436f6e74726f6c6c65725c46696368696572436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/twig/03/0348daaa5912711f5390beb4335ee29d6241c842d3639155bb41e6d83dc71c16.php" afterPath="$PROJECT_DIR$/var/cache/dev/twig/03/0348daaa5912711f5390beb4335ee29d6241c842d3639155bb41e6d83dc71c16.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/twig/3a/3a6b04bfdd9cab79ecf6c9d2415d9297d5e0f5696c55f6ee25bc426fe2ffb8d3.php" afterPath="$PROJECT_DIR$/var/cache/dev/twig/3a/3a6b04bfdd9cab79ecf6c9d2415d9297d5e0f5696c55f6ee25bc426fe2ffb8d3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/twig/62/62fbce7ed658b4963120d775bac7d671eebfaa120d75d7fe5aac688403678432.php" afterPath="$PROJECT_DIR$/var/cache/dev/twig/62/62fbce7ed658b4963120d775bac7d671eebfaa120d75d7fe5aac688403678432.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/twig/a5/a50addb3c354885121d7209ad4de1e5504c329e46f61b37fbedb30b5cebdd8c7.php" afterPath="$PROJECT_DIR$/var/cache/dev/twig/a5/a50addb3c354885121d7209ad4de1e5504c329e46f61b37fbedb30b5cebdd8c7.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/twig/bb/bbe4ab335430b59ec8aae3e9525f0b4f472aecdb63bb7c9c0ffd95c0a8aef454.php" afterPath="$PROJECT_DIR$/var/cache/dev/twig/bb/bbe4ab335430b59ec8aae3e9525f0b4f472aecdb63bb7c9c0ffd95c0a8aef454.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/sensio/generator-bundle/Generator/BundleGenerator.php" afterPath="$PROJECT_DIR$/vendor/sensio/generator-bundle/Generator/BundleGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/style.css" afterPath="$PROJECT_DIR$/web/style.css" />
     </list>
     <ignored path="nationalSecurityZero.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,8 +45,8 @@
       <file leaf-file-name="FichierController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FichierBundle/Controller/FichierController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="58" column="69" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
+            <state relative-caret-position="330">
+              <caret line="63" column="82" selection-start-line="63" selection-start-column="82" selection-end-line="63" selection-end-column="82" />
               <folding>
                 <element signature="e#44#101#0#PHP" expanded="true" />
               </folding>
@@ -110,16 +86,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FormationBundle/Resources/views/Default/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Fichier.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FichierBundle/Entity/Fichier.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -150,21 +116,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listFichiers.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="listFichiers.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FichierBundle/Resources/views/Fichiers/listFichiers.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="37" column="83" selection-start-line="37" selection-start-column="83" selection-end-line="37" selection-end-column="83" />
+            <state relative-caret-position="440">
+              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FichierBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
               <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FichierBundle/Resources/views/Dossier/create.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -226,9 +202,9 @@
         <option value="$PROJECT_DIR$/src/FichierBundle/Resources/views/Fichiers/upload.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/FichierBundle/Entity/Fichier.php" />
+        <option value="$PROJECT_DIR$/src/FichierBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/FichierBundle/Controller/FichierController.php" />
         <option value="$PROJECT_DIR$/src/FichierBundle/Resources/views/Fichiers/listFichiers.html.twig" />
-        <option value="$PROJECT_DIR$/src/FichierBundle/Resources/views/Default/index.html.twig" />
       </list>
     </option>
   </component>
@@ -331,24 +307,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NationalSecurityZero" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NationalSecurityZero" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -368,28 +326,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NationalSecurityZero" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NationalSecurityZero" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -778,7 +714,7 @@
       <workItem from="1463143983984" duration="29840000" />
       <workItem from="1463186132377" duration="1514000" />
       <workItem from="1463226377826" duration="19795000" />
-      <workItem from="1463261581210" duration="12490000" />
+      <workItem from="1463261581210" duration="12958000" />
     </task>
     <task id="LOCAL-00001" summary="Test de commit avec PhpStorm">
       <created>1460163789198</created>
@@ -791,7 +727,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185000000" />
+    <option name="totallyTimeSpent" value="185468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -1079,14 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FichierBundle/Resources/views/Dossier/create.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ForumBundle/Resources/views/Topic/listTopics.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1163,6 +1091,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/FichierBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FichierBundle/Resources/views/Dossier/create.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FichierBundle/Resources/views/Fichiers/upload.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -1173,8 +1117,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FichierBundle/Controller/FichierController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="58" column="69" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
+        <state relative-caret-position="330">
+          <caret line="63" column="82" selection-start-line="63" selection-start-column="82" selection-end-line="63" selection-end-column="82" />
           <folding>
             <element signature="e#44#101#0#PHP" expanded="true" />
           </folding>
@@ -1183,16 +1127,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FichierBundle/Resources/views/Fichiers/listFichiers.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="37" column="83" selection-start-line="37" selection-start-column="83" selection-end-line="37" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FichierBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        <state relative-caret-position="440">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
           <folding />
         </state>
       </provider>
