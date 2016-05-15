@@ -52,7 +52,7 @@ class Fichier
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Dossier")
+     * @ORM\ManyToOne(targetEntity="Dossier", inversedBy="fichiers")
      * @ORM\JoinColumn(name="dossier_id", referencedColumnName="id")
      */
     private $dossier;

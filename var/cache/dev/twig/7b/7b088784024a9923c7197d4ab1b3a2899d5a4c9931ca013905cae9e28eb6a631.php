@@ -21,20 +21,20 @@ class __TwigTemplate_c64fca4f8895d2d679bd11877e590d0b20f215fcec7330313c13896fc86
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_62a93df3b8b7a7a2fb8594229dd18c318005aa0e470230b0d045e232078e20d6 = $this->env->getExtension("native_profiler");
-        $__internal_62a93df3b8b7a7a2fb8594229dd18c318005aa0e470230b0d045e232078e20d6->enter($__internal_62a93df3b8b7a7a2fb8594229dd18c318005aa0e470230b0d045e232078e20d6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FichierBundle:Fichiers:listFichiers.html.twig"));
+        $__internal_f374af3afdfac790da2f26f2abb0d0c66d5a16e96d2b4c300328c78879244d87 = $this->env->getExtension("native_profiler");
+        $__internal_f374af3afdfac790da2f26f2abb0d0c66d5a16e96d2b4c300328c78879244d87->enter($__internal_f374af3afdfac790da2f26f2abb0d0c66d5a16e96d2b4c300328c78879244d87_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FichierBundle:Fichiers:listFichiers.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_62a93df3b8b7a7a2fb8594229dd18c318005aa0e470230b0d045e232078e20d6->leave($__internal_62a93df3b8b7a7a2fb8594229dd18c318005aa0e470230b0d045e232078e20d6_prof);
+        $__internal_f374af3afdfac790da2f26f2abb0d0c66d5a16e96d2b4c300328c78879244d87->leave($__internal_f374af3afdfac790da2f26f2abb0d0c66d5a16e96d2b4c300328c78879244d87_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_3183fd439323c8ccc24424b16c77936ec4dbfa4950ca2bfbb5f67cdf10848d1a = $this->env->getExtension("native_profiler");
-        $__internal_3183fd439323c8ccc24424b16c77936ec4dbfa4950ca2bfbb5f67cdf10848d1a->enter($__internal_3183fd439323c8ccc24424b16c77936ec4dbfa4950ca2bfbb5f67cdf10848d1a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e7bb7e96cd485a5b47b4518901c2c90e383c2754435e83fed4833616bb9d4335 = $this->env->getExtension("native_profiler");
+        $__internal_e7bb7e96cd485a5b47b4518901c2c90e383c2754435e83fed4833616bb9d4335->enter($__internal_e7bb7e96cd485a5b47b4518901c2c90e383c2754435e83fed4833616bb9d4335_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h2 class=\"page-header\">";
@@ -54,7 +54,7 @@ class __TwigTemplate_c64fca4f8895d2d679bd11877e590d0b20f215fcec7330313c13896fc86
     <div class=\"panel panel-default\" style=\"margin-top: 20px;\">
         <!-- Default panel contents -->
         <div class=\"panel-heading\">Fichiers</div>
-        <table class=\"table table-striped\">
+        <table class=\"table table-striped table-bordered\">
             <thead>
             <tr>
                 <th>Fichier</th>
@@ -132,7 +132,7 @@ $context["fichier"], "type", array()) == "rar"))) {
     </div>
 ";
         
-        $__internal_3183fd439323c8ccc24424b16c77936ec4dbfa4950ca2bfbb5f67cdf10848d1a->leave($__internal_3183fd439323c8ccc24424b16c77936ec4dbfa4950ca2bfbb5f67cdf10848d1a_prof);
+        $__internal_e7bb7e96cd485a5b47b4518901c2c90e383c2754435e83fed4833616bb9d4335->leave($__internal_e7bb7e96cd485a5b47b4518901c2c90e383c2754435e83fed4833616bb9d4335_prof);
 
     }
 
@@ -163,7 +163,7 @@ $context["fichier"], "type", array()) == "rar"))) {
 /*     <div class="panel panel-default" style="margin-top: 20px;">*/
 /*         <!-- Default panel contents -->*/
 /*         <div class="panel-heading">Fichiers</div>*/
-/*         <table class="table table-striped">*/
+/*         <table class="table table-striped table-bordered">*/
 /*             <thead>*/
 /*             <tr>*/
 /*                 <th>Fichier</th>*/

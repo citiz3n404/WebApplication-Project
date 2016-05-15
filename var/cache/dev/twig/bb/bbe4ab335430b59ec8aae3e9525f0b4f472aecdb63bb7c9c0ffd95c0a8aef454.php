@@ -22,20 +22,20 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3608fc6c74e03cbc4ea478a1261ca9cebdf972aee48b3f89a28fb4d15d022ba4 = $this->env->getExtension("native_profiler");
-        $__internal_3608fc6c74e03cbc4ea478a1261ca9cebdf972aee48b3f89a28fb4d15d022ba4->enter($__internal_3608fc6c74e03cbc4ea478a1261ca9cebdf972aee48b3f89a28fb4d15d022ba4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnnuaireBundle:Default:index.html.twig"));
+        $__internal_54273a13034b11b3267622c33daeb3343326b1c89e6f771b98c584fcd4e4eaaf = $this->env->getExtension("native_profiler");
+        $__internal_54273a13034b11b3267622c33daeb3343326b1c89e6f771b98c584fcd4e4eaaf->enter($__internal_54273a13034b11b3267622c33daeb3343326b1c89e6f771b98c584fcd4e4eaaf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnnuaireBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3608fc6c74e03cbc4ea478a1261ca9cebdf972aee48b3f89a28fb4d15d022ba4->leave($__internal_3608fc6c74e03cbc4ea478a1261ca9cebdf972aee48b3f89a28fb4d15d022ba4_prof);
+        $__internal_54273a13034b11b3267622c33daeb3343326b1c89e6f771b98c584fcd4e4eaaf->leave($__internal_54273a13034b11b3267622c33daeb3343326b1c89e6f771b98c584fcd4e4eaaf_prof);
 
     }
 
     // line 2
     public function block_breadcrumbs($context, array $blocks = array())
     {
-        $__internal_6a256de5a7109540af64ea936ca147e27e412a02167677fe662201fcba935fe9 = $this->env->getExtension("native_profiler");
-        $__internal_6a256de5a7109540af64ea936ca147e27e412a02167677fe662201fcba935fe9->enter($__internal_6a256de5a7109540af64ea936ca147e27e412a02167677fe662201fcba935fe9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumbs"));
+        $__internal_926225f0b2908b45be8ab8be0dba69eb5dfca7621168f144c22f1e480379e5e4 = $this->env->getExtension("native_profiler");
+        $__internal_926225f0b2908b45be8ab8be0dba69eb5dfca7621168f144c22f1e480379e5e4->enter($__internal_926225f0b2908b45be8ab8be0dba69eb5dfca7621168f144c22f1e480379e5e4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumbs"));
 
         // line 3
         echo "    ";
@@ -47,15 +47,15 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
         echo "\">Annuaire</a></li>
 ";
         
-        $__internal_6a256de5a7109540af64ea936ca147e27e412a02167677fe662201fcba935fe9->leave($__internal_6a256de5a7109540af64ea936ca147e27e412a02167677fe662201fcba935fe9_prof);
+        $__internal_926225f0b2908b45be8ab8be0dba69eb5dfca7621168f144c22f1e480379e5e4->leave($__internal_926225f0b2908b45be8ab8be0dba69eb5dfca7621168f144c22f1e480379e5e4_prof);
 
     }
 
     // line 6
     public function block_body($context, array $blocks = array())
     {
-        $__internal_da44a08da4f5055b96b0a67a4769ff35a3fb7de8c030184ae2c695f0eaea5fa5 = $this->env->getExtension("native_profiler");
-        $__internal_da44a08da4f5055b96b0a67a4769ff35a3fb7de8c030184ae2c695f0eaea5fa5->enter($__internal_da44a08da4f5055b96b0a67a4769ff35a3fb7de8c030184ae2c695f0eaea5fa5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_333064384846413fff857a7bcfc69da37a37540d354649bc4768a60d10dd503c = $this->env->getExtension("native_profiler");
+        $__internal_333064384846413fff857a7bcfc69da37a37540d354649bc4768a60d10dd503c->enter($__internal_333064384846413fff857a7bcfc69da37a37540d354649bc4768a60d10dd503c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 7
         echo "    <h2 class=\"page-header\">ANNUAIRE</h2>
@@ -63,7 +63,7 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
     <div class=\"panel panel-default\">
     <!-- Default panel contents -->
     <div class=\"panel-heading\">Annuaire</div>
-    <table class=\"table table-striped\">
+    <table class=\"table table-striped table-bordered\">
         <thead>
         <tr>
             <th>Photo</th>
@@ -89,39 +89,41 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
             echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("img/users/" . $this->getAttribute($this->getAttribute(            // line 29
 $context["user"], "salarie", array()), "img", array()))), "html", null, true);
             echo "\"
-                                                                alt=\"photo\"></div></th>
+                                                                alt=\"photo\"
+                                                style=\"margin: 0 auto;\"
+                        ></div></th>
                 <th scope=\"row\">";
-            // line 31
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "username", array()), "html", null, true);
             echo "</th>
                 <td>";
-            // line 32
+            // line 34
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "nom", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 33
+            // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "prenom", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 34
+            // line 36
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "sexe", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 35
+            // line 37
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "salaire", array()), "html", null, true);
             echo " €</td>
                 <td>";
-            // line 36
+            // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "typeContrat", array()), "html", null, true);
             echo "</td>
                 <td><a href=\"";
-            // line 37
+            // line 39
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "\"
                        class=\"btn
                 btn-info btn-sm\">Details</a>
                     <a href=\"";
-            // line 40
+            // line 42
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("editprofil", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "\"
                        class=\"btn
@@ -135,7 +137,7 @@ $context["user"], "salarie", array()), "img", array()))), "html", null, true);
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 50
         echo "        </tbody>
     </table>
 </div>
@@ -143,16 +145,16 @@ $context["user"], "salarie", array()), "img", array()))), "html", null, true);
         <ul class=\"pagination\">
             <li
                 ";
-        // line 54
+        // line 56
         if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) == 1)) {
-            // line 55
+            // line 57
             echo "                    class=\"disabled\"
                 ";
         }
-        // line 57
+        // line 59
         echo "            >
                 <a href=\"";
-        // line 58
+        // line 60
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => ((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) - 1))), "html", null, true);
         echo "\"
                    aria-label=\"Previous\"
@@ -161,23 +163,23 @@ $context["user"], "salarie", array()), "img", array()))), "html", null, true);
                 </a>
             </li>
             ";
-        // line 64
+        // line 66
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["maxpage"]) ? $context["maxpage"] : $this->getContext($context, "maxpage"))));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 65
+            // line 67
             echo "                ";
             if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) == $context["i"])) {
-                // line 66
+                // line 68
                 echo "                    <li class=\"active\"><a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => $context["i"])), "html", null, true);
                 echo "\">";
                 echo twig_escape_filter($this->env, $context["i"], "html", null, true);
-                // line 67
+                // line 69
                 echo "</a></li>
                 ";
             } else {
-                // line 69
+                // line 71
                 echo "                    <li><a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => $context["i"])), "html", null, true);
                 echo "\">";
@@ -185,25 +187,25 @@ $context["user"], "salarie", array()), "img", array()))), "html", null, true);
                 echo "<span class=\"sr-only\">(current) </span></a></li>
                 ";
             }
-            // line 71
+            // line 73
             echo "            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 72
+        // line 74
         echo "            <li
                 ";
-        // line 73
+        // line 75
         if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) == (isset($context["maxpage"]) ? $context["maxpage"] : $this->getContext($context, "maxpage")))) {
-            // line 74
+            // line 76
             echo "                    class=\"disabled\"
                 ";
         }
-        // line 76
+        // line 78
         echo "            >
                 <a href=\"";
-        // line 77
+        // line 79
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => ((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) + 1))), "html", null, true);
         echo "\"
                    aria-label=\"Next\">
@@ -214,7 +216,7 @@ $context["user"], "salarie", array()), "img", array()))), "html", null, true);
     </nav>
 ";
         
-        $__internal_da44a08da4f5055b96b0a67a4769ff35a3fb7de8c030184ae2c695f0eaea5fa5->leave($__internal_da44a08da4f5055b96b0a67a4769ff35a3fb7de8c030184ae2c695f0eaea5fa5_prof);
+        $__internal_333064384846413fff857a7bcfc69da37a37540d354649bc4768a60d10dd503c->leave($__internal_333064384846413fff857a7bcfc69da37a37540d354649bc4768a60d10dd503c_prof);
 
     }
 
@@ -230,7 +232,7 @@ $context["user"], "salarie", array()), "img", array()))), "html", null, true);
 
     public function getDebugInfo()
     {
-        return array (  207 => 77,  204 => 76,  200 => 74,  198 => 73,  195 => 72,  189 => 71,  181 => 69,  177 => 67,  172 => 66,  169 => 65,  165 => 64,  156 => 58,  153 => 57,  149 => 55,  147 => 54,  139 => 48,  125 => 40,  119 => 37,  115 => 36,  111 => 35,  107 => 34,  103 => 33,  99 => 32,  95 => 31,  90 => 29,  89 => 28,  86 => 27,  82 => 26,  61 => 7,  55 => 6,  46 => 4,  41 => 3,  35 => 2,  11 => 1,);
+        return array (  209 => 79,  206 => 78,  202 => 76,  200 => 75,  197 => 74,  191 => 73,  183 => 71,  179 => 69,  174 => 68,  171 => 67,  167 => 66,  158 => 60,  155 => 59,  151 => 57,  149 => 56,  141 => 50,  127 => 42,  121 => 39,  117 => 38,  113 => 37,  109 => 36,  105 => 35,  101 => 34,  97 => 33,  90 => 29,  89 => 28,  86 => 27,  82 => 26,  61 => 7,  55 => 6,  46 => 4,  41 => 3,  35 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -244,7 +246,7 @@ $context["user"], "salarie", array()), "img", array()))), "html", null, true);
 /*     <div class="panel panel-default">*/
 /*     <!-- Default panel contents -->*/
 /*     <div class="panel-heading">Annuaire</div>*/
-/*     <table class="table table-striped">*/
+/*     <table class="table table-striped table-bordered">*/
 /*         <thead>*/
 /*         <tr>*/
 /*             <th>Photo</th>*/
@@ -262,7 +264,9 @@ $context["user"], "salarie", array()), "img", array()))), "html", null, true);
 /*             <tr>*/
 /*                 <th><div class="littleImg"><img src="{{ asset*/
 /*                         ('img/users/' ~ user.salarie.img ) }}"*/
-/*                                                                 alt="photo"></div></th>*/
+/*                                                                 alt="photo"*/
+/*                                                 style="margin: 0 auto;"*/
+/*                         ></div></th>*/
 /*                 <th scope="row">{{ user.username }}</th>*/
 /*                 <td>{{ user.salarie.nom }}</td>*/
 /*                 <td>{{ user.salarie.prenom }}</td>*/

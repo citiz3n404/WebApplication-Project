@@ -232,4 +232,26 @@ class Categories extends \ForumBundle\Entity\Categories implements \Doctrine\ORM
         return parent::getDescription();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getTopics()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTopics', []);
+
+        return parent::getTopics();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTopics($topics)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTopics', [$topics]);
+
+        return parent::setTopics($topics);
+    }
+
 }

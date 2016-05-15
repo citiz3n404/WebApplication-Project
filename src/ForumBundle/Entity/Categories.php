@@ -105,5 +105,21 @@ class Categories
     {
         return $this->description;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTopics()
+    {
+        return $this->topics;
+    }
+
+    /**
+     * @param mixed $topics
+     */
+    public function setTopics($topics)
+    {
+        $this->topics = $topics;
+    }
 }
 

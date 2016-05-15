@@ -9,7 +9,7 @@
     <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading">Annuaire</div>
-    <table class="table table-striped">
+    <table class="table table-striped table-bordered">
         <thead>
         <tr>
             <th>Photo</th>
@@ -27,7 +27,9 @@
             <tr>
                 <th><div class="littleImg"><img src="{{ asset
                         ('img/users/' ~ user.salarie.img ) }}"
-                                                                alt="photo"></div></th>
+                                                                alt="photo"
+                                                style="margin: 0 auto;"
+                        ></div></th>
                 <th scope="row">{{ user.username }}</th>
                 <td>{{ user.salarie.nom }}</td>
                 <td>{{ user.salarie.prenom }}</td>

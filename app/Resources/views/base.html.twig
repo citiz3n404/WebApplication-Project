@@ -84,56 +84,42 @@
                     <hr>
                     <div class="panel">
                         <p class="s-title">NSZ en chiffres</p>
+                        {#
                         <ul>
-                            <li><span class="label label-primary">2105</span> Employés  </li>
-                            <li><span class="label label-primary">36</span> Documents partagés</li>
-                            <li><span class="label label-primary">1</span> Balance</li>
-                            <li><span class="label label-primary">51</span> Formations</li>
-                            <li><span class="label label-primary">12</span> Admin/RH</li>
+                            <li><span class="label label-primary">{{ nbUsers
+                                    }}</span>
+                                Employés  </li>
+                            <li><span class="label label-primary">{{ nbFiles
+                                    }}</span>
+                                Documents partagés</li>
+                            <li><span class="label label-primary">{{
+                                    nbFormations }}</span>
+                                Formations</li>
+                            <li><span class="label label-primary">{{ nbReplies
+                                    }}</span>
+                                 réponses Forum</li>
                         </ul>
+                        #}
+
                     </div>
                     <div class="panel">
                         <p class="s-title">Annuaire</p>
+                        {#
+                        {% for user in top5 %}
                         <div class="s-people">
-                            <img src="{{ asset('img/users/default.jpg') }}"
-                                 alt="Ace">
+                            <img src="{{ asset('img/users/' ~ user.salarie.img ) }}"
+                                 alt="img">
                             <div class="s-people-desc">
                                 <div>
-                                    <a href="#" >Ace Ventura</a>
+                                    <a href="#" >{{ user.username|capitalize }}</a>
                                     <span>(Detective)</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="s-people">
-                            <img src="{{ asset('img/users/default.jpg') }}"
-                                 alt="Ace">
-                            <div class="s-people-desc">
-                                <div>
-                                    <a href="#" >Holland</a>
-                                    <span>(Président)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-people">
-                            <img src="{{ asset('img/users/default.jpg') }}"
-                                 alt="Rambo">
-                            <div class="s-people-desc">
-                                <div>
-                                    <a href="#" >Rambo</a>
-                                    <span>(Casse tout)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-people">
-                            <img src="{{ asset('img/users/default.jpg') }}"
-                                 alt="Ace">
-                            <div class="s-people-desc">
-                                <div>
-                                    <a href="#" >Snowden</a>
-                                    <span>(Balance)</span>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+                        #}
+
+
                         <button type="button" class="btn btn-xs btn-default">Voir l'annuaire complet</button>
                     </div>
                     <hr>

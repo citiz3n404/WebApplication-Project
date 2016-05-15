@@ -21,20 +21,20 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7797b07b112154d9449d2d5318287c686d2471cd9967410aa1bdb6a9f998a374 = $this->env->getExtension("native_profiler");
-        $__internal_7797b07b112154d9449d2d5318287c686d2471cd9967410aa1bdb6a9f998a374->enter($__internal_7797b07b112154d9449d2d5318287c686d2471cd9967410aa1bdb6a9f998a374_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:topic.html.twig"));
+        $__internal_1247fad9c7ea3d1235829153dc2bd17cc1e6e04c42a4f35afe64ce6ba75dc30f = $this->env->getExtension("native_profiler");
+        $__internal_1247fad9c7ea3d1235829153dc2bd17cc1e6e04c42a4f35afe64ce6ba75dc30f->enter($__internal_1247fad9c7ea3d1235829153dc2bd17cc1e6e04c42a4f35afe64ce6ba75dc30f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:topic.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_7797b07b112154d9449d2d5318287c686d2471cd9967410aa1bdb6a9f998a374->leave($__internal_7797b07b112154d9449d2d5318287c686d2471cd9967410aa1bdb6a9f998a374_prof);
+        $__internal_1247fad9c7ea3d1235829153dc2bd17cc1e6e04c42a4f35afe64ce6ba75dc30f->leave($__internal_1247fad9c7ea3d1235829153dc2bd17cc1e6e04c42a4f35afe64ce6ba75dc30f_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d040cafa22b321aca29aa1539d29e32ec4a4dcbf1c0863396f8036a5d7c50add = $this->env->getExtension("native_profiler");
-        $__internal_d040cafa22b321aca29aa1539d29e32ec4a4dcbf1c0863396f8036a5d7c50add->enter($__internal_d040cafa22b321aca29aa1539d29e32ec4a4dcbf1c0863396f8036a5d7c50add_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_d7ea912a4346ec71dc8fc6d4b6840f78f5d105b0acc0cfb7af8131d9f2d30d01 = $this->env->getExtension("native_profiler");
+        $__internal_d7ea912a4346ec71dc8fc6d4b6840f78f5d105b0acc0cfb7af8131d9f2d30d01->enter($__internal_d7ea912a4346ec71dc8fc6d4b6840f78f5d105b0acc0cfb7af8131d9f2d30d01_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h2 class=\"page-header\">";
@@ -53,7 +53,13 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
     <div class=\"panel panel-default\"  style=\"margin-top: 20px;\">
     <!-- Default panel contents -->
     <div class=\"panel-heading\">Replies</div>
-    <table class=\"table table-striped\">
+    <table class=\"table table-striped table-bordered\">
+        <colgroup>
+            <col style=\"width:5%\">
+            <col style=\"width:65%\">
+            <col style=\"width:15%\">
+            <col style=\"width:15%\">
+        </colgroup>
         <thead>
         <tr>
             <th>Author</th>
@@ -64,63 +70,68 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
         </thead>
         <tbody>
         ";
-        // line 22
+        // line 28
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["topic"]) ? $context["topic"] : $this->getContext($context, "topic")), "replies", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["reply"]) {
-            // line 23
+            // line 29
             echo "            <tr>
                 <th scope=\"row\">
                     ";
-            // line 25
+            // line 31
             if ( !(null === $this->getAttribute($context["reply"], "user", array()))) {
-                // line 26
+                // line 32
                 echo "                        <div class=\"avatarForum\">
-                            <span>";
-                // line 27
-                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, $this->getAttribute($this->getAttribute($context["reply"], "user", array()), "username", array())), "html", null, true);
-                echo "</span>
+                            <span><a href=\"";
+                // line 33
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($this->getAttribute($context["reply"], "user", array()), "id", array()))), "html", null, true);
+                // line 34
+                echo "\">";
+                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, $this->getAttribute($this->getAttribute(                // line 35
+$context["reply"], "user", array()), "username", array())), "html", null, true);
+                // line 37
+                echo "</a></span>
                             <img alt=\"Brand\" src=\"";
-                // line 28
+                // line 38
                 echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("img/users/" . $this->getAttribute($this->getAttribute($this->getAttribute($context["reply"], "user", array()), "salarie", array()), "img", array()))), "html", null, true);
-                // line 29
+                // line 39
                 echo "\">
                         </div>
 
                     ";
             } else {
-                // line 33
+                // line 43
                 echo "                        <div class=\"avatarForum\">
                             <span>Anonymous</span>
                             <img alt=\"Brand\" src=\"";
-                // line 35
+                // line 45
                 echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("img/users/default.png"), "html", null, true);
-                // line 36
+                // line 46
                 echo "\">
                         </div>
                     ";
             }
-            // line 39
+            // line 49
             echo "                </th>
                 <td>";
-            // line 40
+            // line 50
             echo twig_escape_filter($this->env, $this->getAttribute($context["reply"], "content", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 41
+            // line 51
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["reply"], "date", array()), "d-m-Y H:i:s"), "html", null, true);
             echo "</td>
                 <td><a href=\"";
-            // line 42
+            // line 52
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("replyedit", array("id" => $this->getAttribute($context["reply"], "id", array()))), "html", null, true);
             echo "\"
                        class=\"btn
                 btn-default btn-sm\"><span class=\"glyphicon
                 glyphicon-edit\" aria-hidden=\"true\"></span> Edit</a>
                     <a href=\"";
-            // line 46
+            // line 56
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("replyremove", array("id" => $this->getAttribute($context["reply"], "id", array()))), "html", null, true);
-            // line 47
+            // line 57
             echo "\" class=\"btn
                 btn-danger btn-sm\"><span class=\"glyphicon
                 glyphicon-trash\" aria-hidden=\"true\"></span></a>
@@ -131,18 +142,18 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reply'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 63
         echo "        </tbody>
     </table>
     </div>
     <a href=\"";
-        // line 56
+        // line 66
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("topicreply", array("id" => $this->getAttribute((isset($context["topic"]) ? $context["topic"] : $this->getContext($context, "topic")), "id", array()))), "html", null, true);
         echo "\"
        class=\"btn btn-success\">Reply to the topic</a>
 ";
         
-        $__internal_d040cafa22b321aca29aa1539d29e32ec4a4dcbf1c0863396f8036a5d7c50add->leave($__internal_d040cafa22b321aca29aa1539d29e32ec4a4dcbf1c0863396f8036a5d7c50add_prof);
+        $__internal_d7ea912a4346ec71dc8fc6d4b6840f78f5d105b0acc0cfb7af8131d9f2d30d01->leave($__internal_d7ea912a4346ec71dc8fc6d4b6840f78f5d105b0acc0cfb7af8131d9f2d30d01_prof);
 
     }
 
@@ -158,7 +169,7 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
 
     public function getDebugInfo()
     {
-        return array (  140 => 56,  135 => 53,  124 => 47,  122 => 46,  115 => 42,  111 => 41,  107 => 40,  104 => 39,  99 => 36,  97 => 35,  93 => 33,  87 => 29,  85 => 28,  81 => 27,  78 => 26,  76 => 25,  72 => 23,  68 => 22,  49 => 6,  45 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  151 => 66,  146 => 63,  135 => 57,  133 => 56,  126 => 52,  122 => 51,  118 => 50,  115 => 49,  110 => 46,  108 => 45,  104 => 43,  98 => 39,  96 => 38,  93 => 37,  91 => 35,  89 => 34,  87 => 33,  84 => 32,  82 => 31,  78 => 29,  74 => 28,  49 => 6,  45 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -172,7 +183,13 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
 /*     <div class="panel panel-default"  style="margin-top: 20px;">*/
 /*     <!-- Default panel contents -->*/
 /*     <div class="panel-heading">Replies</div>*/
-/*     <table class="table table-striped">*/
+/*     <table class="table table-striped table-bordered">*/
+/*         <colgroup>*/
+/*             <col style="width:5%">*/
+/*             <col style="width:65%">*/
+/*             <col style="width:15%">*/
+/*             <col style="width:15%">*/
+/*         </colgroup>*/
 /*         <thead>*/
 /*         <tr>*/
 /*             <th>Author</th>*/
@@ -187,7 +204,11 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
 /*                 <th scope="row">*/
 /*                     {% if reply.user is not null %}*/
 /*                         <div class="avatarForum">*/
-/*                             <span>{{ reply.user.username|capitalize }}</span>*/
+/*                             <span><a href="{{ path('profiluser', {'id': reply*/
+/*                                     .user.id }) }}">{{*/
+/*                                     reply.user*/
+/*                                     .username|capitalize*/
+/*                                 }}</a></span>*/
 /*                             <img alt="Brand" src="{{ asset('img/users/' ~ reply.user.salarie.img )*/
 /*                             }}">*/
 /*                         </div>*/

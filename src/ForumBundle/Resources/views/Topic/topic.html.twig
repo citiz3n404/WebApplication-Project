@@ -9,7 +9,13 @@
     <div class="panel panel-default"  style="margin-top: 20px;">
     <!-- Default panel contents -->
     <div class="panel-heading">Replies</div>
-    <table class="table table-striped">
+    <table class="table table-striped table-bordered">
+        <colgroup>
+            <col style="width:5%">
+            <col style="width:65%">
+            <col style="width:15%">
+            <col style="width:15%">
+        </colgroup>
         <thead>
         <tr>
             <th>Author</th>
@@ -24,7 +30,11 @@
                 <th scope="row">
                     {% if reply.user is not null %}
                         <div class="avatarForum">
-                            <span>{{ reply.user.username|capitalize }}</span>
+                            <span><a href="{{ path('profiluser', {'id': reply
+                                    .user.id }) }}">{{
+                                    reply.user
+                                    .username|capitalize
+                                }}</a></span>
                             <img alt="Brand" src="{{ asset('img/users/' ~ reply.user.salarie.img )
                             }}">
                         </div>

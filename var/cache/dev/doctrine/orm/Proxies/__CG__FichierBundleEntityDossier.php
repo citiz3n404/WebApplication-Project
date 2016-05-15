@@ -64,10 +64,10 @@ class Dossier extends \FichierBundle\Entity\Dossier implements \Doctrine\ORM\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'id', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'name', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'roles'];
+            return ['__isInitialized__', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'id', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'name', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'roles', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'fichiers'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'id', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'name', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'roles'];
+        return ['__isInitialized__', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'id', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'name', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'roles', '' . "\0" . 'FichierBundle\\Entity\\Dossier' . "\0" . 'fichiers'];
     }
 
     /**
@@ -230,6 +230,28 @@ class Dossier extends \FichierBundle\Entity\Dossier implements \Doctrine\ORM\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRoles', []);
 
         return parent::getRoles();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFichiers()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFichiers', []);
+
+        return parent::getFichiers();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFichiers($fichiers)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFichiers', [$fichiers]);
+
+        return parent::setFichiers($fichiers);
     }
 
 }

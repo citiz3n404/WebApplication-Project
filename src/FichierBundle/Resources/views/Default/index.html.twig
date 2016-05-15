@@ -5,14 +5,20 @@
     <div class="row">
         {% for dossier in dossiers %}
         <div class="col-md-2">
-
             <div class="dossier">
                 <a href="{{ path('fichiers', {'id': dossier.id}) }}">
                     <i class="fa fa-folder" aria-hidden="true"></i>
+                    <span class="label label-primary">{{ dossier.fichiers|length
+                        }}
+                        {% if dossier.fichiers|length > 1 %}
+                            Fichiers
+                        {% else %}
+                            Fichier
+                        {% endif %}
+                    </span>
                     <p>{{ dossier.name }}</p>
                 </a>
             </div>
-
         </div>
 
         {% endfor %}

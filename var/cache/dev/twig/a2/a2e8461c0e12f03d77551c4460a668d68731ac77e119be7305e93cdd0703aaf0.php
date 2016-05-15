@@ -21,20 +21,20 @@ class __TwigTemplate_e40fbc6a29352628d2c447b2fd0f29c0ba035ab732f9fd0c2c86deb38e7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e3f2a0329b62e7516b2d00ec27df294c8327deaa674b132e3a5417d35cbb68ea = $this->env->getExtension("native_profiler");
-        $__internal_e3f2a0329b62e7516b2d00ec27df294c8327deaa674b132e3a5417d35cbb68ea->enter($__internal_e3f2a0329b62e7516b2d00ec27df294c8327deaa674b132e3a5417d35cbb68ea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FichierBundle:Default:index.html.twig"));
+        $__internal_be8c1e7cf497325ae2a8662ea627027d4f60de8cfe34531f23d54255962ac288 = $this->env->getExtension("native_profiler");
+        $__internal_be8c1e7cf497325ae2a8662ea627027d4f60de8cfe34531f23d54255962ac288->enter($__internal_be8c1e7cf497325ae2a8662ea627027d4f60de8cfe34531f23d54255962ac288_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FichierBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_e3f2a0329b62e7516b2d00ec27df294c8327deaa674b132e3a5417d35cbb68ea->leave($__internal_e3f2a0329b62e7516b2d00ec27df294c8327deaa674b132e3a5417d35cbb68ea_prof);
+        $__internal_be8c1e7cf497325ae2a8662ea627027d4f60de8cfe34531f23d54255962ac288->leave($__internal_be8c1e7cf497325ae2a8662ea627027d4f60de8cfe34531f23d54255962ac288_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_a433a48b5c0d348137894f5813637bfb3e42780ea81d6674309736ec7651c15f = $this->env->getExtension("native_profiler");
-        $__internal_a433a48b5c0d348137894f5813637bfb3e42780ea81d6674309736ec7651c15f->enter($__internal_a433a48b5c0d348137894f5813637bfb3e42780ea81d6674309736ec7651c15f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_ffc0f9001179febe51367d3f5f99661753b65f79341232a485446ecd3974c177 = $this->env->getExtension("native_profiler");
+        $__internal_ffc0f9001179febe51367d3f5f99661753b65f79341232a485446ecd3974c177->enter($__internal_ffc0f9001179febe51367d3f5f99661753b65f79341232a485446ecd3974c177_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h2 class=\"page-header\">Dossiers</h2>
@@ -46,20 +46,36 @@ class __TwigTemplate_e40fbc6a29352628d2c447b2fd0f29c0ba035ab732f9fd0c2c86deb38e7
         foreach ($context['_seq'] as $context["_key"] => $context["dossier"]) {
             // line 7
             echo "        <div class=\"col-md-2\">
-
             <div class=\"dossier\">
                 <a href=\"";
-            // line 10
+            // line 9
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("fichiers", array("id" => $this->getAttribute($context["dossier"], "id", array()))), "html", null, true);
             echo "\">
                     <i class=\"fa fa-folder\" aria-hidden=\"true\"></i>
-                    <p>";
+                    <span class=\"label label-primary\">";
+            // line 11
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, $this->getAttribute($context["dossier"], "fichiers", array())), "html", null, true);
             // line 12
+            echo "
+                        ";
+            // line 13
+            if ((twig_length_filter($this->env, $this->getAttribute($context["dossier"], "fichiers", array())) > 1)) {
+                // line 14
+                echo "                            Fichiers
+                        ";
+            } else {
+                // line 16
+                echo "                            Fichier
+                        ";
+            }
+            // line 18
+            echo "                    </span>
+                    <p>";
+            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute($context["dossier"], "name", array()), "html", null, true);
             echo "</p>
                 </a>
             </div>
-
         </div>
 
         ";
@@ -67,14 +83,14 @@ class __TwigTemplate_e40fbc6a29352628d2c447b2fd0f29c0ba035ab732f9fd0c2c86deb38e7
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dossier'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 19
+        // line 25
         echo "    </div>
 
 
 
 ";
         
-        $__internal_a433a48b5c0d348137894f5813637bfb3e42780ea81d6674309736ec7651c15f->leave($__internal_a433a48b5c0d348137894f5813637bfb3e42780ea81d6674309736ec7651c15f_prof);
+        $__internal_ffc0f9001179febe51367d3f5f99661753b65f79341232a485446ecd3974c177->leave($__internal_ffc0f9001179febe51367d3f5f99661753b65f79341232a485446ecd3974c177_prof);
 
     }
 
@@ -90,7 +106,7 @@ class __TwigTemplate_e40fbc6a29352628d2c447b2fd0f29c0ba035ab732f9fd0c2c86deb38e7
 
     public function getDebugInfo()
     {
-        return array (  71 => 19,  58 => 12,  53 => 10,  48 => 7,  44 => 6,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  87 => 25,  75 => 19,  72 => 18,  68 => 16,  64 => 14,  62 => 13,  59 => 12,  57 => 11,  52 => 9,  48 => 7,  44 => 6,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -100,14 +116,20 @@ class __TwigTemplate_e40fbc6a29352628d2c447b2fd0f29c0ba035ab732f9fd0c2c86deb38e7
 /*     <div class="row">*/
 /*         {% for dossier in dossiers %}*/
 /*         <div class="col-md-2">*/
-/* */
 /*             <div class="dossier">*/
 /*                 <a href="{{ path('fichiers', {'id': dossier.id}) }}">*/
 /*                     <i class="fa fa-folder" aria-hidden="true"></i>*/
+/*                     <span class="label label-primary">{{ dossier.fichiers|length*/
+/*                         }}*/
+/*                         {% if dossier.fichiers|length > 1 %}*/
+/*                             Fichiers*/
+/*                         {% else %}*/
+/*                             Fichier*/
+/*                         {% endif %}*/
+/*                     </span>*/
 /*                     <p>{{ dossier.name }}</p>*/
 /*                 </a>*/
 /*             </div>*/
-/* */
 /*         </div>*/
 /* */
 /*         {% endfor %}*/

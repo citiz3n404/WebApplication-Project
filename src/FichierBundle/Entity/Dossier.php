@@ -2,6 +2,7 @@
 
 namespace FichierBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,8 +36,15 @@ class Dossier
      */
     private $roles;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Fichier", mappedBy="dossier")
+     */
+    private $fichiers;
 
-    
+    public function __construct()
+    {
+        $this->fichiers = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -94,6 +102,22 @@ class Dossier
     public function getRoles()
     {
         return $this->roles;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFichiers()
+    {
+        return $this->fichiers;
+    }
+
+    /**
+     * @param mixed $fichiers
+     */
+    public function setFichiers($fichiers)
+    {
+        $this->fichiers = $fichiers;
     }
 }
 
