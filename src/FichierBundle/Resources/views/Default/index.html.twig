@@ -2,6 +2,9 @@
 
 {% block body %}
     <h2 class="page-header">Dossiers</h2>
+    <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading" style="margin-bottom: 10px;">Fichiers</div>
     <div class="row">
         {% for dossier in dossiers %}
         <div class="col-md-2">
@@ -20,8 +23,8 @@
                 </a>
             </div>
         </div>
-
         {% endfor %}
+        </div>
     </div>
 
 
