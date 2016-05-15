@@ -23,6 +23,7 @@
       <parameter key="AdminBundle">AdminBundle\AdminBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="AnnuaireBundle">AnnuaireBundle\AnnuaireBundle</parameter>
+      <parameter key="FichierBundle">FichierBundle\FichierBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -1918,7 +1919,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57373cee10c1c3.22357933</argument>
+            <argument>5737a69ec0de67.36563611</argument>
           </service>
         </argument>
       </argument>
@@ -2220,7 +2221,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57373cee10c1c3.22357933</argument>
+            <argument>5737a69ec0de67.36563611</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2687,6 +2688,7 @@
               <argument key="FormationBundle">FormationBundle\Entity</argument>
               <argument key="ForumBundle">ForumBundle\Entity</argument>
               <argument key="UserBundle">UserBundle\Entity</argument>
+              <argument key="FichierBundle">FichierBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2709,6 +2711,7 @@
                         <argument>E:\NationalSecurityZero\src\FormationBundle\Entity</argument>
                         <argument>E:\NationalSecurityZero\src\ForumBundle\Entity</argument>
                         <argument>E:\NationalSecurityZero\src\UserBundle\Entity</argument>
+                        <argument>E:\NationalSecurityZero\src\FichierBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -2722,6 +2725,7 @@
                         <argument>E:\NationalSecurityZero\src\FormationBundle\Entity</argument>
                         <argument>E:\NationalSecurityZero\src\ForumBundle\Entity</argument>
                         <argument>E:\NationalSecurityZero\src\UserBundle\Entity</argument>
+                        <argument>E:\NationalSecurityZero\src\FichierBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -2735,10 +2739,25 @@
                         <argument>E:\NationalSecurityZero\src\FormationBundle\Entity</argument>
                         <argument>E:\NationalSecurityZero\src\ForumBundle\Entity</argument>
                         <argument>E:\NationalSecurityZero\src\UserBundle\Entity</argument>
+                        <argument>E:\NationalSecurityZero\src\FichierBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>UserBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>E:\NationalSecurityZero\src\FormationBundle\Entity</argument>
+                        <argument>E:\NationalSecurityZero\src\ForumBundle\Entity</argument>
+                        <argument>E:\NationalSecurityZero\src\UserBundle\Entity</argument>
+                        <argument>E:\NationalSecurityZero\src\FichierBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>FichierBundle\Entity</argument>
                 </call>
                 <call method="addDriver">
                   <argument type="service">
@@ -3283,6 +3302,10 @@
       <call method="addPath">
         <argument>E:\NationalSecurityZero\src\AnnuaireBundle/Resources/views</argument>
         <argument>Annuaire</argument>
+      </call>
+      <call method="addPath">
+        <argument>E:\NationalSecurityZero\src\FichierBundle/Resources/views</argument>
+        <argument>Fichier</argument>
       </call>
       <call method="addPath">
         <argument>E:\NationalSecurityZero\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>

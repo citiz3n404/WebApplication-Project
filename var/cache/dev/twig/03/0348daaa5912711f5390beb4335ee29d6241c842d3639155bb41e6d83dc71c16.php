@@ -21,20 +21,20 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a9daa2dd90d5716f06c0c87d3f00e73d6a7b6e282c8bf297a33df423aa69a777 = $this->env->getExtension("native_profiler");
-        $__internal_a9daa2dd90d5716f06c0c87d3f00e73d6a7b6e282c8bf297a33df423aa69a777->enter($__internal_a9daa2dd90d5716f06c0c87d3f00e73d6a7b6e282c8bf297a33df423aa69a777_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:topic.html.twig"));
+        $__internal_7797b07b112154d9449d2d5318287c686d2471cd9967410aa1bdb6a9f998a374 = $this->env->getExtension("native_profiler");
+        $__internal_7797b07b112154d9449d2d5318287c686d2471cd9967410aa1bdb6a9f998a374->enter($__internal_7797b07b112154d9449d2d5318287c686d2471cd9967410aa1bdb6a9f998a374_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:topic.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_a9daa2dd90d5716f06c0c87d3f00e73d6a7b6e282c8bf297a33df423aa69a777->leave($__internal_a9daa2dd90d5716f06c0c87d3f00e73d6a7b6e282c8bf297a33df423aa69a777_prof);
+        $__internal_7797b07b112154d9449d2d5318287c686d2471cd9967410aa1bdb6a9f998a374->leave($__internal_7797b07b112154d9449d2d5318287c686d2471cd9967410aa1bdb6a9f998a374_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_356ad8ebd5ad5c577b0cd97f6820808d53458a2b553eaa16c0ec937746c28c23 = $this->env->getExtension("native_profiler");
-        $__internal_356ad8ebd5ad5c577b0cd97f6820808d53458a2b553eaa16c0ec937746c28c23->enter($__internal_356ad8ebd5ad5c577b0cd97f6820808d53458a2b553eaa16c0ec937746c28c23_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_d040cafa22b321aca29aa1539d29e32ec4a4dcbf1c0863396f8036a5d7c50add = $this->env->getExtension("native_profiler");
+        $__internal_d040cafa22b321aca29aa1539d29e32ec4a4dcbf1c0863396f8036a5d7c50add->enter($__internal_d040cafa22b321aca29aa1539d29e32ec4a4dcbf1c0863396f8036a5d7c50add_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h2 class=\"page-header\">";
@@ -115,13 +115,15 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("replyedit", array("id" => $this->getAttribute($context["reply"], "id", array()))), "html", null, true);
             echo "\"
                        class=\"btn
-                btn-default\">Edit</a>
+                btn-default btn-sm\"><span class=\"glyphicon
+                glyphicon-edit\" aria-hidden=\"true\"></span> Edit</a>
                     <a href=\"";
-            // line 45
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("replyremove", array("id" => $this->getAttribute($context["reply"], "id", array()))), "html", null, true);
             // line 46
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("replyremove", array("id" => $this->getAttribute($context["reply"], "id", array()))), "html", null, true);
+            // line 47
             echo "\" class=\"btn
-                btn-danger\">Remove</a>
+                btn-danger btn-sm\"><span class=\"glyphicon
+                glyphicon-trash\" aria-hidden=\"true\"></span></a>
                 </td>
             </tr>
         ";
@@ -129,18 +131,18 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reply'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 51
+        // line 53
         echo "        </tbody>
     </table>
     </div>
     <a href=\"";
-        // line 54
+        // line 56
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("topicreply", array("id" => $this->getAttribute((isset($context["topic"]) ? $context["topic"] : $this->getContext($context, "topic")), "id", array()))), "html", null, true);
         echo "\"
        class=\"btn btn-success\">Reply to the topic</a>
 ";
         
-        $__internal_356ad8ebd5ad5c577b0cd97f6820808d53458a2b553eaa16c0ec937746c28c23->leave($__internal_356ad8ebd5ad5c577b0cd97f6820808d53458a2b553eaa16c0ec937746c28c23_prof);
+        $__internal_d040cafa22b321aca29aa1539d29e32ec4a4dcbf1c0863396f8036a5d7c50add->leave($__internal_d040cafa22b321aca29aa1539d29e32ec4a4dcbf1c0863396f8036a5d7c50add_prof);
 
     }
 
@@ -156,7 +158,7 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
 
     public function getDebugInfo()
     {
-        return array (  138 => 54,  133 => 51,  123 => 46,  121 => 45,  115 => 42,  111 => 41,  107 => 40,  104 => 39,  99 => 36,  97 => 35,  93 => 33,  87 => 29,  85 => 28,  81 => 27,  78 => 26,  76 => 25,  72 => 23,  68 => 22,  49 => 6,  45 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  140 => 56,  135 => 53,  124 => 47,  122 => 46,  115 => 42,  111 => 41,  107 => 40,  104 => 39,  99 => 36,  97 => 35,  93 => 33,  87 => 29,  85 => 28,  81 => 27,  78 => 26,  76 => 25,  72 => 23,  68 => 22,  49 => 6,  45 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -202,10 +204,12 @@ class __TwigTemplate_55d8cd40012868d628e8289bcfe31409f6b9c0dd186b3751fe2677297da
 /*                 <td>{{ reply.date|date("d-m-Y H:i:s")  }}</td>*/
 /*                 <td><a href="{{ path('replyedit', {'id': reply.id}) }}"*/
 /*                        class="btn*/
-/*                 btn-default">Edit</a>*/
+/*                 btn-default btn-sm"><span class="glyphicon*/
+/*                 glyphicon-edit" aria-hidden="true"></span> Edit</a>*/
 /*                     <a href="{{ path('replyremove', {'id': reply.id})*/
 /*                     }}" class="btn*/
-/*                 btn-danger">Remove</a>*/
+/*                 btn-danger btn-sm"><span class="glyphicon*/
+/*                 glyphicon-trash" aria-hidden="true"></span></a>*/
 /*                 </td>*/
 /*             </tr>*/
 /*         {% endfor %}*/

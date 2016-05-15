@@ -41,10 +41,12 @@
                 <td>{{ reply.date|date("d-m-Y H:i:s")  }}</td>
                 <td><a href="{{ path('replyedit', {'id': reply.id}) }}"
                        class="btn
-                btn-default">Edit</a>
+                btn-default btn-sm"><span class="glyphicon
+                glyphicon-edit" aria-hidden="true"></span> Edit</a>
                     <a href="{{ path('replyremove', {'id': reply.id})
                     }}" class="btn
-                btn-danger">Remove</a>
+                btn-danger btn-sm"><span class="glyphicon
+                glyphicon-trash" aria-hidden="true"></span></a>
                 </td>
             </tr>
         {% endfor %}

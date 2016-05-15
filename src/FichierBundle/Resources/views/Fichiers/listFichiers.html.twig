@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="page-header">{{ dossier.name }}</h2>
+    <a class="btn btn-default" href="{{ path('dossiers') }}">Retour aux
+        dossiers</a>
+    <a href="{{ path('fichierupload', {'id': dossier.id}) }}"
+       class="btn btn-warning">Upload a new file</a>
+
+    <div class="panel panel-default" style="margin-top: 20px;">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Fichiers</div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Fichier</th>
+                <th>Type</th>
+                <th>Taille</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for fichier in fichiers %}
+                <tr>
+                    <th>
+                        {% if fichier.type == "jpeg" or fichier.type == "gif"
+                       or fichier.type == "png" %}
+                            <i class="fa fa-file-image-o" aria-hidden="true"></i>
+                        {% elseif fichier.type == "pdf" %}
+                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                        {% elseif fichier.type == "txt" or fichier.type ==
+                        "doc" or fichier.type == "docx" %}
+                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        {% elseif fichier.type == "css" or fichier.type ==
+                        "html" or fichier.type == "php" %}
+                            <i class="fa fa-file-code-o" aria-hidden="true"></i>
+                        {% elseif fichier.type == "tar" or fichier.type ==
+                        "zip" or fichier.type == "rar" %}
+                            <i class="fa fa-file-archive-o" aria-hidden="true"></i>
+                        {% else %}
+                            <i class="fa fa-file-o" aria-hidden="true"></i>
+                        {% endif %}
+                        <a href="{{ asset('img/uploads/' ~ fichier.fichier ) }}">{{ fichier.name }}</a></th>
+                    <td>{{ fichier.type }}</td>
+                    <td>{{ fichier.size }} octets</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

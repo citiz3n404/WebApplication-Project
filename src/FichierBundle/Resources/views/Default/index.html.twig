@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="page-header">Dossiers</h2>
+    <div class="row">
+        {% for dossier in dossiers %}
+        <div class="col-md-2">
+
+            <div class="dossier">
+                <a href="{{ path('fichiers', {'id': dossier.id}) }}">
+                    <i class="fa fa-folder" aria-hidden="true"></i>
+                    <p>{{ dossier.name }}</p>
+                </a>
+            </div>
+
+        </div>
+
+        {% endfor %}
+    </div>
+
+
+
+{% endblock %}

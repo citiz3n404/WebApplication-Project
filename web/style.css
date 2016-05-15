@@ -428,6 +428,29 @@ div .stripes h4 {
     padding-top: 3px;
 }
 
+.littleImg img{
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.dossier{
+    text-align: center;
+}
+
+.dossier a{
+    text-decoration: none;
+}
+
+.dossier i{
+    font-size: 50px;
+    display:block;
+}
+
+.dossier p{
+    font-weight: bold;
+}
+
 .avatarForum img{
     width: 100%;
     hight: 100%;

@@ -21,20 +21,20 @@ class __TwigTemplate_1e0fcdc7ebbbccc2c795c50ff8545041bbf1ea12dfd1d3510e2ea13c2a0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_573df5eab0134886c254646a7ec9af975fa6f1d4c54e7bfcac353e28254e6739 = $this->env->getExtension("native_profiler");
-        $__internal_573df5eab0134886c254646a7ec9af975fa6f1d4c54e7bfcac353e28254e6739->enter($__internal_573df5eab0134886c254646a7ec9af975fa6f1d4c54e7bfcac353e28254e6739_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:listTopics.html.twig"));
+        $__internal_efef3b9a530a67572dc672421d8e15dae17c6ce37206f06b74876ef7ea0a28a7 = $this->env->getExtension("native_profiler");
+        $__internal_efef3b9a530a67572dc672421d8e15dae17c6ce37206f06b74876ef7ea0a28a7->enter($__internal_efef3b9a530a67572dc672421d8e15dae17c6ce37206f06b74876ef7ea0a28a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:listTopics.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_573df5eab0134886c254646a7ec9af975fa6f1d4c54e7bfcac353e28254e6739->leave($__internal_573df5eab0134886c254646a7ec9af975fa6f1d4c54e7bfcac353e28254e6739_prof);
+        $__internal_efef3b9a530a67572dc672421d8e15dae17c6ce37206f06b74876ef7ea0a28a7->leave($__internal_efef3b9a530a67572dc672421d8e15dae17c6ce37206f06b74876ef7ea0a28a7_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_96f60519b356aa0635538af5e5aba9f9b6922da8f2f1a3246f52095b808c1573 = $this->env->getExtension("native_profiler");
-        $__internal_96f60519b356aa0635538af5e5aba9f9b6922da8f2f1a3246f52095b808c1573->enter($__internal_96f60519b356aa0635538af5e5aba9f9b6922da8f2f1a3246f52095b808c1573_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_b4a2ae6fd0da678843565d516ac9f59e18403a185e5d2dd554ebec997870e6ba = $this->env->getExtension("native_profiler");
+        $__internal_b4a2ae6fd0da678843565d516ac9f59e18403a185e5d2dd554ebec997870e6ba->enter($__internal_b4a2ae6fd0da678843565d516ac9f59e18403a185e5d2dd554ebec997870e6ba_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h2 class=\"page-header\">";
@@ -89,13 +89,13 @@ $context["topic"], "subject", array()), "html", null, true);
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("edittopic", array("id" => $this->getAttribute($context["topic"], "id", array()))), "html", null, true);
             echo "\"
                        class=\"btn
-                btn-default\">Edit</a>
+                btn-default btn-sm\">Edit</a>
                     <a href=\"";
             // line 35
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("removetopic", array("id" => $this->getAttribute($context["topic"], "id", array()))), "html", null, true);
             // line 36
             echo "\" class=\"btn
-                btn-danger\">Remove</a>
+                btn-danger btn-sm\">Remove</a>
                 </td>
             </tr>
         ";
@@ -109,7 +109,7 @@ $context["topic"], "subject", array()), "html", null, true);
     </div>
 ";
         
-        $__internal_96f60519b356aa0635538af5e5aba9f9b6922da8f2f1a3246f52095b808c1573->leave($__internal_96f60519b356aa0635538af5e5aba9f9b6922da8f2f1a3246f52095b808c1573_prof);
+        $__internal_b4a2ae6fd0da678843565d516ac9f59e18403a185e5d2dd554ebec997870e6ba->leave($__internal_b4a2ae6fd0da678843565d516ac9f59e18403a185e5d2dd554ebec997870e6ba_prof);
 
     }
 
@@ -161,10 +161,10 @@ $context["topic"], "subject", array()), "html", null, true);
 /*                 <td></td>*/
 /*                 <td><a href="{{ path('edittopic', {'id': topic.id}) }}"*/
 /*                        class="btn*/
-/*                 btn-default">Edit</a>*/
+/*                 btn-default btn-sm">Edit</a>*/
 /*                     <a href="{{ path('removetopic', {'id': topic.id})*/
 /*                     }}" class="btn*/
-/*                 btn-danger">Remove</a>*/
+/*                 btn-danger btn-sm">Remove</a>*/
 /*                 </td>*/
 /*             </tr>*/
 /*         {% endfor %}*/

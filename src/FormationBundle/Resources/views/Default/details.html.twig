@@ -92,10 +92,12 @@
                                     {%  if inscription.validated != true %}
                                         <a href="{{ path('formationvalidateinscription', {'id':
                                             inscription.id }) }}"class="btn
-                                            btn-success btn-sm ">Valider</a>
+                                            btn-success btn-sm "><span
+                                                    class="fa fa-check"
+                                                    aria-hidden="true"></span></a>
                                     {% endif %}
                                     <a href="{{ path
-                                    ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm">Remove</a>
+                                    ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm"><span class="fa fa-times" aria-hidden="true"></span></a>
                                 </td>
                             </tr>
                         {% endif %}
@@ -129,10 +131,12 @@
                                     {%  if inscription.validated != true %}
                                         <a href="{{ path('formationvalidateinscription', {'id':
                                             inscription.id }) }}"class="btn
-                                            btn-success btn-sm">Valider</a>
+                                            btn-success btn-sm"><span
+                                                    class="fa fa-check"
+                                                    aria-hidden="true"></span></a>
                                     {% endif %}
                                     <a href="{{ path
-                                    ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm">Remove</a>
+                                    ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm"><span class="fa fa-times" aria-hidden="true"></span></a>
                                 </td>
                             </tr>
                         {% endif %}

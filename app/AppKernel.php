@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new AdminBundle\AdminBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new AnnuaireBundle\AnnuaireBundle(),
+            new FichierBundle\FichierBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

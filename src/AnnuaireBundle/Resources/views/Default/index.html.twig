@@ -12,6 +12,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
+            <th>Photo</th>
             <th>Username</th>
             <th>Nom</th>
             <th>Prénom</th>
@@ -24,6 +25,9 @@
         <tbody>
         {% for user in users %}
             <tr>
+                <th><div class="littleImg"><img src="{{ asset
+                        ('img/users/' ~ user.salarie.img ) }}"
+                                                                alt="photo"></div></th>
                 <th scope="row">{{ user.username }}</th>
                 <td>{{ user.salarie.nom }}</td>
                 <td>{{ user.salarie.prenom }}</td>

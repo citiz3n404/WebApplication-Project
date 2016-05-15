@@ -100,6 +100,33 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/dossier')) {
+            // dossiers
+            if (rtrim($pathinfo, '/') === '/dossier') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'dossiers');
+                }
+
+                return array (  '_controller' => 'FichierBundle\\Controller\\DossierController::dossierAction',  '_route' => 'dossiers',);
+            }
+
+            // createdir
+            if ($pathinfo === '/dossier/create') {
+                return array (  '_controller' => 'FichierBundle\\Controller\\DossierController::createAction',  '_route' => 'createdir',);
+            }
+
+            // fichiers
+            if (preg_match('#^/dossier/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fichiers')), array (  '_controller' => 'FichierBundle\\Controller\\FichierController::listAction',));
+            }
+
+            // fichierupload
+            if (preg_match('#^/dossier/(?P<id>[^/]++)/upload$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fichierupload')), array (  '_controller' => 'FichierBundle\\Controller\\FichierController::uploadAction',));
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/a')) {
             if (0 === strpos($pathinfo, '/annuaire')) {
                 // annuaire

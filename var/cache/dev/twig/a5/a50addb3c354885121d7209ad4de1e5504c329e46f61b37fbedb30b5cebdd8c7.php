@@ -21,20 +21,20 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7a8ef2fc7d25bdbd2ce60b8a0f35e58d96c70b6ba4e768ef5b20c5d28eca79d2 = $this->env->getExtension("native_profiler");
-        $__internal_7a8ef2fc7d25bdbd2ce60b8a0f35e58d96c70b6ba4e768ef5b20c5d28eca79d2->enter($__internal_7a8ef2fc7d25bdbd2ce60b8a0f35e58d96c70b6ba4e768ef5b20c5d28eca79d2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FormationBundle:Default:details.html.twig"));
+        $__internal_555d787f094ea554ffd829c3175daa83923fc577e4813e5c8a2691580c35ceef = $this->env->getExtension("native_profiler");
+        $__internal_555d787f094ea554ffd829c3175daa83923fc577e4813e5c8a2691580c35ceef->enter($__internal_555d787f094ea554ffd829c3175daa83923fc577e4813e5c8a2691580c35ceef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FormationBundle:Default:details.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_7a8ef2fc7d25bdbd2ce60b8a0f35e58d96c70b6ba4e768ef5b20c5d28eca79d2->leave($__internal_7a8ef2fc7d25bdbd2ce60b8a0f35e58d96c70b6ba4e768ef5b20c5d28eca79d2_prof);
+        $__internal_555d787f094ea554ffd829c3175daa83923fc577e4813e5c8a2691580c35ceef->leave($__internal_555d787f094ea554ffd829c3175daa83923fc577e4813e5c8a2691580c35ceef_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_2b313bebca6dd77ffee08f09587e1978d2420073f7c9aa285dd4ddeffc47800f = $this->env->getExtension("native_profiler");
-        $__internal_2b313bebca6dd77ffee08f09587e1978d2420073f7c9aa285dd4ddeffc47800f->enter($__internal_2b313bebca6dd77ffee08f09587e1978d2420073f7c9aa285dd4ddeffc47800f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_d54eb657091c74ee8fd22d01a87b5c1c89119de296f97d01e4dd95c527e1d7f8 = $this->env->getExtension("native_profiler");
+        $__internal_d54eb657091c74ee8fd22d01a87b5c1c89119de296f97d01e4dd95c527e1d7f8->enter($__internal_d54eb657091c74ee8fd22d01a87b5c1c89119de296f97d01e4dd95c527e1d7f8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <a class=\"btn btn-default\" href=\"/formation/\">Back to  formation list</a>
@@ -200,19 +200,21 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                    // line 94
 $context["inscription"], "id", array()))), "html", null, true);
                     echo "\"class=\"btn
-                                            btn-success btn-sm \">Valider</a>
+                                            btn-success btn-sm \"><span
+                                                    class=\"fa fa-check\"
+                                                    aria-hidden=\"true\"></span></a>
                                     ";
                 }
-                // line 97
+                // line 99
                 echo "                                    <a href=\"";
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                // line 98
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                // line 100
 $context["inscription"], "id", array()))), "html", null, true);
-                echo "\"class=\"btn btn-danger btn-sm\">Remove</a>
+                echo "\"class=\"btn btn-danger btn-sm\"><span class=\"fa fa-times\" aria-hidden=\"true\"></span></a>
                                 </td>
                             </tr>
                         ";
             }
-            // line 102
+            // line 104
             echo "                    ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -226,7 +228,7 @@ $context["inscription"], "id", array()))), "html", null, true);
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['inscription'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 103
+        // line 105
         echo "                    </tbody>
                 </table>
             </div>
@@ -246,7 +248,7 @@ $context["inscription"], "id", array()))), "html", null, true);
                     </thead>
                     <tbody>
                     ";
-        // line 121
+        // line 123
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["inscriptions"]) ? $context["inscriptions"] : $this->getContext($context, "inscriptions")));
         $context['loop'] = array(
@@ -263,45 +265,47 @@ $context["inscription"], "id", array()))), "html", null, true);
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["inscription"]) {
-            // line 122
+            // line 124
             echo "                        ";
             if (($this->getAttribute($context["inscription"], "validated", array()) == false)) {
-                // line 123
+                // line 125
                 echo "                            <tr>
                                 <th scope=\"row\">";
-                // line 124
+                // line 126
                 echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index", array()), "html", null, true);
                 echo "</th>
                                 <td><a href=\"";
-                // line 125
+                // line 127
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "id", array()))), "html", null, true);
-                // line 126
+                // line 128
                 echo "\"> ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "username", array()), "html", null, true);
-                // line 127
+                // line 129
                 echo "</a></td>
                                 <td>
                                     ";
-                // line 129
+                // line 131
                 if (($this->getAttribute($context["inscription"], "validated", array()) != true)) {
-                    // line 130
+                    // line 132
                     echo "                                        <a href=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                    // line 131
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                    // line 133
 $context["inscription"], "id", array()))), "html", null, true);
                     echo "\"class=\"btn
-                                            btn-success btn-sm\">Valider</a>
+                                            btn-success btn-sm\"><span
+                                                    class=\"fa fa-check\"
+                                                    aria-hidden=\"true\"></span></a>
                                     ";
                 }
-                // line 134
+                // line 138
                 echo "                                    <a href=\"";
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                // line 135
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                // line 139
 $context["inscription"], "id", array()))), "html", null, true);
-                echo "\"class=\"btn btn-danger btn-sm\">Remove</a>
+                echo "\"class=\"btn btn-danger btn-sm\"><span class=\"fa fa-times\" aria-hidden=\"true\"></span></a>
                                 </td>
                             </tr>
                         ";
             }
-            // line 139
+            // line 143
             echo "                    ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -315,7 +319,7 @@ $context["inscription"], "id", array()))), "html", null, true);
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['inscription'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 140
+        // line 144
         echo "                    </tbody>
                 </table>
             </div>
@@ -327,7 +331,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 
 ";
         
-        $__internal_2b313bebca6dd77ffee08f09587e1978d2420073f7c9aa285dd4ddeffc47800f->leave($__internal_2b313bebca6dd77ffee08f09587e1978d2420073f7c9aa285dd4ddeffc47800f_prof);
+        $__internal_d54eb657091c74ee8fd22d01a87b5c1c89119de296f97d01e4dd95c527e1d7f8->leave($__internal_d54eb657091c74ee8fd22d01a87b5c1c89119de296f97d01e4dd95c527e1d7f8_prof);
 
     }
 
@@ -343,7 +347,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 
     public function getDebugInfo()
     {
-        return array (  319 => 140,  305 => 139,  298 => 135,  296 => 134,  290 => 131,  288 => 130,  286 => 129,  282 => 127,  279 => 126,  277 => 125,  273 => 124,  270 => 123,  267 => 122,  250 => 121,  230 => 103,  216 => 102,  209 => 98,  207 => 97,  201 => 94,  199 => 93,  197 => 92,  190 => 90,  186 => 89,  183 => 88,  180 => 87,  163 => 86,  135 => 60,  133 => 59,  129 => 57,  127 => 56,  120 => 52,  114 => 49,  108 => 45,  104 => 44,  100 => 42,  98 => 41,  91 => 37,  84 => 33,  77 => 29,  63 => 17,  61 => 15,  52 => 8,  48 => 7,  44 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  323 => 144,  309 => 143,  302 => 139,  300 => 138,  292 => 133,  290 => 132,  288 => 131,  284 => 129,  281 => 128,  279 => 127,  275 => 126,  272 => 125,  269 => 124,  252 => 123,  232 => 105,  218 => 104,  211 => 100,  209 => 99,  201 => 94,  199 => 93,  197 => 92,  190 => 90,  186 => 89,  183 => 88,  180 => 87,  163 => 86,  135 => 60,  133 => 59,  129 => 57,  127 => 56,  120 => 52,  114 => 49,  108 => 45,  104 => 44,  100 => 42,  98 => 41,  91 => 37,  84 => 33,  77 => 29,  63 => 17,  61 => 15,  52 => 8,  48 => 7,  44 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -440,10 +444,12 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                                     {%  if inscription.validated != true %}*/
 /*                                         <a href="{{ path('formationvalidateinscription', {'id':*/
 /*                                             inscription.id }) }}"class="btn*/
-/*                                             btn-success btn-sm ">Valider</a>*/
+/*                                             btn-success btn-sm "><span*/
+/*                                                     class="fa fa-check"*/
+/*                                                     aria-hidden="true"></span></a>*/
 /*                                     {% endif %}*/
 /*                                     <a href="{{ path*/
-/*                                     ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm">Remove</a>*/
+/*                                     ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm"><span class="fa fa-times" aria-hidden="true"></span></a>*/
 /*                                 </td>*/
 /*                             </tr>*/
 /*                         {% endif %}*/
@@ -477,10 +483,12 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                                     {%  if inscription.validated != true %}*/
 /*                                         <a href="{{ path('formationvalidateinscription', {'id':*/
 /*                                             inscription.id }) }}"class="btn*/
-/*                                             btn-success btn-sm">Valider</a>*/
+/*                                             btn-success btn-sm"><span*/
+/*                                                     class="fa fa-check"*/
+/*                                                     aria-hidden="true"></span></a>*/
 /*                                     {% endif %}*/
 /*                                     <a href="{{ path*/
-/*                                     ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm">Remove</a>*/
+/*                                     ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm"><span class="fa fa-times" aria-hidden="true"></span></a>*/
 /*                                 </td>*/
 /*                             </tr>*/
 /*                         {% endif %}*/

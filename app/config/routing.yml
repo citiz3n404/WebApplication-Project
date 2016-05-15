@@ -1,3 +1,8 @@
+fichier:
+    resource: "@FichierBundle/Controller/"
+    type:     annotation
+    prefix:   /dossier
+
 annuaire:
     resource: "@AnnuaireBundle/Controller/"
     type:     annotation
