@@ -83,45 +83,42 @@
                     </ul>
                     <hr>
                     <div class="panel">
-                        <p class="s-title">NSZ en chiffres</p>
-                        {#
+                        <p class="s-title">les chiffres clés</p>
+
+
                         <ul>
-                            <li><span class="label label-primary">{{ nbUsers
-                                    }}</span>
+                            <li><span class="label label-primary">{{ dbInfo.getNbUsers() }}</span>
                                 Employés  </li>
-                            <li><span class="label label-primary">{{ nbFiles
-                                    }}</span>
+                            <li><span class="label label-primary">{{ dbInfo.getNbFiles() }}</span>
                                 Documents partagés</li>
-                            <li><span class="label label-primary">{{
-                                    nbFormations }}</span>
+                            <li><span class="label label-primary">{{ dbInfo
+                                    .getNbFormations() }}</span>
                                 Formations</li>
-                            <li><span class="label label-primary">{{ nbReplies
-                                    }}</span>
-                                 réponses Forum</li>
+                            <li><span class="label label-primary">{{ dbInfo
+                                    .getNbReplies }}</span>
+                                 Réponses Forum</li>
                         </ul>
-                        #}
+
 
                     </div>
                     <div class="panel">
-                        <p class="s-title">Annuaire</p>
-                        {#
-                        {% for user in top5 %}
+                        <p class="s-title">Top 5 des membres</p>
+
+                        {% for user in dbInfo.getTop5() %}
                         <div class="s-people">
                             <img src="{{ asset('img/users/' ~ user.salarie.img ) }}"
                                  alt="img">
                             <div class="s-people-desc">
                                 <div>
-                                    <a href="#" >{{ user.username|capitalize }}</a>
-                                    <span>(Detective)</span>
+                                    <a href="{{ path
+                                    ('profiluser', {'id': user.id}) }}" >{{ user.username|capitalize }}</a>
+                                    <span>({{ user.email }})</span>
                                 </div>
                             </div>
                         </div>
                         {% endfor %}
-                        #}
-
-
-                        <button type="button" class="btn btn-xs btn-default">Voir l'annuaire complet</button>
                     </div>
+
                     <hr>
                     <span class="fa-stack fa-md">
                       <i class="fa fa-square fa-stack-2x"></i>

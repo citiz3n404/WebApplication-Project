@@ -29,8 +29,12 @@
         <tbody>
         {% for topic in topics %}
             <tr>
-                <th scope="row"><div class="littleIconForum"><span
-                                class="glyphicon glyphicon-comment" aria-hidden="true"></span></div></th>
+                <th scope="row">
+                    <span class="fa-stack fa-md">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-comment-o fa-stack-1x fa-inverse"></i>
+                    </span>
+                </th>
                 <td><a href="{{ path('topicdisplay', {'id': topic.id}) }}"> {{
                         topic.subject
                         }}</a></td>
