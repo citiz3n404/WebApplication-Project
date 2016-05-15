@@ -6,12 +6,21 @@
         {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.theme.min.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset
+            ('css/jquery-ui.structure.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% block headscript %}
-            <script type="text/javascript" src="{{ asset('js/Chart.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('js/ChartBundle.js')
+            <script type="text/javascript" src="{{ asset('js/jquery-2.2.3.min.js')
+            }}"></script>
+            <script type="text/javascript" src="{{ asset('js/Chart.min.js')
+            }}"></script>
+            <script type="text/javascript" src="{{ asset('js/ChartBundle.min.js')
+            }}"></script>
+            <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js')
             }}"></script>
         {% endblock %}
     </head>
@@ -76,10 +85,6 @@
                                class="menu-unselected"><i
                                         class="fa
                         fa-area-chart"></i>Statistiques</a></li>
-                        <li><a href="{{ path('admin') }}"
-                               class="menu-unselected"><i
-                                        class="fa
-                        fa-server"></i>Admin</a></li>
                     </ul>
                     <hr>
                     <div class="panel">
@@ -120,14 +125,6 @@
                     </div>
 
                     <hr>
-                    <span class="fa-stack fa-md">
-                      <i class="fa fa-square fa-stack-2x"></i>
-                      <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-md">
-                      <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-trello fa-stack-1x fa-inverse"></i>
-                    </span>
                 </div>
 
             </div>

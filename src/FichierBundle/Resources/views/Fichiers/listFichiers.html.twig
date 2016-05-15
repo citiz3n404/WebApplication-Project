@@ -24,20 +24,25 @@
                     <th>
                         {% if fichier.type == "jpeg" or fichier.type == "gif"
                        or fichier.type == "png" %}
-                            <i class="fa fa-file-image-o" aria-hidden="true"></i>
+                            <i class="fa fa-file-image-o" aria-hidden="true"
+                               style="margin-left: 5px; margin-right: 5px;"
+                            ></i>
                         {% elseif fichier.type == "pdf" %}
-                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                            <i class="fa fa-file-pdf-o" aria-hidden="true" style="margin-left: 5px; margin-right: 5px;"></i>
                         {% elseif fichier.type == "txt" or fichier.type ==
                         "doc" or fichier.type == "docx" %}
-                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                            <i class="fa fa-file-text-o" aria-hidden="true" style="margin-left: 5px; margin-right: 5px;"
+                            ></i>
                         {% elseif fichier.type == "css" or fichier.type ==
                         "html" or fichier.type == "php" %}
-                            <i class="fa fa-file-code-o" aria-hidden="true"></i>
+                            <i class="fa fa-file-code-o" aria-hidden="true" style="margin-left: 5px; margin-right: 5px;"
+                            ></i>
                         {% elseif fichier.type == "tar" or fichier.type ==
                         "zip" or fichier.type == "rar" %}
-                            <i class="fa fa-file-archive-o" aria-hidden="true"></i>
+                            <i class="fa fa-file-archive-o"
+                               aria-hidden="true" style="margin-left: 5px; margin-right: 5px;"></i>
                         {% else %}
-                            <i class="fa fa-file-o" aria-hidden="true"></i>
+                            <i class="fa fa-file-o" aria-hidden="true" style="margin-left: 5px; margin-right: 5px;"></i>
                         {% endif %}
                         <a href="{{ asset('uploads/' ~ fichier.fichier ) }}">{{ fichier.name }}</a></th>
                     <td>{{ fichier.type }}</td>
