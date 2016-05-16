@@ -30,7 +30,7 @@ Avant tout comme le site est protéger il vous sera impossible d'acceder aux
 diverses pages du site.<br/>
 Pour simplifier nous avons donc mis comme mot de passe pour les utilisateurs
 leur propre nom. <br/><br/>Ainsi vous pouvez vous logger avec :
-* Login: `mcessac` Password: `cressac` (**Admin**)
+* Login: `mcressac` Password: `cressac` (**Admin**)
 * Login: `fgamache` Password: `gamache` (**Gestionnaire de Fichiers**)
 * Login: `clafond` Password: `lafond` (**Responsable RH**)
 * Login `croy` Password: `roy` (**Formateur**)
