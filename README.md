@@ -16,6 +16,7 @@ Avant de commencer il faut télécharger le repertoire. Je vous invite ensuite
 * `composer update`<br/><br/>
 Vous aurez ainsi la dernière version de chaque dépendance et de récupérer
 notemment `FOSUserBundle` qui n'est pas stocké sur le repo git.
+
 ###Attention
 Pour une raison encore inconnue, il semblerait que tout ne s'upload pas
 correctement sur git. Par conséquent une fois le répertoire cloné, veuillez
