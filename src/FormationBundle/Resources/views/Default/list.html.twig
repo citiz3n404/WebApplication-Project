@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <h2 class="page-header">FORMATIONS</h2>
-    <a href="{{ path('formationcreate') }}"
-       class="btn btn-success">Create a new formation</a>
 
     <div class="row">
     {% for formation in formations %}
@@ -25,6 +23,9 @@
                     <p class="card-text"><small class="text-muted">With
                             {{ formation.teacher }}</small></p>
 
+                    {% if is_granted('ROLE_ADMIN') or is_granted
+                    ('ROLE_FORMATEUR')%}
+
                     <a href="{{ path('formationedit', {'id': formation.id}) }}">
                         <span class="label label-info" >Edit</span></a>
 
@@ -34,11 +35,14 @@
 
                     <a href="{{ path('formationremove', {'id': formation.id})
                     }}" ><span class="label label-danger" ><i class="fa fa-trash" aria-hidden="true"></i></span></a>
-
+                    {% endif %}
                 </div>
             </div>
         </div>
 
     {% endfor %}
     </div>
+    <a href="{{ path('formationcreate') }}"
+       class="btn btn-success" style="margin-bottom: 10px;">Create a new
+        formation</a>
 {% endblock %}

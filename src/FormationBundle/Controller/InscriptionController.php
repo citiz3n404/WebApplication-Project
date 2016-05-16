@@ -81,6 +81,11 @@ class InscriptionController extends Controller
      */
     public function validateAction($id)
     {
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_FORMATEUR')) {
+            $this->addFlash('danger', 'Vous n\'êtes pas formateur.');
+            return $this->redirectToRoute('formation');
+        }
         $inscription = $this->getDoctrine()->getRepository
         ('FormationBundle:Inscription')->find($id);
         $inscription->setValidated(True);
@@ -105,6 +110,11 @@ class InscriptionController extends Controller
      */
     public function removeAction($id)
     {
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_FORMATEUR')) {
+            $this->addFlash('danger', 'Vous n\'êtes pas formateur.');
+            return $this->redirectToRoute('formation');
+        }
         $em=$this->getDoctrine()->getManager();
         $inscription = $em->getRepository('FormationBundle:Inscription')->find($id);
 

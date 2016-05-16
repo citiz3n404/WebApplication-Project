@@ -92,10 +92,18 @@
       <parameter key="ROLE_ADMIN" type="collection">
         <parameter>ROLE_USER</parameter>
         <parameter>ROLE_ADMIN</parameter>
+        <parameter>ROLE_VALIDATOR</parameter>
+        <parameter>ROLE_FORMATEUR</parameter>
+        <parameter>ROLE_MODERATEUR</parameter>
+        <parameter>ROLE_RH</parameter>
       </parameter>
       <parameter key="ROLE_SUPER_ADMIN" type="collection">
         <parameter>ROLE_ADMIN</parameter>
         <parameter>ROLE_USER</parameter>
+        <parameter>ROLE_VALIDATOR</parameter>
+        <parameter>ROLE_FORMATEUR</parameter>
+        <parameter>ROLE_MODERATEUR</parameter>
+        <parameter>ROLE_RH</parameter>
       </parameter>
     </parameter>
     <parameter key="security.access.denied_url">null</parameter>
@@ -1922,7 +1930,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57388f2bac8d05.38658639</argument>
+            <argument>573925f2cf28c3.86968181</argument>
           </service>
         </argument>
       </argument>
@@ -1978,10 +1986,18 @@
         <argument key="ROLE_ADMIN" type="collection">
           <argument>ROLE_USER</argument>
           <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_VALIDATOR</argument>
+          <argument>ROLE_FORMATEUR</argument>
+          <argument>ROLE_MODERATEUR</argument>
+          <argument>ROLE_RH</argument>
         </argument>
         <argument key="ROLE_SUPER_ADMIN" type="collection">
           <argument>ROLE_ADMIN</argument>
           <argument>ROLE_USER</argument>
+          <argument>ROLE_VALIDATOR</argument>
+          <argument>ROLE_FORMATEUR</argument>
+          <argument>ROLE_MODERATEUR</argument>
+          <argument>ROLE_RH</argument>
         </argument>
       </argument>
     </service>
@@ -2092,6 +2108,61 @@
                   </argument>
                   <argument type="collection">
                     <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/formation/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/forum/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/annuaire/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/stats/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/dossier/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -2224,7 +2295,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57388f2bac8d05.38658639</argument>
+            <argument>573925f2cf28c3.86968181</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2288,6 +2359,61 @@
                   </argument>
                   <argument type="collection">
                     <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/formation/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/forum/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/annuaire/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/stats/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/dossier/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
                   </argument>
                   <argument>null</argument>
                 </call>

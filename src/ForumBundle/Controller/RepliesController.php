@@ -56,6 +56,23 @@ class RepliesController extends Controller
     {
         $reply = $this->getDoctrine()->getRepository
         ('ForumBundle:Replies')->find($id);
+
+        $topic = $reply->getTopic();
+
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_MODERATEUR')) {
+
+            if($reply->getUser()->getUsername()!=$this->getUser()
+                    ->getUsername()){
+                $this->addFlash('danger', 'Vous n\'êtes pas modérateur du 
+                forum. Vous ne pouvez pas editer les messages des autres 
+                membres.');
+                return $this->redirectToRoute('topicdisplay', array('id'=>$topic->getId()));
+            }
+
+        }
+
+
         $form = $this->createFormBuilder($reply)
             ->add('content', TextareaType::class, array('attr' => array
             ('class' => 'form-control')))
@@ -88,6 +105,21 @@ class RepliesController extends Controller
      */
     public function removeAction($id)
     {
+        $reply = $this->getDoctrine()->getRepository('ForumBundle:Replies')->find($id);
+
+        $topic = $reply->getTopic();
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_MODERATEUR')) {
+
+            if($reply->getUser()->getUsername()!=$this->getUser()
+                    ->getUsername()){
+                $this->addFlash('danger', 'Vous n\'êtes pas modérateur du 
+                forum. Vous ne pouvez pas supprimer les messages des autres 
+                membres.');
+                return $this->redirectToRoute('topicdisplay', array('id'=>$topic->getId()));
+            }
+
+        }
         $em=$this->getDoctrine()->getManager();
         $reply = $em->getRepository('ForumBundle:Replies')->find($id);
         $em->remove($reply);

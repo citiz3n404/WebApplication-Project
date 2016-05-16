@@ -1,0 +1,137 @@
+{% block body %}
+  <style type="text/css">
+  th
+  {
+    padding-right: 30px;
+    padding-left: 10px;
+  }
+
+  table
+  {
+    padding-bottom: 5px;
+  }
+
+  ul
+  {
+      list-style: none;
+  }
+
+  li
+  {
+      padding: 2px;
+  }
+
+
+
+  </style>
+  <page backtop="50px" backright="50px" backleft="50px">
+    <div align="center">
+    <img alt="Brand" src=".{{ asset('img/logoaigle.png') }}"><h2>Bulletin de paie {{ 'now'|date(' m/Y') }}</h2>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="col-md-8">
+        <div class="panel panel-primary" >
+            <div class="panel-body">
+
+            <fieldset>
+              <legend style="background-color: white; border: solid 2px white">Employeur : National Security Zero</legend>
+              <table class="table">
+                <tbody >
+                <tr>
+                    <th scope="row">Adresse de l'établissement</th>
+                    <td>42 rue des noises - Zone 51, UNITED STATES OF NOWHERE</td>
+                </tr>
+                <tr>
+                    <th scope="row">N° SIRET</th>
+                    <td>10011011010101</td>
+                </tr>
+                </tbody>
+              </table>
+            </fieldset>
+
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="col-md-8">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+            <fieldset>
+              <legend style="background-color: white; border: solid 2px white">Salarié</legend>
+              <table class="table">
+                <tbody>
+                <tr>
+                    <th scope="row">Nom</th>
+                    <td>{{ user.salarie.nom|upper }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Prénom</th>
+                    <td>{{ user.salarie.prenom|capitalize }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Matricule</th>
+                    <td>{{random(89999)+10000}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">N° de sécurité sociale</th>
+                    <td>{{random(99999)+1}}{{random(99999)+1}}{{random(9999)+1}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Adresse</th>
+                    <td>Goulag des employés sages – Moscou, Russie</td>
+                </tr>
+                </tbody>
+              </table>
+              </fieldset>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="col-md-8">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+            <fieldset>
+              <legend style="background-color: white; border: solid 2px white"> Salaire mensuel </legend>
+              <table class="table">
+                <tbody>
+                <tr>
+                    <th scope="row">Rémunération brute</th>
+                    <td>{{ user.salarie.salaire }} € </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                      Cotisations sociales
+                      <ul class="ul1">
+                        <li>Maladie</li>
+                        <li>Chomage</li>
+                        <li>Vieillesse</li>
+                        <li>Retraite compl.</li>
+                      </ul>
+                    </th>
+                    <td style="overflow: visible">
+                      {{ (user.salarie.salaire*(maladie+retraite+chomage+vieillesse))|round(2, 'common') }} €
+                      <ul class="ul2">
+                        <li>{{(user.salarie.salaire*maladie)|round(2,'common')}}€</li>
+                        <li>{{(user.salarie.salaire*chomage)|round(2,'common')}}€</li>
+                        <li>{{(user.salarie.salaire*vieillesse)|round(2,'common')}}€</li>
+                        <li>{{(user.salarie.salaire*retraite)|round(2,'common')}}€</li>
+                      </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Rémunération nette</th>
+                    <td>{{ (user.salarie.salaire - (app.user.salarie.salaire * (maladie+retraite+chomage+vieillesse)))|round(2, 'common') }} € </td>
+                </tr>
+                </tbody>
+              </table>
+            </fieldset>
+            </div>
+        </div>
+    </div>
+  </page>
+{% endblock %}

@@ -17,6 +17,10 @@ class CategorieController extends Controller
      */
     public function createAction(Request $request)
     {
+        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_MODERATEUR')) {
+            $this->addFlash('danger', 'Vous n\'êtes pas modérateur du forum.');
+            return $this->redirectToRoute('forum');
+        }
         $categorie = new Categories();
         $form = $this->createFormBuilder($categorie)->add('name',
             TextType::class, array('attr' => array('class' => 'form-control')))
@@ -50,6 +54,10 @@ class CategorieController extends Controller
      */
     public function editAction($id, Request $request)
     {
+        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_MODERATEUR')) {
+            $this->addFlash('danger', 'Vous n\'êtes pas modérateur du forum.');
+            return $this->redirectToRoute('forum');
+        }
         $categorie = $this->getDoctrine()->getRepository
         ('ForumBundle:Categories')->find($id);
 
@@ -86,6 +94,10 @@ class CategorieController extends Controller
      */
     public function removeAction($id)
     {
+        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_MODERATEUR')) {
+            $this->addFlash('danger', 'Vous n\'êtes pas modérateur du forum.');
+            return $this->redirectToRoute('forum');
+        }
         $em=$this->getDoctrine()->getManager();
         $categorie = $em->getRepository('ForumBundle:Categories')->find($id);
         $em->remove($categorie);

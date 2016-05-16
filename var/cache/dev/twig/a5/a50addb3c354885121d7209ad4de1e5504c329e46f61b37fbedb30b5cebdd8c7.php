@@ -21,20 +21,20 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e001c682612637ff23128ec58a28421c4e47ad6baa23308088231d9f3d5f86f4 = $this->env->getExtension("native_profiler");
-        $__internal_e001c682612637ff23128ec58a28421c4e47ad6baa23308088231d9f3d5f86f4->enter($__internal_e001c682612637ff23128ec58a28421c4e47ad6baa23308088231d9f3d5f86f4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FormationBundle:Default:details.html.twig"));
+        $__internal_31e0a91349c1a69f8a2658dc96a750364893a53b854ad389a3cbcbdeb50f1bb0 = $this->env->getExtension("native_profiler");
+        $__internal_31e0a91349c1a69f8a2658dc96a750364893a53b854ad389a3cbcbdeb50f1bb0->enter($__internal_31e0a91349c1a69f8a2658dc96a750364893a53b854ad389a3cbcbdeb50f1bb0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FormationBundle:Default:details.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_e001c682612637ff23128ec58a28421c4e47ad6baa23308088231d9f3d5f86f4->leave($__internal_e001c682612637ff23128ec58a28421c4e47ad6baa23308088231d9f3d5f86f4_prof);
+        $__internal_31e0a91349c1a69f8a2658dc96a750364893a53b854ad389a3cbcbdeb50f1bb0->leave($__internal_31e0a91349c1a69f8a2658dc96a750364893a53b854ad389a3cbcbdeb50f1bb0_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_b1c937959116d871bff39e966b5f3575f021e1ea439ef16e7fd4885c4126ed7e = $this->env->getExtension("native_profiler");
-        $__internal_b1c937959116d871bff39e966b5f3575f021e1ea439ef16e7fd4885c4126ed7e->enter($__internal_b1c937959116d871bff39e966b5f3575f021e1ea439ef16e7fd4885c4126ed7e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_01649bb600dc0636ebde7c449e3bde1d6ee74b448459bd4ffbb4b27aa48a2ad4 = $this->env->getExtension("native_profiler");
+        $__internal_01649bb600dc0636ebde7c449e3bde1d6ee74b448459bd4ffbb4b27aa48a2ad4->enter($__internal_01649bb600dc0636ebde7c449e3bde1d6ee74b448459bd4ffbb4b27aa48a2ad4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <a class=\"btn btn-default\" href=\"/formation/\">Back to  formation list</a>
@@ -118,29 +118,39 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "cost", array()), "html", null, true);
         echo " euros</td>
                     </tr>
-                    <tr>
-                        <th><a href=\"";
-        // line 56
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationedit", array("id" => $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "id", array()))), "html", null, true);
-        echo "\">
+                    ";
+        // line 55
+        if (($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || $this->env->getExtension('security')->isGranted("ROLE_FORMATEUR"))) {
+            // line 56
+            echo "                    <tr>
+                        <th>
+
+                            <a href=\"";
+            // line 59
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationedit", array("id" => $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "id", array()))), "html", null, true);
+            echo "\">
                                 <span class=\"label label-info\" >Edit</span></a>
 
 
                             <a href=\"";
-        // line 60
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationlock", array("id" => $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "id", array()))), "html", null, true);
-        // line 61
-        echo "\"><span class=\"label label-warning\"><i class=\"fa fa-lock\" aria-hidden=\"true\"></i></span></a>
+            // line 63
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationlock", array("id" => $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "id", array()))), "html", null, true);
+            // line 64
+            echo "\"><span class=\"label label-warning\"><i class=\"fa fa-lock\" aria-hidden=\"true\"></i></span></a>
 
                             <a href=\"";
-        // line 63
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremove", array("id" => $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "id", array()))), "html", null, true);
-        // line 64
-        echo "\" ><span class=\"label label-danger\" ><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></span></a>
+            // line 66
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremove", array("id" => $this->getAttribute((isset($context["formation"]) ? $context["formation"] : $this->getContext($context, "formation")), "id", array()))), "html", null, true);
+            // line 67
+            echo "\" ><span class=\"label label-danger\" ><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></span></a>
+
                         </th>
                         <td></td>
                     </tr>
-                    </tbody>
+                    ";
+        }
+        // line 73
+        echo "                    </tbody>
                 </table>
             </div>
         </div>
@@ -163,12 +173,19 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
                     <tr>
                         <th>#</th>
                         <th>User</th>
-                        <th>Action</th>
-                    </tr>
+                        ";
+        // line 96
+        if (($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || $this->env->getExtension('security')->isGranted("ROLE_FORMATEUR"))) {
+            // line 97
+            echo "                        <th>Action</th>
+                        ";
+        }
+        // line 99
+        echo "                    </tr>
                     </thead>
                     <tbody>
                     ";
-        // line 95
+        // line 102
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["inscriptions"]) ? $context["inscriptions"] : $this->getContext($context, "inscriptions")));
         $context['loop'] = array(
@@ -185,45 +202,53 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["inscription"]) {
-            // line 96
+            // line 103
             echo "                        ";
             if (($this->getAttribute($context["inscription"], "validated", array()) == true)) {
-                // line 97
+                // line 104
                 echo "                            <tr>
                                 <th scope=\"row\">";
-                // line 98
+                // line 105
                 echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index", array()), "html", null, true);
                 echo "</th>
                                 <td><a href=\"";
-                // line 99
+                // line 106
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "id", array()))), "html", null, true);
                 echo "\"> ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "username", array()), "html", null, true);
                 echo "</a></td>
-                                <td>
+                                ";
+                // line 107
+                if (($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || $this->env->getExtension('security')->isGranted("ROLE_FORMATEUR"))) {
+                    // line 108
+                    echo "                                <td>
+
                                     ";
-                // line 101
-                if (($this->getAttribute($context["inscription"], "validated", array()) != true)) {
-                    // line 102
-                    echo "                                        <a href=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                    // line 103
+                    // line 110
+                    if (($this->getAttribute($context["inscription"], "validated", array()) != true)) {
+                        // line 111
+                        echo "                                        <a href=\"";
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                        // line 112
 $context["inscription"], "id", array()))), "html", null, true);
-                    echo "\"class=\"btn
+                        echo "\"class=\"btn
                                             btn-success btn-sm \"><span
                                                     class=\"fa fa-check\"
                                                     aria-hidden=\"true\"></span></a>
                                     ";
-                }
-                // line 108
-                echo "                                    <a href=\"";
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                // line 109
+                    }
+                    // line 117
+                    echo "                                    <a href=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                    // line 118
 $context["inscription"], "id", array()))), "html", null, true);
-                echo "\"class=\"btn btn-danger btn-sm\"><span class=\"fa fa-times\" aria-hidden=\"true\"></span></a>
+                    echo "\"class=\"btn btn-danger btn-sm\"><span class=\"fa fa-times\" aria-hidden=\"true\"></span></a>
                                 </td>
-                            </tr>
+                                ";
+                }
+                // line 121
+                echo "                            </tr>
                         ";
             }
-            // line 113
+            // line 123
             echo "                    ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -237,7 +262,7 @@ $context["inscription"], "id", array()))), "html", null, true);
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['inscription'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 114
+        // line 124
         echo "                    </tbody>
                 </table>
             </div>
@@ -257,12 +282,19 @@ $context["inscription"], "id", array()))), "html", null, true);
                     <tr>
                         <th>#</th>
                         <th>User</th>
-                        <th>Action</th>
-                    </tr>
+                        ";
+        // line 143
+        if (($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || $this->env->getExtension('security')->isGranted("ROLE_FORMATEUR"))) {
+            // line 144
+            echo "                        <th>Action</th>
+                        ";
+        }
+        // line 146
+        echo "                    </tr>
                     </thead>
                     <tbody>
                     ";
-        // line 137
+        // line 149
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["inscriptions"]) ? $context["inscriptions"] : $this->getContext($context, "inscriptions")));
         $context['loop'] = array(
@@ -279,47 +311,54 @@ $context["inscription"], "id", array()))), "html", null, true);
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["inscription"]) {
-            // line 138
+            // line 150
             echo "                        ";
             if (($this->getAttribute($context["inscription"], "validated", array()) == false)) {
-                // line 139
+                // line 151
                 echo "                            <tr>
                                 <th scope=\"row\">";
-                // line 140
+                // line 152
                 echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index", array()), "html", null, true);
                 echo "</th>
                                 <td><a href=\"";
-                // line 141
+                // line 153
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "id", array()))), "html", null, true);
-                // line 142
+                // line 154
                 echo "\"> ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "username", array()), "html", null, true);
-                // line 143
+                // line 155
                 echo "</a></td>
-                                <td>
+                            ";
+                // line 156
+                if (($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || $this->env->getExtension('security')->isGranted("ROLE_FORMATEUR"))) {
+                    // line 157
+                    echo "                                <td>
                                     ";
-                // line 145
-                if (($this->getAttribute($context["inscription"], "validated", array()) != true)) {
-                    // line 146
-                    echo "                                        <a href=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                    // line 147
+                    // line 158
+                    if (($this->getAttribute($context["inscription"], "validated", array()) != true)) {
+                        // line 159
+                        echo "                                        <a href=\"";
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                        // line 160
 $context["inscription"], "id", array()))), "html", null, true);
-                    echo "\"class=\"btn
+                        echo "\"class=\"btn
                                             btn-success btn-sm\"><span
                                                     class=\"fa fa-check\"
                                                     aria-hidden=\"true\"></span></a>
                                     ";
-                }
-                // line 152
-                echo "                                    <a href=\"";
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                // line 153
+                    }
+                    // line 165
+                    echo "                                    <a href=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                    // line 166
 $context["inscription"], "id", array()))), "html", null, true);
-                echo "\"class=\"btn btn-danger btn-sm\"><span class=\"fa fa-times\" aria-hidden=\"true\"></span></a>
+                    echo "\"class=\"btn btn-danger btn-sm\"><span class=\"fa fa-times\" aria-hidden=\"true\"></span></a>
                                 </td>
-                            </tr>
+                                ";
+                }
+                // line 169
+                echo "                            </tr>
                         ";
             }
-            // line 157
+            // line 171
             echo "                    ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -333,7 +372,7 @@ $context["inscription"], "id", array()))), "html", null, true);
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['inscription'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 158
+        // line 172
         echo "                    </tbody>
                 </table>
             </div>
@@ -345,7 +384,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 
 ";
         
-        $__internal_b1c937959116d871bff39e966b5f3575f021e1ea439ef16e7fd4885c4126ed7e->leave($__internal_b1c937959116d871bff39e966b5f3575f021e1ea439ef16e7fd4885c4126ed7e_prof);
+        $__internal_01649bb600dc0636ebde7c449e3bde1d6ee74b448459bd4ffbb4b27aa48a2ad4->leave($__internal_01649bb600dc0636ebde7c449e3bde1d6ee74b448459bd4ffbb4b27aa48a2ad4_prof);
 
     }
 
@@ -361,7 +400,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 
     public function getDebugInfo()
     {
-        return array (  337 => 158,  323 => 157,  316 => 153,  314 => 152,  306 => 147,  304 => 146,  302 => 145,  298 => 143,  295 => 142,  293 => 141,  289 => 140,  286 => 139,  283 => 138,  266 => 137,  241 => 114,  227 => 113,  220 => 109,  218 => 108,  210 => 103,  208 => 102,  206 => 101,  199 => 99,  195 => 98,  192 => 97,  189 => 96,  172 => 95,  139 => 64,  137 => 63,  133 => 61,  131 => 60,  124 => 56,  118 => 53,  112 => 49,  108 => 48,  104 => 46,  102 => 45,  95 => 41,  88 => 37,  81 => 33,  63 => 17,  61 => 15,  52 => 8,  48 => 7,  44 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  376 => 172,  362 => 171,  358 => 169,  352 => 166,  350 => 165,  342 => 160,  340 => 159,  338 => 158,  335 => 157,  333 => 156,  330 => 155,  327 => 154,  325 => 153,  321 => 152,  318 => 151,  315 => 150,  298 => 149,  293 => 146,  289 => 144,  287 => 143,  266 => 124,  252 => 123,  248 => 121,  242 => 118,  240 => 117,  232 => 112,  230 => 111,  228 => 110,  224 => 108,  222 => 107,  216 => 106,  212 => 105,  209 => 104,  206 => 103,  189 => 102,  184 => 99,  180 => 97,  178 => 96,  153 => 73,  145 => 67,  143 => 66,  139 => 64,  137 => 63,  130 => 59,  125 => 56,  123 => 55,  118 => 53,  112 => 49,  108 => 48,  104 => 46,  102 => 45,  95 => 41,  88 => 37,  81 => 33,  63 => 17,  61 => 15,  52 => 8,  48 => 7,  44 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -418,8 +457,11 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                         <th scope="row">Coût</th>*/
 /*                         <td>{{ formation.cost }} euros</td>*/
 /*                     </tr>*/
+/*                     {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}*/
 /*                     <tr>*/
-/*                         <th><a href="{{ path('formationedit', {'id': formation.id}) }}">*/
+/*                         <th>*/
+/* */
+/*                             <a href="{{ path('formationedit', {'id': formation.id}) }}">*/
 /*                                 <span class="label label-info" >Edit</span></a>*/
 /* */
 /* */
@@ -428,9 +470,11 @@ $context["inscription"], "id", array()))), "html", null, true);
 /* */
 /*                             <a href="{{ path('formationremove', {'id': formation.id})*/
 /*                             }}" ><span class="label label-danger" ><i class="fa fa-trash" aria-hidden="true"></i></span></a>*/
+/* */
 /*                         </th>*/
 /*                         <td></td>*/
 /*                     </tr>*/
+/*                     {% endif %}*/
 /*                     </tbody>*/
 /*                 </table>*/
 /*             </div>*/
@@ -454,7 +498,9 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                     <tr>*/
 /*                         <th>#</th>*/
 /*                         <th>User</th>*/
+/*                         {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}*/
 /*                         <th>Action</th>*/
+/*                         {% endif %}*/
 /*                     </tr>*/
 /*                     </thead>*/
 /*                     <tbody>*/
@@ -463,7 +509,9 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                             <tr>*/
 /*                                 <th scope="row">{{ loop.index }}</th>*/
 /*                                 <td><a href="{{ path('profiluser', {'id': inscription.user.id })  }}"> {{ inscription.user.username }}</a></td>*/
+/*                                 {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}*/
 /*                                 <td>*/
+/* */
 /*                                     {%  if inscription.validated != true %}*/
 /*                                         <a href="{{ path('formationvalidateinscription', {'id':*/
 /*                                             inscription.id }) }}"class="btn*/
@@ -474,6 +522,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                                     <a href="{{ path*/
 /*                                     ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm"><span class="fa fa-times" aria-hidden="true"></span></a>*/
 /*                                 </td>*/
+/*                                 {% endif %}*/
 /*                             </tr>*/
 /*                         {% endif %}*/
 /*                     {% endfor %}*/
@@ -496,7 +545,9 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                     <tr>*/
 /*                         <th>#</th>*/
 /*                         <th>User</th>*/
+/*                         {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}*/
 /*                         <th>Action</th>*/
+/*                         {% endif %}*/
 /*                     </tr>*/
 /*                     </thead>*/
 /*                     <tbody>*/
@@ -507,6 +558,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                                 <td><a href="{{ path('profiluser', {'id': inscription*/
 /*                                         .user.id })   }}"> {{ inscription.user.username*/
 /*                                         }}</a></td>*/
+/*                             {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}*/
 /*                                 <td>*/
 /*                                     {%  if inscription.validated != true %}*/
 /*                                         <a href="{{ path('formationvalidateinscription', {'id':*/
@@ -518,6 +570,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                                     <a href="{{ path*/
 /*                                     ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm"><span class="fa fa-times" aria-hidden="true"></span></a>*/
 /*                                 </td>*/
+/*                                 {% endif %}*/
 /*                             </tr>*/
 /*                         {% endif %}*/
 /*                     {% endfor %}*/

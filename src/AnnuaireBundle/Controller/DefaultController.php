@@ -8,6 +8,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 
+require_once(dirname(__FILE__).'/../../../vendor/spipu/html2pdf/html2pdf.class.php');
+
 class DefaultController extends Controller
 {
     /**
@@ -44,8 +46,6 @@ class DefaultController extends Controller
             }
 
         }
-
-
 
         $em=$this->getDoctrine()->getManager();
         $qb = $em->createQueryBuilder();
@@ -86,5 +86,58 @@ class DefaultController extends Controller
         ('UserBundle:User')->find($id);
         return $this->render('AnnuaireBundle:Default:profil.html.twig', array
         ('user'=> $user));
+    }
+
+
+    /**
+     * @Route("/profile/{id}/payslip", name="payslip")
+     */
+    public function payslipAction($id)
+    {
+        $user = $this->getDoctrine()->getRepository
+        ('UserBundle:User')->find($id);
+
+        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_RH')) {
+            if($user->getUsername()!=$this->getUser()
+                    ->getUsername()) {
+                $this->addFlash('danger', 'Vous n\'êtes pas RH. Cette information
+             est confidentielle');
+                return $this->redirectToRoute('profiluser', array('id' => $id));
+            }
+        }
+
+        if(!empty($user)){
+            $salaire = $user->getSalarie()->getSalaire();
+        }
+        else{
+            $this->addFlash('danger', 'Aucun profil trouvé, veuillez reessayer.');
+            return $this->redirectToRoute('profiluser', array('id'=> $id));
+        }
+
+        //$salaire = $this->getUser()->getSalarie()->getSalaire();
+        $maladie = 0.0075;
+        if($salaire < 3086) {
+            $vieillesse = 0.0675;
+            $chomage = 0.024;
+            $retraite = 0.038;
+        } else if($salaire >= 3086 && $salaire < 12344) {
+            $vieillesse = 0.001;
+            $chomage = 0.024;
+            $retraite = 0.012;
+        } else {
+            $vieillesse = 0.001;
+            $chomage = 0;
+            $retraite = 0.0033;
+        }
+
+        $html =  $this->renderView('AnnuaireBundle:Default:payslip.html.twig',
+        array('maladie' => $maladie, 'vieillesse' => $vieillesse, 'chomage'
+        => $chomage, 'retraite' => $retraite, 'user'=>$user));
+
+        $html2pdf = new \Html2Pdf('P','A4','fr');
+        $html2pdf->pdf->SetDisplayMode('fullwidth');
+        $html2pdf->writeHTML($html);
+        $html2pdf->Output('FicheDePaie.pdf');
+        return new Response();
     }
 }

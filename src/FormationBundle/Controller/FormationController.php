@@ -36,6 +36,12 @@ class FormationController extends Controller
      */
     public function createAction(Request $request)
     {
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_FORMATEUR')) {
+            $this->addFlash('danger', 'Vous n\'êtes pas formateur.');
+            return $this->redirectToRoute('formation');
+        }
+        
         $formation = new Formation;
         $form = $this->createFormBuilder($formation)
             ->add('title', TextType::class, array('attr' => array
@@ -110,6 +116,11 @@ class FormationController extends Controller
      */
     public function removeAction($id)
     {
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_FORMATEUR')) {
+            $this->addFlash('danger', 'Vous n\'êtes pas formateur.');
+            return $this->redirectToRoute('formation');
+        }
         $em=$this->getDoctrine()->getManager();
         $formation = $em->getRepository('FormationBundle:Formation')->find($id);
         $em->remove($formation);
@@ -125,6 +136,11 @@ class FormationController extends Controller
      */
     public function lockAction($id)
     {
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_FORMATEUR')) {
+            $this->addFlash('danger', 'Vous n\'êtes pas formateur.');
+            return $this->redirectToRoute('formation');
+        }
         $em=$this->getDoctrine()->getManager();
         $formation = $em->getRepository('FormationBundle:Formation')->find($id);
         $formation->setLocked(True);
@@ -140,6 +156,11 @@ class FormationController extends Controller
      */
     public function editAction($id, Request $request)
     {
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_FORMATEUR')) {
+            $this->addFlash('danger', 'Vous n\'êtes pas formateur.');
+            return $this->redirectToRoute('formation');
+        }
         $formation = $this->getDoctrine()->getRepository
         ('FormationBundle:Formation')->find($id);
 

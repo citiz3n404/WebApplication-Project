@@ -48,7 +48,7 @@
                                                                 alt="photo"
                                                 style="margin: 0 auto;"
                         ></div></th>
-                <th scope="row">{{ user.username }}</th>
+                <th scope="row"><a href="{{ path('profiluser', {'id': user.id}) }}">{{ user.username }}</a></th>
                 <td>{{ user.salarie.nom }}</td>
                 <td>{{ user.salarie.prenom }}</td>
                 <td>{{ user.salarie.sexe }}</td>
@@ -57,11 +57,14 @@
                 <td><a href="{{ path('profiluser', {'id': user.id}) }}"
                        class="btn
                 btn-info btn-sm">Details</a>
+
+                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_RH')%}
                     <a href="{{ path('editprofil', {'id': user.id}) }}"
                        class="btn
                     btn-default
                     btn-sm">Edit</a>
                     <a href="" class="btn  btn-danger btn-sm">Remove</a>
+                    {% endif %}
                 </td>
             </tr>
         {% endfor %}
@@ -114,7 +117,10 @@
                     "{{ user.username }}"});
             {% endfor %}
             $( "#form_recherche" ).autocomplete({
-                source: listUsername
+                source: function(request, response) {
+                    var results = $.ui.autocomplete.filter(listUsername, request.term);
+                    response(results.slice(0, 5));
+                }
             });
         });
     </script>

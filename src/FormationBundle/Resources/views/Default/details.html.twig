@@ -52,8 +52,11 @@
                         <th scope="row">Coût</th>
                         <td>{{ formation.cost }} euros</td>
                     </tr>
+                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}
                     <tr>
-                        <th><a href="{{ path('formationedit', {'id': formation.id}) }}">
+                        <th>
+
+                            <a href="{{ path('formationedit', {'id': formation.id}) }}">
                                 <span class="label label-info" >Edit</span></a>
 
 
@@ -62,9 +65,11 @@
 
                             <a href="{{ path('formationremove', {'id': formation.id})
                             }}" ><span class="label label-danger" ><i class="fa fa-trash" aria-hidden="true"></i></span></a>
+
                         </th>
                         <td></td>
                     </tr>
+                    {% endif %}
                     </tbody>
                 </table>
             </div>
@@ -88,7 +93,9 @@
                     <tr>
                         <th>#</th>
                         <th>User</th>
+                        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}
                         <th>Action</th>
+                        {% endif %}
                     </tr>
                     </thead>
                     <tbody>
@@ -97,7 +104,9 @@
                             <tr>
                                 <th scope="row">{{ loop.index }}</th>
                                 <td><a href="{{ path('profiluser', {'id': inscription.user.id })  }}"> {{ inscription.user.username }}</a></td>
+                                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}
                                 <td>
+
                                     {%  if inscription.validated != true %}
                                         <a href="{{ path('formationvalidateinscription', {'id':
                                             inscription.id }) }}"class="btn
@@ -108,6 +117,7 @@
                                     <a href="{{ path
                                     ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm"><span class="fa fa-times" aria-hidden="true"></span></a>
                                 </td>
+                                {% endif %}
                             </tr>
                         {% endif %}
                     {% endfor %}
@@ -130,7 +140,9 @@
                     <tr>
                         <th>#</th>
                         <th>User</th>
+                        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}
                         <th>Action</th>
+                        {% endif %}
                     </tr>
                     </thead>
                     <tbody>
@@ -141,6 +153,7 @@
                                 <td><a href="{{ path('profiluser', {'id': inscription
                                         .user.id })   }}"> {{ inscription.user.username
                                         }}</a></td>
+                            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}
                                 <td>
                                     {%  if inscription.validated != true %}
                                         <a href="{{ path('formationvalidateinscription', {'id':
@@ -152,6 +165,7 @@
                                     <a href="{{ path
                                     ('formationremoveinscription', {'id': inscription.id }) }}"class="btn btn-danger btn-sm"><span class="fa fa-times" aria-hidden="true"></span></a>
                                 </td>
+                                {% endif %}
                             </tr>
                         {% endif %}
                     {% endfor %}

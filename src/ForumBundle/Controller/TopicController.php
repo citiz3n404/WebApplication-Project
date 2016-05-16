@@ -46,7 +46,7 @@ class TopicController extends Controller
             $categorie = $this->getDoctrine()->getRepository
             ('ForumBundle:Categories')->find($id);
             $topic->setCategorie($categorie);
-
+            $topic->setUser($this->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($topic);
             $em->flush();
@@ -65,6 +65,19 @@ class TopicController extends Controller
     public function editAction($id, Request $request)
     {
         $topic = $this->getDoctrine()->getRepository('ForumBundle:Topics')->find($id);
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_MODERATEUR')) {
+
+            if($topic->getUser()->getUsername()!=$this->getUser()
+                    ->getUsername()){
+                $this->addFlash('danger', 'Vous n\'êtes pas modérateur du 
+                forum. Vous ne pouvez pas editer les messages des autres 
+                membres.');
+                return $this->redirectToRoute('topicdisplay', array('id'=>$topic->getId()));
+            }
+
+        }
+
         $form = $this->createFormBuilder($topic)->add('subject',
             TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('Save', SubmitType::class, array('label' => 'Edit topic',
@@ -98,6 +111,15 @@ class TopicController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $topic = $em->getRepository('ForumBundle:Topics')->find($id);
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_MODERATEUR')) {
+            if($topic->getUser()->getUsername()!=$this->getUser()
+                    ->getUsername()){
+                $this->addFlash('danger', 'Vous n\'êtes pas modérateur du 
+                forum. Vous ne pouvez pas supprimer ce topic.');
+                return $this->redirectToRoute('topicdisplay', array('id'=>$topic->getId()));
+            }
+        }
         $categorie = $topic->getCategorie();
         $em->remove($topic);
         $em->flush();

@@ -5,8 +5,8 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
-        ROLE_ADMIN:       [ROLE_USER, ROLE_ADMIN]
-        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_USER]
+        ROLE_ADMIN:       [ROLE_USER, ROLE_ADMIN, ROLE_VALIDATOR, ROLE_FORMATEUR, ROLE_MODERATEUR, ROLE_RH]
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_USER, ROLE_VALIDATOR, ROLE_FORMATEUR, ROLE_MODERATEUR, ROLE_RH]
 
     providers:
         fos_userbundle:
@@ -30,3 +30,8 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_USER }
         - { path: ^/user, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/formation/, role: ROLE_USER }
+        - { path: ^/forum/, role: ROLE_USER }
+        - { path: ^/annuaire/, role: ROLE_USER }
+        - { path: ^/stats/, role: ROLE_USER }
+        - { path: ^/dossier/, role: ROLE_USER }

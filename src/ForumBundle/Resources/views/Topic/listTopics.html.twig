@@ -41,12 +41,16 @@
                 <td>{{
                         topic.replies|length
                     }}</td>
-                <td><a href="{{ path('edittopic', {'id': topic.id}) }}"
+                <td>
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MODERATEUR')
+            or topic.user.username== app.user.username %}
+                <a href="{{ path('edittopic', {'id': topic.id}) }}"
                        class="btn
                 btn-default btn-sm">Edit</a>
                     <a href="{{ path('removetopic', {'id': topic.id})
                     }}" class="btn
                 btn-danger btn-sm">Remove</a>
+                {% endif %}
                 </td>
             </tr>
         {% endfor %}

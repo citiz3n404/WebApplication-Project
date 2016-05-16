@@ -2,7 +2,7 @@
 {% block body %}
     <h2 class="page-header">{{ user.salarie.prenom|capitalize
         }} {{ user.salarie.nom|upper }} <span class="label
-        label-info">{{ user.salarie.typeContrat }}</span></h2>
+        label-info">{{ user.roles|join(' | ') }}</span></h2>
 
     <div class="row">
     <div class="col-md-3">
@@ -46,9 +46,14 @@
                 </tbody>
             </table>
         </div>
+        {% if user.username == app.user.username or
+                    is_granted('ROLE_ADMIN') or is_granted('ROLE_RH')%}
         <a class="btn btn-default" href="{{ path('editprofil', {'id': user.id })
         }}">Editer le
             profil</a>
+        <a href="{{path('payslip', {'id': user.id })}}" class="btn btn-primary"
+           style=""><i class="glyphicon glyphicon-download-alt"></i> Fiche de paie</a>
+        {% endif %}
     </div>
 
 {% endblock body %}

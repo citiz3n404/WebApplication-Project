@@ -19,6 +19,17 @@ class ProfilController extends Controller
     {
         $user = $this->getDoctrine()->getRepository
         ('UserBundle:User')->find($id);
+
+        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_RH')) {
+            if($user->getUsername()!=$this->getUser()
+                    ->getUsername()) {
+                $this->addFlash('danger', 'Vous n\'êtes pas RH. Vous ne 
+                pouvez pas modifier le profil d\'une personne tiers.');
+                return $this->redirectToRoute('profiluser', array('id' => $id));
+            }
+        }
+
+
         $salarie = $user->getSalarie();
 
         $form = $this->createFormBuilder($salarie)

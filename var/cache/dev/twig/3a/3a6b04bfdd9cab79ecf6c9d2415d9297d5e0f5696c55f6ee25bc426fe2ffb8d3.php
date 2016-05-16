@@ -21,20 +21,20 @@ class __TwigTemplate_1e0fcdc7ebbbccc2c795c50ff8545041bbf1ea12dfd1d3510e2ea13c2a0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b441126ab939f78a5e4e7015fdc93ecb46b4379cfb558412a78fcc65ef28b6ea = $this->env->getExtension("native_profiler");
-        $__internal_b441126ab939f78a5e4e7015fdc93ecb46b4379cfb558412a78fcc65ef28b6ea->enter($__internal_b441126ab939f78a5e4e7015fdc93ecb46b4379cfb558412a78fcc65ef28b6ea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:listTopics.html.twig"));
+        $__internal_349a21e45f694c800645d61584a1d778cd9619665fb1f3e43dcaf9ea4e19ae9e = $this->env->getExtension("native_profiler");
+        $__internal_349a21e45f694c800645d61584a1d778cd9619665fb1f3e43dcaf9ea4e19ae9e->enter($__internal_349a21e45f694c800645d61584a1d778cd9619665fb1f3e43dcaf9ea4e19ae9e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ForumBundle:Topic:listTopics.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_b441126ab939f78a5e4e7015fdc93ecb46b4379cfb558412a78fcc65ef28b6ea->leave($__internal_b441126ab939f78a5e4e7015fdc93ecb46b4379cfb558412a78fcc65ef28b6ea_prof);
+        $__internal_349a21e45f694c800645d61584a1d778cd9619665fb1f3e43dcaf9ea4e19ae9e->leave($__internal_349a21e45f694c800645d61584a1d778cd9619665fb1f3e43dcaf9ea4e19ae9e_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_7e6fea4211c9c2470da95f1e528136258556a310e5a860b30afd4d77180aa16a = $this->env->getExtension("native_profiler");
-        $__internal_7e6fea4211c9c2470da95f1e528136258556a310e5a860b30afd4d77180aa16a->enter($__internal_7e6fea4211c9c2470da95f1e528136258556a310e5a860b30afd4d77180aa16a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_8bcde1c0b5f7532b214ca1016e74638ad786ad2969c97ea8d88e53591c8b2b80 = $this->env->getExtension("native_profiler");
+        $__internal_8bcde1c0b5f7532b214ca1016e74638ad786ad2969c97ea8d88e53591c8b2b80->enter($__internal_8bcde1c0b5f7532b214ca1016e74638ad786ad2969c97ea8d88e53591c8b2b80_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h2 class=\"page-header\">";
@@ -99,32 +99,40 @@ $context["topic"], "subject", array()), "html", null, true);
 $context["topic"], "replies", array())), "html", null, true);
             // line 43
             echo "</td>
-                <td><a href=\"";
-            // line 44
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("edittopic", array("id" => $this->getAttribute($context["topic"], "id", array()))), "html", null, true);
-            echo "\"
+                <td>
+            ";
+            // line 45
+            if ((($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || $this->env->getExtension('security')->isGranted("ROLE_MODERATEUR")) || ($this->getAttribute($this->getAttribute(            // line 46
+$context["topic"], "user", array()), "username", array()) == $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array())))) {
+                // line 47
+                echo "                <a href=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("edittopic", array("id" => $this->getAttribute($context["topic"], "id", array()))), "html", null, true);
+                echo "\"
                        class=\"btn
                 btn-default btn-sm\">Edit</a>
                     <a href=\"";
-            // line 47
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("removetopic", array("id" => $this->getAttribute($context["topic"], "id", array()))), "html", null, true);
-            // line 48
-            echo "\" class=\"btn
+                // line 50
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("removetopic", array("id" => $this->getAttribute($context["topic"], "id", array()))), "html", null, true);
+                // line 51
+                echo "\" class=\"btn
                 btn-danger btn-sm\">Remove</a>
-                </td>
+                ";
+            }
+            // line 54
+            echo "                </td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['topic'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 57
         echo "        </tbody>
     </table>
     </div>
 ";
         
-        $__internal_7e6fea4211c9c2470da95f1e528136258556a310e5a860b30afd4d77180aa16a->leave($__internal_7e6fea4211c9c2470da95f1e528136258556a310e5a860b30afd4d77180aa16a_prof);
+        $__internal_8bcde1c0b5f7532b214ca1016e74638ad786ad2969c97ea8d88e53591c8b2b80->leave($__internal_8bcde1c0b5f7532b214ca1016e74638ad786ad2969c97ea8d88e53591c8b2b80_prof);
 
     }
 
@@ -140,7 +148,7 @@ $context["topic"], "replies", array())), "html", null, true);
 
     public function getDebugInfo()
     {
-        return array (  122 => 53,  112 => 48,  110 => 47,  104 => 44,  101 => 43,  99 => 42,  98 => 41,  95 => 40,  93 => 39,  90 => 38,  81 => 31,  77 => 30,  52 => 8,  48 => 7,  45 => 6,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  130 => 57,  122 => 54,  117 => 51,  115 => 50,  108 => 47,  106 => 46,  105 => 45,  101 => 43,  99 => 42,  98 => 41,  95 => 40,  93 => 39,  90 => 38,  81 => 31,  77 => 30,  52 => 8,  48 => 7,  45 => 6,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -186,12 +194,16 @@ $context["topic"], "replies", array())), "html", null, true);
 /*                 <td>{{*/
 /*                         topic.replies|length*/
 /*                     }}</td>*/
-/*                 <td><a href="{{ path('edittopic', {'id': topic.id}) }}"*/
+/*                 <td>*/
+/*             {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MODERATEUR')*/
+/*             or topic.user.username== app.user.username %}*/
+/*                 <a href="{{ path('edittopic', {'id': topic.id}) }}"*/
 /*                        class="btn*/
 /*                 btn-default btn-sm">Edit</a>*/
 /*                     <a href="{{ path('removetopic', {'id': topic.id})*/
 /*                     }}" class="btn*/
 /*                 btn-danger btn-sm">Remove</a>*/
+/*                 {% endif %}*/
 /*                 </td>*/
 /*             </tr>*/
 /*         {% endfor %}*/

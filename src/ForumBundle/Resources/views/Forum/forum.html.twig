@@ -17,7 +17,9 @@
             <th>#</th>
             <th>Categorie</th>
             <th>Topics</th>
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MODERATEUR')%}
             <th>Action</th>
+            {% endif %}
         </tr>
         </thead>
         <tbody>
@@ -32,9 +34,9 @@
                     <p style="font-size: 12px;">{{ categorie.description }}</p>
                 </td>
                 <td>{{ categorie.topics|length }}</td>
-
-                <td><a href="{{ path('detailcategorie', {'id': categorie.id}) }}"
-                       class="btn btn-success btn-sm">View</a>
+                {% if is_granted('ROLE_ADMIN') or is_granted
+                ('ROLE_MODERATEUR')%}
+                <td>
                     <a href="{{ path('editcategorie', {'id': categorie.id}) }}"
                        class="btn
                 btn-default btn-sm">Edit</a>
@@ -42,6 +44,7 @@
                     }}" class="btn
                 btn-danger btn-sm">Remove</a>
                 </td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>
