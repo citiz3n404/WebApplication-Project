@@ -16,6 +16,12 @@ Avant de commencer il faut télécharger le repertoire. Je vous invite ensuite
 * `composer update`<br/><br/>
 Vous aurez ainsi la dernière version de chaque dépendance et de récupérer
 notemment `FOSUserBundle` qui n'est pas stocké sur le repo git.
+###Attention
+Pour une raison encore inconnue, il semblerait que tout ne s'upload pas
+correctement sur git. Par conséquent une fois le répertoire cloné, veuillez
+suivre les instructions suivantes :<br/>
+* Supprimer le dossier vendor
+* Entrer la commande : `composer install`
 
 ###Base de données
 Nous avons mis à disposition un fichier nsz.sql à la racine du projet pour
@@ -23,7 +29,9 @@ pouvoir remplir la base de données.
 Avant vous devez vous rendre dans le projet et executer la commande :
 `php bin/console doctrine:schema:update --force`<br/><br/>
 Au préalable vous devez avoir votre base de données, par défaut la notre se
-nomme `nsz`, mais libre à vous d'editer le fichier `app/config/parameters.yml` pour l'adapter à votre base de données.
+nomme `nsz`, mais libre à vous d'editer le fichier `app/config/parameters
+.yml` pour l'adapter à votre base de données.<br/>
+Vous pourrez ensuite lancer le server avec `php bin/console server:run`
 
 ###Se connecter
 Avant tout comme le site est protéger il vous sera impossible d'acceder aux
