@@ -112,7 +112,7 @@ dossier). <br/>
 Seuls les utilisateurs ayant le role requis par le dossier peuvent y acceder.
  Sauf le **Gestionnaire** qui a accès à tous les dossiers.
 
- ####Les Fichiers
+####Les Fichiers
  ![img](gitImg/files.jpg "Files")<br/>
  Les fichiers sont uploadés vers le dossier `src/web/uploads/` et sont donc
  listé dans les dossiers. Tout le monde ayant accès au dossier peuvent
@@ -125,7 +125,7 @@ Nous avons utilisé le module `html2pdf` afin de faire un rendu de la fiche de
  paie employé. Seul l'employé concerné, l'Adminsitrateur et le RH peuvent y
   avoir accès.
 
- ##Services
+##Services
  Nous avons fait un service afin de pouvoir recueillir dans la base de donnée
   quelques informations nécessaires sur toutes les pages. Par exemple, dans
   notre sidebar nous avons un module `TOP5Membres` ainsi qu'un module `Les

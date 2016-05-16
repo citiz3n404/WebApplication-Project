@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71bd8dca-f337-4e5d-b293-9a7f537be4c6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitImg/annuaire.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitImg/categ.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitImg/dossiers.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitImg/files.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitImg/formation.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitImg/formations.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitImg/paie.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitImg/profil.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitImg/stats.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitImg/topic.jpg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/var/sessions/dev/sess_5l0uhmpbgdekat3j3r28bar585" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
     </list>
     <ignored path="nationalSecurityZero.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,8 +92,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="510">
-                <caret line="132" column="28" selection-start-line="132" selection-start-column="28" selection-end-line="132" selection-end-column="28" />
+              <first_editor relative-caret-position="312">
+                <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -408,7 +395,7 @@
       <workItem from="1463318609633" duration="7658000" />
       <workItem from="1463327496302" duration="23726000" />
       <workItem from="1463367169062" duration="13000" />
-      <workItem from="1463398790046" duration="21429000" />
+      <workItem from="1463398790046" duration="21704000" />
     </task>
     <task id="LOCAL-00001" summary="Test de commit avec PhpStorm">
       <created>1460163789198</created>
@@ -421,7 +408,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244915000" />
+    <option name="totallyTimeSpent" value="245190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -867,8 +854,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="510">
-            <caret line="132" column="28" selection-start-line="132" selection-start-column="28" selection-end-line="132" selection-end-column="28" />
+          <first_editor relative-caret-position="312">
+            <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
