@@ -10,6 +10,13 @@ Nous avons créer un bundle pour chaque module implémenté:
 * StatsBundle (avec `ChartJS`)
 
 ## Tester le projet
+###Récuperer le repertoire
+Avant de commencer il faut télécharger le repertoire. Je vous invite ensuite
+à faire :<br/>
+* `composer update`<br/><br/>
+Vous aurez ainsi la dernière version de chaque dépendance et de récupérer
+notemment `FOSUserBundle` qui n'est pas stocké sur le repo git.
+
 ###Base de données
 Nous avons mis à disposition un fichier nsz.sql à la racine du projet pour
 pouvoir remplir la base de données.
@@ -123,7 +130,11 @@ Seuls les utilisateurs ayant le role requis par le dossier peuvent y acceder.
 ![img](gitImg/paie.jpg "FichedePaie")<br/>
 Nous avons utilisé le module `html2pdf` afin de faire un rendu de la fiche de
  paie employé. Seul l'employé concerné, l'Adminsitrateur et le RH peuvent y
-  avoir accès.
+  avoir accès.<br>
+<br/>
+ Les cotisations sociales sont basées sur la version simplifié trouvée dans
+ le lien qui suit.
+[Cotisations sociales](https://fr.wikipedia.org/wiki/Cotisations_sociales_en_France#Travailleurs_salari.C3.A9s)
 
 ##Services
  Nous avons fait un service afin de pouvoir recueillir dans la base de donnée
