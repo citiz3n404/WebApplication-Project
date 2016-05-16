@@ -23,20 +23,20 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2507a1554782270dfa0dc89143c266c37701ec73317df99ad19545866647940b = $this->env->getExtension("native_profiler");
-        $__internal_2507a1554782270dfa0dc89143c266c37701ec73317df99ad19545866647940b->enter($__internal_2507a1554782270dfa0dc89143c266c37701ec73317df99ad19545866647940b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnnuaireBundle:Default:index.html.twig"));
+        $__internal_74d55f0957cabbc4bf5c7041a4a3df6fa95cc3a14897236f92e86bc147aa34aa = $this->env->getExtension("native_profiler");
+        $__internal_74d55f0957cabbc4bf5c7041a4a3df6fa95cc3a14897236f92e86bc147aa34aa->enter($__internal_74d55f0957cabbc4bf5c7041a4a3df6fa95cc3a14897236f92e86bc147aa34aa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnnuaireBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_2507a1554782270dfa0dc89143c266c37701ec73317df99ad19545866647940b->leave($__internal_2507a1554782270dfa0dc89143c266c37701ec73317df99ad19545866647940b_prof);
+        $__internal_74d55f0957cabbc4bf5c7041a4a3df6fa95cc3a14897236f92e86bc147aa34aa->leave($__internal_74d55f0957cabbc4bf5c7041a4a3df6fa95cc3a14897236f92e86bc147aa34aa_prof);
 
     }
 
     // line 2
     public function block_breadcrumbs($context, array $blocks = array())
     {
-        $__internal_666d82441ddd7cf61ca083341ee1b5c3db599f5e3a55b85b7c5f0940ac37a21e = $this->env->getExtension("native_profiler");
-        $__internal_666d82441ddd7cf61ca083341ee1b5c3db599f5e3a55b85b7c5f0940ac37a21e->enter($__internal_666d82441ddd7cf61ca083341ee1b5c3db599f5e3a55b85b7c5f0940ac37a21e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumbs"));
+        $__internal_c11965078ef716fd4ef445a526565967f607b80e3015e8b6cee58bc108c5af48 = $this->env->getExtension("native_profiler");
+        $__internal_c11965078ef716fd4ef445a526565967f607b80e3015e8b6cee58bc108c5af48->enter($__internal_c11965078ef716fd4ef445a526565967f607b80e3015e8b6cee58bc108c5af48_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumbs"));
 
         // line 3
         echo "    ";
@@ -48,15 +48,15 @@ class __TwigTemplate_7d154de4861acdce2770ee65eeeaf2f1662f5d833be92950ac3ed3f13a6
         echo "\">Annuaire</a></li>
 ";
         
-        $__internal_666d82441ddd7cf61ca083341ee1b5c3db599f5e3a55b85b7c5f0940ac37a21e->leave($__internal_666d82441ddd7cf61ca083341ee1b5c3db599f5e3a55b85b7c5f0940ac37a21e_prof);
+        $__internal_c11965078ef716fd4ef445a526565967f607b80e3015e8b6cee58bc108c5af48->leave($__internal_c11965078ef716fd4ef445a526565967f607b80e3015e8b6cee58bc108c5af48_prof);
 
     }
 
     // line 6
     public function block_body($context, array $blocks = array())
     {
-        $__internal_84e2d2410b75ca72269a15ddc615b45be57290ed956c375403091d05649bfc17 = $this->env->getExtension("native_profiler");
-        $__internal_84e2d2410b75ca72269a15ddc615b45be57290ed956c375403091d05649bfc17->enter($__internal_84e2d2410b75ca72269a15ddc615b45be57290ed956c375403091d05649bfc17_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_8ebee6975de82591cd1af47de443fcd5568118e2b65cc3b1e4dedb2b7327c447 = $this->env->getExtension("native_profiler");
+        $__internal_8ebee6975de82591cd1af47de443fcd5568118e2b65cc3b1e4dedb2b7327c447->enter($__internal_8ebee6975de82591cd1af47de443fcd5568118e2b65cc3b1e4dedb2b7327c447_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 7
         echo "    <h2 class=\"page-header\">ANNUAIRE</h2>
@@ -157,46 +157,52 @@ $context["role"] == "ROLE_RH")) {
                     // line 63
                     echo "                            <span class=\"label label-success\">RH</span>
                         ";
+                } elseif ((                // line 64
+$context["role"] == "ROLE_GESTIONNAIRE")) {
+                    // line 65
+                    echo "                            <span class=\"label
+                            label-primary\">GESTIONNAIRE</span>
+                        ";
                 }
-                // line 65
+                // line 68
                 echo "                    ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 66
+            // line 69
             echo "                </td>
                 <td>";
-            // line 67
+            // line 70
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "nom", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 68
+            // line 71
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "prenom", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 69
+            // line 72
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "sexe", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 70
+            // line 73
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "salaire", array()), "html", null, true);
             echo " €</td>
                 <td>";
-            // line 71
+            // line 74
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "typeContrat", array()), "html", null, true);
             echo "</td>
                 <td><a href=\"";
-            // line 72
+            // line 75
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "\"
                        class=\"btn
                 btn-info btn-sm\">Details</a>
 
                     ";
-            // line 76
+            // line 79
             if (($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || $this->env->getExtension('security')->isGranted("ROLE_RH"))) {
-                // line 77
+                // line 80
                 echo "                    <a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("editprofil", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
                 echo "\"
@@ -206,7 +212,7 @@ $context["role"] == "ROLE_RH")) {
                     <a href=\"\" class=\"btn  btn-danger btn-sm\">Remove</a>
                     ";
             }
-            // line 83
+            // line 86
             echo "                </td>
             </tr>
         ";
@@ -214,7 +220,7 @@ $context["role"] == "ROLE_RH")) {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 86
+        // line 89
         echo "        </tbody>
     </table>
 </div>
@@ -222,16 +228,16 @@ $context["role"] == "ROLE_RH")) {
         <ul class=\"pagination\">
             <li
                 ";
-        // line 92
+        // line 95
         if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) == 1)) {
-            // line 93
+            // line 96
             echo "                    class=\"disabled\"
                 ";
         }
-        // line 95
+        // line 98
         echo "            >
                 <a href=\"";
-        // line 96
+        // line 99
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => ((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) - 1))), "html", null, true);
         echo "\"
                    aria-label=\"Previous\"
@@ -240,23 +246,23 @@ $context["role"] == "ROLE_RH")) {
                 </a>
             </li>
             ";
-        // line 102
+        // line 105
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["maxpage"]) ? $context["maxpage"] : $this->getContext($context, "maxpage"))));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 103
+            // line 106
             echo "                ";
             if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) == $context["i"])) {
-                // line 104
+                // line 107
                 echo "                    <li class=\"active\"><a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => $context["i"])), "html", null, true);
                 echo "\">";
                 echo twig_escape_filter($this->env, $context["i"], "html", null, true);
-                // line 105
+                // line 108
                 echo "</a></li>
                 ";
             } else {
-                // line 107
+                // line 110
                 echo "                    <li><a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => $context["i"])), "html", null, true);
                 echo "\">";
@@ -264,25 +270,25 @@ $context["role"] == "ROLE_RH")) {
                 echo "<span class=\"sr-only\">(current) </span></a></li>
                 ";
             }
-            // line 109
+            // line 112
             echo "            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 110
+        // line 113
         echo "            <li
                 ";
-        // line 111
+        // line 114
         if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) == (isset($context["maxpage"]) ? $context["maxpage"] : $this->getContext($context, "maxpage")))) {
-            // line 112
+            // line 115
             echo "                    class=\"disabled\"
                 ";
         }
-        // line 114
+        // line 117
         echo "            >
                 <a href=\"";
-        // line 115
+        // line 118
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annuaire", array("page" => ((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) + 1))), "html", null, true);
         echo "\"
                    aria-label=\"Next\">
@@ -293,39 +299,47 @@ $context["role"] == "ROLE_RH")) {
     </nav>
 ";
         
-        $__internal_84e2d2410b75ca72269a15ddc615b45be57290ed956c375403091d05649bfc17->leave($__internal_84e2d2410b75ca72269a15ddc615b45be57290ed956c375403091d05649bfc17_prof);
+        $__internal_8ebee6975de82591cd1af47de443fcd5568118e2b65cc3b1e4dedb2b7327c447->leave($__internal_8ebee6975de82591cd1af47de443fcd5568118e2b65cc3b1e4dedb2b7327c447_prof);
 
     }
 
-    // line 124
+    // line 127
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_6e03a775a3c8da13670ce35492dc41a36d2427be3a3c5c95861af7504dd13b02 = $this->env->getExtension("native_profiler");
-        $__internal_6e03a775a3c8da13670ce35492dc41a36d2427be3a3c5c95861af7504dd13b02->enter($__internal_6e03a775a3c8da13670ce35492dc41a36d2427be3a3c5c95861af7504dd13b02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_0166329990865e81ee682040106ad0ffdbeecf256912f312fd02980516120e87 = $this->env->getExtension("native_profiler");
+        $__internal_0166329990865e81ee682040106ad0ffdbeecf256912f312fd02980516120e87->enter($__internal_0166329990865e81ee682040106ad0ffdbeecf256912f312fd02980516120e87_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 125
+        // line 128
         echo "    <script>
         \$(function() {
             var listUsername = [];
             ";
-        // line 128
+        // line 131
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["listusers"]) ? $context["listusers"] : $this->getContext($context, "listusers")));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 129
+            // line 132
             echo "                listUsername.push({ label : \"";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "nom", array()), "html", null, true);
             echo "\", value:
                         \"";
-            // line 130
+            // line 133
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "username", array()), "html", null, true);
             echo "\"});
                 listUsername.push({ label : \"";
-            // line 131
+            // line 134
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "prenom", array()), "html", null, true);
             echo "\", value:
                     \"";
-            // line 132
+            // line 135
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "username", array()), "html", null, true);
+            echo "\"});
+                listUsername.push({ label : \"";
+            // line 136
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "username", array()), "html", null, true);
+            echo "\", value:
+                    \"";
+            // line 137
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "username", array()), "html", null, true);
             echo "\"});
             ";
@@ -333,7 +347,7 @@ $context["role"] == "ROLE_RH")) {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 134
+        // line 139
         echo "            \$( \"#form_recherche\" ).autocomplete({
                 source: function(request, response) {
                     var results = \$.ui.autocomplete.filter(listUsername, request.term);
@@ -344,7 +358,7 @@ $context["role"] == "ROLE_RH")) {
     </script>
 ";
         
-        $__internal_6e03a775a3c8da13670ce35492dc41a36d2427be3a3c5c95861af7504dd13b02->leave($__internal_6e03a775a3c8da13670ce35492dc41a36d2427be3a3c5c95861af7504dd13b02_prof);
+        $__internal_0166329990865e81ee682040106ad0ffdbeecf256912f312fd02980516120e87->leave($__internal_0166329990865e81ee682040106ad0ffdbeecf256912f312fd02980516120e87_prof);
 
     }
 
@@ -360,7 +374,7 @@ $context["role"] == "ROLE_RH")) {
 
     public function getDebugInfo()
     {
-        return array (  337 => 134,  329 => 132,  325 => 131,  321 => 130,  316 => 129,  312 => 128,  307 => 125,  301 => 124,  286 => 115,  283 => 114,  279 => 112,  277 => 111,  274 => 110,  268 => 109,  260 => 107,  256 => 105,  251 => 104,  248 => 103,  244 => 102,  235 => 96,  232 => 95,  228 => 93,  226 => 92,  218 => 86,  210 => 83,  200 => 77,  198 => 76,  191 => 72,  187 => 71,  183 => 70,  179 => 69,  175 => 68,  171 => 67,  168 => 66,  162 => 65,  158 => 63,  156 => 62,  153 => 61,  151 => 60,  148 => 59,  146 => 58,  143 => 57,  140 => 56,  137 => 55,  133 => 54,  126 => 52,  119 => 48,  118 => 47,  115 => 46,  111 => 45,  83 => 20,  77 => 17,  71 => 14,  62 => 7,  56 => 6,  47 => 4,  42 => 3,  36 => 2,  11 => 1,);
+        return array (  351 => 139,  343 => 137,  339 => 136,  335 => 135,  331 => 134,  327 => 133,  322 => 132,  318 => 131,  313 => 128,  307 => 127,  292 => 118,  289 => 117,  285 => 115,  283 => 114,  280 => 113,  274 => 112,  266 => 110,  262 => 108,  257 => 107,  254 => 106,  250 => 105,  241 => 99,  238 => 98,  234 => 96,  232 => 95,  224 => 89,  216 => 86,  206 => 80,  204 => 79,  197 => 75,  193 => 74,  189 => 73,  185 => 72,  181 => 71,  177 => 70,  174 => 69,  168 => 68,  163 => 65,  161 => 64,  158 => 63,  156 => 62,  153 => 61,  151 => 60,  148 => 59,  146 => 58,  143 => 57,  140 => 56,  137 => 55,  133 => 54,  126 => 52,  119 => 48,  118 => 47,  115 => 46,  111 => 45,  83 => 20,  77 => 17,  71 => 14,  62 => 7,  56 => 6,  47 => 4,  42 => 3,  36 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -426,6 +440,9 @@ $context["role"] == "ROLE_RH")) {
 /*                             <span class="label label-danger">MODERATEUR</span>*/
 /*                         {% elseif role == "ROLE_RH" %}*/
 /*                             <span class="label label-success">RH</span>*/
+/*                         {% elseif role == "ROLE_GESTIONNAIRE" %}*/
+/*                             <span class="label*/
+/*                             label-primary">GESTIONNAIRE</span>*/
 /*                         {% endif %}*/
 /*                     {% endfor %}*/
 /*                 </td>*/
@@ -494,6 +511,8 @@ $context["role"] == "ROLE_RH")) {
 /*                 listUsername.push({ label : "{{ user.salarie.nom }}", value:*/
 /*                         "{{ user.username }}"});*/
 /*                 listUsername.push({ label : "{{ user.salarie.prenom }}", value:*/
+/*                     "{{ user.username }}"});*/
+/*                 listUsername.push({ label : "{{ user.username }}", value:*/
 /*                     "{{ user.username }}"});*/
 /*             {% endfor %}*/
 /*             $( "#form_recherche" ).autocomplete({*/

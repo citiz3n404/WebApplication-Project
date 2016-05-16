@@ -2,6 +2,24 @@
 {% block body %}
     <h2 class="page-header">FORMATIONS</h2>
 
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Rechercher</div>
+        <div style="margin: 10px 10px;">
+            <div class="row">
+                <div class="col-md-4">
+                    {{ form_start(form) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
     {% for formation in formations %}
         <div class="col-sm-3">
@@ -45,4 +63,22 @@
     <a href="{{ path('formationcreate') }}"
        class="btn btn-success" style="margin-bottom: 10px;">Create a new
         formation</a>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(function() {
+            var listFormation = [];
+            {% for formation in formations %}
+            listFormation.push({ label : "{{ formation.title }}", value:
+                    "{{ formation.title }}"});
+            {% endfor %}
+            $( "#form_recherche" ).autocomplete({
+                source: function(request, response) {
+                    var results = $.ui.autocomplete.filter(listFormation, request.term);
+                    response(results.slice(0, 5));
+                }
+            });
+        });
+    </script>
 {% endblock %}

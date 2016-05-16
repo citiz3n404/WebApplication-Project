@@ -96,6 +96,7 @@
         <parameter>ROLE_FORMATEUR</parameter>
         <parameter>ROLE_MODERATEUR</parameter>
         <parameter>ROLE_RH</parameter>
+        <parameter>ROLE_GESTIONNAIRE</parameter>
       </parameter>
       <parameter key="ROLE_SUPER_ADMIN" type="collection">
         <parameter>ROLE_ADMIN</parameter>
@@ -104,6 +105,7 @@
         <parameter>ROLE_FORMATEUR</parameter>
         <parameter>ROLE_MODERATEUR</parameter>
         <parameter>ROLE_RH</parameter>
+        <parameter>ROLE_GESTIONNAIRE</parameter>
       </parameter>
     </parameter>
     <parameter key="security.access.denied_url">null</parameter>
@@ -1930,7 +1932,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>573925f2cf28c3.86968181</argument>
+            <argument>5739d899811d28.78073986</argument>
           </service>
         </argument>
       </argument>
@@ -1990,6 +1992,7 @@
           <argument>ROLE_FORMATEUR</argument>
           <argument>ROLE_MODERATEUR</argument>
           <argument>ROLE_RH</argument>
+          <argument>ROLE_GESTIONNAIRE</argument>
         </argument>
         <argument key="ROLE_SUPER_ADMIN" type="collection">
           <argument>ROLE_ADMIN</argument>
@@ -1998,6 +2001,7 @@
           <argument>ROLE_FORMATEUR</argument>
           <argument>ROLE_MODERATEUR</argument>
           <argument>ROLE_RH</argument>
+          <argument>ROLE_GESTIONNAIRE</argument>
         </argument>
       </argument>
     </service>
@@ -2295,7 +2299,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>573925f2cf28c3.86968181</argument>
+            <argument>5739d899811d28.78073986</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>

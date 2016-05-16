@@ -46,6 +46,9 @@
                                     <span class="label label-danger">MODERATEUR</span>
                                 {% elseif role == "ROLE_RH" %}
                                     <span class="label label-success">RH</span>
+                                {% elseif role == "ROLE_GESTIONNAIRE" %}
+                                    <span class="label
+                                    label-primary">GESTIONNAIRE</span>
                                 {% endif %}
                             {% endfor %}
                         </div>
@@ -59,7 +62,9 @@
                     {% endif %}
                 </th>
                 <td>{{ reply.content }}</td>
-                <td>{{ reply.date|date("d-m-Y H:i:s")  }}</td>
+                <td><p style="font-size: 12px;">{{ reply.date|date("d-m-Y
+                H:i:s")
+                        }}</p></td>
                 <td>
                     {% if reply.user.username == app.user.username or
                     is_granted('ROLE_ADMIN') or is_granted('ROLE_MODERATEUR')%}

@@ -22,6 +22,8 @@
             }}"></script>
             <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js')
             }}"></script>
+            <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')
+            }}"></script>
         {% endblock %}
     </head>
     <body>
@@ -44,8 +46,11 @@
 
                     {% if app.user is not null %}
                         <p class="navbar-text">
-                            <span class="label label-default">{{ app.user
-                                .username|upper }}</span>
+                            <a href="{{ path
+                            ('profiluser', {'id': app.user.id}) }}"
+                               role="button"><span class="label label-default">{{ app.user
+                                    .username|upper }}</span></a>
+
                             {% for role in app.user.roles %}
                                 {% if role == "ROLE_ADMIN" %}
                                     <span class="label label-black">ADMIN</span>
@@ -55,15 +60,16 @@
                                     <span class="label label-danger">MODERATEUR</span>
                                 {% elseif role == "ROLE_RH" %}
                                     <span class="label label-success">RH</span>
+                                {% elseif role == "ROLE_GESTIONNAIRE" %}
+                                    <span class="label
+                                    label-primary">GESTIONNAIRE</span>
                                 {% endif %}
                             {% endfor %}
                         </p>
                         <img alt="Brand" src="{{ asset('img/users/' ~ app.user
                         .salarie.img )
                         }}">
-                    <a class="btn btn-default navbar-btn btn-sm" href="{{ path
-                    ('profiluser', {'id': app.user.id}) }}"
-                       role="button">Profil</a>
+
                     <a class="btn btn-default navbar-btn btn-sm" href="/logout"
                        role="button"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                     {% else %}
@@ -149,22 +155,34 @@
             <div class="container white-shadow" style="padding-top: 10px;">
                 {% for flash_message in app.session.flashbag.get
                 ('info') %}
-                    <div class="alert alert-info">{{ flash_message
+                    <div class="alert alert-info alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>{{ flash_message
                         }}</div>
                 {% endfor %}
                 {% for flash_message in app.session.flashbag.get
                 ('success') %}
-                    <div class="alert alert-success">{{ flash_message
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>{{ flash_message
                         }}</div>
                 {% endfor %}
                 {% for flash_message in app.session.flashbag.get
                 ('warning') %}
-                    <div class="alert alert-warning">{{ flash_message
+                    <div class="alert alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>{{ flash_message
                         }}</div>
                 {% endfor %}
                 {% for flash_message in app.session.flashbag.get
                 ('danger') %}
-                    <div class="alert alert-danger">{{ flash_message
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>{{ flash_message
                         }}</div>
                 {% endfor %}
 

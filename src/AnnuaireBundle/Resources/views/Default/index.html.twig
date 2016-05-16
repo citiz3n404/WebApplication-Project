@@ -61,6 +61,9 @@
                             <span class="label label-danger">MODERATEUR</span>
                         {% elseif role == "ROLE_RH" %}
                             <span class="label label-success">RH</span>
+                        {% elseif role == "ROLE_GESTIONNAIRE" %}
+                            <span class="label
+                            label-primary">GESTIONNAIRE</span>
                         {% endif %}
                     {% endfor %}
                 </td>
@@ -129,6 +132,8 @@
                 listUsername.push({ label : "{{ user.salarie.nom }}", value:
                         "{{ user.username }}"});
                 listUsername.push({ label : "{{ user.salarie.prenom }}", value:
+                    "{{ user.username }}"});
+                listUsername.push({ label : "{{ user.username }}", value:
                     "{{ user.username }}"});
             {% endfor %}
             $( "#form_recherche" ).autocomplete({

@@ -120,6 +120,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'fichiers')), array (  '_controller' => 'FichierBundle\\Controller\\FichierController::listAction',));
             }
 
+            // fichierremove
+            if (0 === strpos($pathinfo, '/dossier/remove') && preg_match('#^/dossier/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fichierremove')), array (  '_controller' => 'FichierBundle\\Controller\\FichierController::removeAction',));
+            }
+
             // fichierupload
             if (preg_match('#^/dossier/(?P<id>[^/]++)/upload$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'fichierupload')), array (  '_controller' => 'FichierBundle\\Controller\\FichierController::uploadAction',));

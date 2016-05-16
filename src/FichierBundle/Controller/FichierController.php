@@ -23,9 +23,54 @@ class FichierController extends Controller
         ('FichierBundle:Fichier')->findByDossier($id);
         $dossier = $this->getDoctrine()->getRepository
         ('FichierBundle:Dossier')->find($id);
+
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_GESTIONNAIRE')) {
+
+            $bool = false;
+            foreach( $this->getUser()->getRoles() as $roluser){
+                foreach ($dossier->getRoles() as $roledir){
+                    if($roledir == $roluser){
+                        $bool = true;
+                    }
+                }
+            }
+            if(!$bool){
+                $this->addFlash('danger', 'Vous n\'avez pas les permissions 
+                d\'accès au dossier.');
+                return $this->redirectToRoute('dossiers');
+            }
+        }
+        
         return $this->render('FichierBundle:Fichiers:listFichiers.html.twig',
             array
         ('fichiers'=> $fichiers, 'dossier'=>$dossier));
+    }
+
+    /**
+     * @Route("/remove/{id}", name="fichierremove")
+     */
+    public function removeAction($id)
+    {
+        $fichier = $this->getDoctrine()->getRepository('FichierBundle:Fichier')
+            ->find($id);
+
+        if (false === $this->get('security.authorization_checker')->isGranted
+            ('ROLE_GESTIONNAIRE')) {
+
+                $this->addFlash('danger', 'Vous n\'êtes pas Gestionnaire, 
+                vous ne pouvez pas supprimer de fichier');
+                return $this->redirectToRoute('fichiers', array
+                ('id'=>$fichier->getDossier()->getId()));
+
+        }
+        $em=$this->getDoctrine()->getManager();
+        $em->remove($fichier);
+        $em->flush();
+        $this->addFlash('danger', 'Fichier supprimé');
+        //nom de la route!
+        return $this->redirectToRoute('fichiers', array
+        ('id'=>$fichier->getDossier()->getId()));
     }
 
 

@@ -16,6 +16,10 @@
                 <th>Fichier</th>
                 <th>Type</th>
                 <th>Taille</th>
+                {% if  is_granted('ROLE_ADMIN') or is_granted
+                ('ROLE_GESTIONNAIRE')%}
+                <th>Action</th>
+                {% endif %}
             </tr>
             </thead>
             <tbody>
@@ -47,6 +51,13 @@
                         <a href="{{ asset('uploads/' ~ fichier.fichier ) }}">{{ fichier.name }}</a></th>
                     <td>{{ fichier.type }}</td>
                     <td>{{ fichier.size }} octets</td>
+                    {% if  is_granted('ROLE_ADMIN') or is_granted
+                    ('ROLE_GESTIONNAIRE')%}
+                        <td><a href="{{ path('fichierremove', {'id': fichier.id})
+                            }}" class="btn
+                btn-danger btn-sm"><span class="glyphicon
+                glyphicon-trash" aria-hidden="true"></span></a></td>
+                    {% endif %}
                 </tr>
             {% endfor %}
             </tbody>

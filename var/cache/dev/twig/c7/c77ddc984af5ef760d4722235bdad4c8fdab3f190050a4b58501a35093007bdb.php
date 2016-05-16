@@ -11,7 +11,6 @@ class __TwigTemplate_9c49c24b005e736761f5980206538ee9934f6144dc4b95cce2f54a7e3a2
         $this->parent = $this->loadTemplate("base.html.twig", "default/index.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
-            'stylesheets' => array($this, 'block_stylesheets'),
         );
     }
 
@@ -22,121 +21,130 @@ class __TwigTemplate_9c49c24b005e736761f5980206538ee9934f6144dc4b95cce2f54a7e3a2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0e07c1010f402304f6c5425e7b02fa5c8e6d6293c2af57ef3992d215bab886a6 = $this->env->getExtension("native_profiler");
-        $__internal_0e07c1010f402304f6c5425e7b02fa5c8e6d6293c2af57ef3992d215bab886a6->enter($__internal_0e07c1010f402304f6c5425e7b02fa5c8e6d6293c2af57ef3992d215bab886a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_4aa90e4dbc7aa3aa9dc19a10a68c294709674bd4771fcdb043b83d81ddef9b35 = $this->env->getExtension("native_profiler");
+        $__internal_4aa90e4dbc7aa3aa9dc19a10a68c294709674bd4771fcdb043b83d81ddef9b35->enter($__internal_4aa90e4dbc7aa3aa9dc19a10a68c294709674bd4771fcdb043b83d81ddef9b35_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_0e07c1010f402304f6c5425e7b02fa5c8e6d6293c2af57ef3992d215bab886a6->leave($__internal_0e07c1010f402304f6c5425e7b02fa5c8e6d6293c2af57ef3992d215bab886a6_prof);
+        $__internal_4aa90e4dbc7aa3aa9dc19a10a68c294709674bd4771fcdb043b83d81ddef9b35->leave($__internal_4aa90e4dbc7aa3aa9dc19a10a68c294709674bd4771fcdb043b83d81ddef9b35_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_5f23738fc78aaf8c3f560c62eb71a6fbca7234a70b462ccf7a2ecc78fd2036ce = $this->env->getExtension("native_profiler");
-        $__internal_5f23738fc78aaf8c3f560c62eb71a6fbca7234a70b462ccf7a2ecc78fd2036ce->enter($__internal_5f23738fc78aaf8c3f560c62eb71a6fbca7234a70b462ccf7a2ecc78fd2036ce_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_cec89802ebb8bae1c20415be648caeebe0b341d8b7d99c0e3a077c9a0f35d5bf = $this->env->getExtension("native_profiler");
+        $__internal_cec89802ebb8bae1c20415be648caeebe0b341d8b7d99c0e3a077c9a0f35d5bf->enter($__internal_cec89802ebb8bae1c20415be648caeebe0b341d8b7d99c0e3a077c9a0f35d5bf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <div id=\"wrapper\">
         <div id=\"container\">
-            <div id=\"welcome\">
-                <h1><span>Welcome to</span> Symfony ";
-        // line 7
-        echo twig_escape_filter($this->env, twig_constant("Symfony\\Component\\HttpKernel\\Kernel::VERSION"), "html", null, true);
-        echo "</h1>
+
+            <div class=\"row\">
+                <div style =\"margin: 0 auto; text-align:
+                center;\">
+                    <h1>National Security Zero</h1>
+                    <img
+                            src=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("img/logoaigleaccueil.png"), "html", null, true);
+        // line 13
+        echo "\"
+                    ></div>
             </div>
 
-            <div id=\"status\">
-                <p>
-                    <svg id=\"icon-status\" width=\"1792\" height=\"1792\" viewBox=\"0 0 1792 1792\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z\" fill=\"#759E1A\"/></svg>
+            <h3 class=\"page-header\">Attention votre présence ici équivault
+                à une acceptation des clauses suivantes, tout manquement
+                est passible de lourdes peines pouvant aller jusqu'à une
+                sanction lethale.</h3>
+            <div class=\"panel panel-default\">
+                <!-- Default panel contents -->
+                <div class=\"panel-heading\">Information</div>
+                <div style=\"margin: 10px 10px;\">
+                    <p><h4><span class=\"label label-danger\">ARTICLE 1 - OBJET DE L'ACCORD</span>
+                        </h4>
 
-                    Your application is now ready. You can start working on it at:
-                    <code>";
-        // line 15
-        echo twig_escape_filter($this->env, (isset($context["base_dir"]) ? $context["base_dir"] : $this->getContext($context, "base_dir")), "html", null, true);
-        echo "/</code>
-                </p>
-            </div>
+                    L'objet du présent accord de confidentialité (ci-après, l'Accord) est de définir les modalités de communications d'informations réalisées entre les Parties, et de fixer les règles relatives à la protection et à l'utilisation des Informations Confidentielles que les Parties souhaitent s'échanger.
 
-            <div id=\"next\">
-                <h2>What's next?</h2>
-                <p>
-                    <svg id=\"icon-book\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewBox=\"-12.5 9 64 64\" enable-background=\"new -12.5 9 64 64\" xml:space=\"preserve\">
-                        <path fill=\"#AAA\" d=\"M6.8,40.8c2.4,0.8,4.5-0.7,4.9-2.5c0.2-1.2-0.3-2.1-1.3-3.2l-0.8-0.8c-0.4-0.5-0.6-1.3-0.2-1.9
-                            c0.4-0.5,0.9-0.8,1.8-0.5c1.3,0.4,1.9,1.3,2.9,2.2c-0.4,1.4-0.7,2.9-0.9,4.2l-0.2,1c-0.7,4-1.3,6.2-2.7,7.5
-                            c-0.3,0.3-0.7,0.5-1.3,0.6c-0.3,0-0.4-0.3-0.4-0.3c0-0.3,0.2-0.3,0.3-0.4c0.2-0.1,0.5-0.3,0.4-0.8c0-0.7-0.6-1.3-1.3-1.3
-                            c-0.6,0-1.4,0.6-1.4,1.7s1,1.9,2.4,1.8c0.8,0,2.5-0.3,4.2-2.5c2-2.5,2.5-5.4,2.9-7.4l0.5-2.8c0.3,0,0.5,0.1,0.8,0.1
-                            c2.4,0.1,3.7-1.3,3.7-2.3c0-0.6-0.3-1.2-0.9-1.2c-0.4,0-0.8,0.3-1,0.8c-0.1,0.6,0.8,1.1,0.1,1.5c-0.5,0.3-1.4,0.6-2.7,0.4l0.3-1.3
-                            c0.5-2.6,1-5.7,3.2-5.8c0.2,0,0.8,0,0.8,0.4c0,0.2,0,0.2-0.2,0.5c-0.2,0.3-0.3,0.4-0.2,0.7c0,0.7,0.5,1.1,1.2,1.1
-                            c0.9,0,1.2-1,1.2-1.4c0-1.2-1.2-1.8-2.6-1.8c-1.5,0.1-2.8,0.9-3.7,2.1c-1.1,1.3-1.8,2.9-2.3,4.5c-0.9-0.8-1.6-1.8-3.1-2.3
-                            c-1.1-0.7-2.3-0.5-3.4,0.3c-0.5,0.4-0.8,1-1,1.6c-0.4,1.5,0.4,2.9,0.8,3.4l0.9,1c0.2,0.2,0.6,0.8,0.4,1.5c-0.3,0.8-1.2,1.3-2.1,1
-                            c-0.4-0.2-1-0.5-0.9-0.9c0.1-0.2,0.2-0.3,0.3-0.5s0.1-0.3,0.1-0.3c0.2-0.6-0.1-1.4-0.7-1.6c-0.6-0.2-1.2,0-1.3,0.8
-                            C4.3,38.4,4.7,40,6.8,40.8z M46.1,20.9c0-4.2-3.2-7.5-7.1-7.5h-3.8C34.8,10.8,32.7,9,30.2,9L-2.3,9.1c-2.8,0.1-4.9,2.4-4.9,5.4
-                            L-7,58.6c0,4.8,8.1,13.9,11.6,14.1l34.7-0.1c3.9,0,7-3.4,7-7.6L46.1,20.9z M-0.3,36.4c0-8.6,6.5-15.6,14.5-15.6
-                            c8,0,14.5,7,14.5,15.6S22.1,52,14.2,52C6.1,52-0.3,45-0.3,36.4z M42.1,65.1c0,1.8-1.5,3.1-3.1,3.1H4.6c-0.7,0-3-1.8-4.5-4.4h30.4
-                            c2.8,0,5-2.4,5-5.4V17.9h3.7c1.6,0,2.9,1.4,2.9,3.1V65.1L42.1,65.1z\"/>
-                    </svg>
+                    Chaque Partie s'engage, par le présent Accord, à réserver un traitement confidentiel aux informations que l'autre Partie lui communique dans le cadre de leur coopération.
 
-                    Read the documentation to learn
-                    <a href=\"http://symfony.com/doc/";
-        // line 39
-        echo twig_escape_filter($this->env, twig_slice($this->env, twig_constant("Symfony\\Component\\HttpKernel\\Kernel::VERSION"), 0, 3), "html", null, true);
-        echo "/book/page_creation.html\">
-                        How to create your first page in Symfony
-                    </a>
-                </p>
-            </div>
+                    </p>
+                    <hr>
+                    <p>
+                        <h4><span class=\"label label-danger\">ARTICLE 2 - DÉFINITIONS</span></h4>
+
+                        Dans le présent Accord, les mots et expressions suivants ont le sens qui leur est attribué ci-dessous :
+
+                        Accord : désigne le présent Accord de confidentialité.
+                        Partie : désigne les Parties au présent Accord, qui communiquent et reçoivent les informations confidentielles et sont tenues de l'obligation de confidentialité.
+                        Informations confidentielles : désigne de manière non limitative les informations de toute nature, à caractère notamment technique, commercial, de savoir-faire, plan, dessins, rapports, données informatiques et archives, échangées mutuellement par les Parties par tous moyens, et qu'elles identifient de manière expresse ou indirecte comme étant confidentielles dès leur divulgation ou au plus tard dans les trente (30) jours suivant celle-ci, pendant toute la durée du présent Accord, et le cas échéant cinq (5) ans après sa résiliation si celle-ci intervient avant échéance de l'Accord.
+
+                        L'existence même du présent Accord est une information confidentielle, telle que définie ci-dessus.
+                    </p>
+                    <hr>
+                    <p>
+                    <h4><span class=\"label label-danger\">ARTICLE 3 - DURÉE DU PRÉSENT ACCORD</span></h4>
+
+                    Le présent Accord de confidentialité entre en vigueur à compter de la date de sa signature par les Parties.
+
+                    Il est conclu pour la durée suivante : 5 ans
+
+                    Les dispositions de confidentialité prévues au présent Accord s'appliqueront pendant toute cette durée, et le cas échéant pendant cinq (5) ans après sa résiliation si le présent Accord est résilié avant échéance, et ce quelle qu'en soit la cause.
+
+                    </p>
+                    <hr>
+                    <p>
+                    <h4><span class=\"label label-danger\">ARTICLE 4 - OBLIGATIONS DE SECRET ET DE
+                        CONFIDENTIALITÉ</span></h4>
+
+                    Les Parties reconnaissent que les Informations communiquées dans le cadre de leur collaboration ont un caractère confidentiel, et elles acceptent de ne pas les divulguer.
+
+                    Aucune Information Confidentielle ne pourra être communiquée à un tiers sans l'accord écrit de la Partie qui transmet ladite information.
+
+                    Les Parties s'engagent à ne pas utiliser, ni à divulguer les informations confidentielles qu'elles reçoivent, pendant toute la durée du présent Accord, ainsi que, le cas échéant, pendant une période de cinq (5) ans à compter de la date de résiliation du présent Accord si celui-ci venait à être résiliée par une quelconque des Parties.
+
+                    Les Parties s'engagent à prendre toutes les dispositions nécessaires pour que les informations confidentielles transmises ne soient ni divulguées, ni cédées. Elles s'engagent à apporter à toute Information Confidentielle au moins la même attention que celle avec laquelle elles protègent leurs propres informations.
+
+                    Les Parties s'engagent également à veiller au respect du présent Accord par leurs collaborateurs et leurs salariés.
+
+                    Les Parties s'engagent à n'utiliser les Informations Confidentielles qu'en vue de réaliser les objectifs de leur collaboration, et à ne pas les utiliser à d'autres fins et à s'assurer qu'elles ne sont portées qu'à la connaissance des personnes à qui elles sont strictement nécessaires pour la réalisation de leur collaboration. Les Informations Confidentielles ne doivent ainsi être communiquées qu'aux seuls membres du personnel ou collaborateurs ayant à les connaître pour la finalité de la collaboration des Parties. L'utilisation des Informations Confidentielles doit ainsi être limitée au déroulement du projet de collaboration entre les Parties.
+
+                    </p>
+                    <hr>
+                    <p>
+                        <h4><span class=\"label label-danger\">ARTICLE 5 - EXCEPTIONS AU PRÉSENT ACCORD</span></h4>
+
+                        Les dispositions prévues au présent Accord ne s'appliquent pas aux informations suivantes :
+
+                        les informations que les Parties possédaient avant la date de signature du présent Accord ;
+                        les informations relevant du domaine public, ou qui tombent par la suite dans le domaine public sans qu'il y a eu inexécution de ses obligations de la part de la Partie les ayant reçues ;
+                        les informations qui sont connues ou portées à la connaissance du public sans la faute de la Partie qui les reçoit ;
+                        les informations qui sont connues de la Partie qui les reçoit avant que la Partie qui les divulgue ne les ait communiquées, sur la foi des archives antérieures de la Partie qui les reçoit ;
+                        les informations qui sont portées à la connaissance de la Partie qui les reçoit par une divulgation d'un tiers habilité à les divulguer ;
+                        les informations bénéficiant d'une autorisation écrite de publication ou d'utilisation de la Partie qui la transmet ;
+                        les informations qui ont dû être communiquées par décision de justice ou conformément à une décision administrative.
+                        Dans le cas où une quelconque partie d'Information Confidentielle tombe dans une des exceptions mentionnées ci-dessus, l'Information Confidentielle restante continue à bénéficier de la protection du présent Accord.
+
+                    </p>
+                    <hr>
+                    <p>
+                        <h4><span class=\"label label-danger\">ARTICLE 6 - PROPRIÉTÉ INTELLECTUELLE</span></h4>
+
+                        Les dispositions du présent Accord ne sauraient être interprétées comme concédant à l'une ou l'autre Partie directement ou implicitement une licence sur un brevet ou une demande de brevet ou des droits d'auteur, des dessins et modèles, secrets industriels, droits sur les marques ou savoir-faire.
+
+                        La communication d'Informations Confidentielles n'implique pas la renonciation à la protection des-dites Informations par un brevet ou par tout autre droit de propriété intellectuelle, et n'implique aucun droit de licence ou de cession de quelconque droit de propriété intellectuelle.
+
+                        Les Informations Confidentielles communiquées par les Parties appartiennent en tout état de cause à la Partie dont elles émanent.
+                    </p>
+
+                </div>
+
 
         </div>
     </div>
 ";
         
-        $__internal_5f23738fc78aaf8c3f560c62eb71a6fbca7234a70b462ccf7a2ecc78fd2036ce->leave($__internal_5f23738fc78aaf8c3f560c62eb71a6fbca7234a70b462ccf7a2ecc78fd2036ce_prof);
-
-    }
-
-    // line 49
-    public function block_stylesheets($context, array $blocks = array())
-    {
-        $__internal_5504d3f600088ce1fa0cbe74091c25ae216d793988797261e6e3424ad31bead8 = $this->env->getExtension("native_profiler");
-        $__internal_5504d3f600088ce1fa0cbe74091c25ae216d793988797261e6e3424ad31bead8->enter($__internal_5504d3f600088ce1fa0cbe74091c25ae216d793988797261e6e3424ad31bead8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
-
-        // line 50
-        echo "
-<style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-    h1 { font-size: 36px; }
-    h2 { font-size: 21px; margin-bottom: 1em; }
-    p { margin: 0 0 1em 0; }
-    a { color: #0000F0; }
-    a:hover { text-decoration: none; }
-    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-    #container { padding: 2em; }
-    #welcome, #status { margin-bottom: 2em; }
-    #welcome h1 span { display: block; font-size: 75%; }
-    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-    #icon-book { display: none; }
-
-    @media (min-width: 768px) {
-        #wrapper { width: 80%; margin: 2em auto; }
-        #icon-book { display: inline-block; }
-        #status a, #next a { display: block; }
-
-        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
-    }
-</style>
-    ";
-        // line 77
-        $this->displayParentBlock("stylesheets", $context, $blocks);
-        echo "
-";
-        
-        $__internal_5504d3f600088ce1fa0cbe74091c25ae216d793988797261e6e3424ad31bead8->leave($__internal_5504d3f600088ce1fa0cbe74091c25ae216d793988797261e6e3424ad31bead8_prof);
+        $__internal_cec89802ebb8bae1c20415be648caeebe0b341d8b7d99c0e3a077c9a0f35d5bf->leave($__internal_cec89802ebb8bae1c20415be648caeebe0b341d8b7d99c0e3a077c9a0f35d5bf_prof);
 
     }
 
@@ -152,7 +160,7 @@ class __TwigTemplate_9c49c24b005e736761f5980206538ee9934f6144dc4b95cce2f54a7e3a2
 
     public function getDebugInfo()
     {
-        return array (  135 => 77,  106 => 50,  100 => 49,  84 => 39,  57 => 15,  46 => 7,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  52 => 13,  50 => 12,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -160,77 +168,106 @@ class __TwigTemplate_9c49c24b005e736761f5980206538ee9934f6144dc4b95cce2f54a7e3a2
 /* {% block body %}*/
 /*     <div id="wrapper">*/
 /*         <div id="container">*/
-/*             <div id="welcome">*/
-/*                 <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>*/
+/* */
+/*             <div class="row">*/
+/*                 <div style ="margin: 0 auto; text-align:*/
+/*                 center;">*/
+/*                     <h1>National Security Zero</h1>*/
+/*                     <img*/
+/*                             src="{{*/
+/*                     asset('img/logoaigleaccueil.png') }}"*/
+/*                     ></div>*/
 /*             </div>*/
 /* */
-/*             <div id="status">*/
-/*                 <p>*/
-/*                     <svg id="icon-status" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" fill="#759E1A"/></svg>*/
+/*             <h3 class="page-header">Attention votre présence ici équivault*/
+/*                 à une acceptation des clauses suivantes, tout manquement*/
+/*                 est passible de lourdes peines pouvant aller jusqu'à une*/
+/*                 sanction lethale.</h3>*/
+/*             <div class="panel panel-default">*/
+/*                 <!-- Default panel contents -->*/
+/*                 <div class="panel-heading">Information</div>*/
+/*                 <div style="margin: 10px 10px;">*/
+/*                     <p><h4><span class="label label-danger">ARTICLE 1 - OBJET DE L'ACCORD</span>*/
+/*                         </h4>*/
 /* */
-/*                     Your application is now ready. You can start working on it at:*/
-/*                     <code>{{ base_dir }}/</code>*/
-/*                 </p>*/
-/*             </div>*/
+/*                     L'objet du présent accord de confidentialité (ci-après, l'Accord) est de définir les modalités de communications d'informations réalisées entre les Parties, et de fixer les règles relatives à la protection et à l'utilisation des Informations Confidentielles que les Parties souhaitent s'échanger.*/
 /* */
-/*             <div id="next">*/
-/*                 <h2>What's next?</h2>*/
-/*                 <p>*/
-/*                     <svg id="icon-book" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-12.5 9 64 64" enable-background="new -12.5 9 64 64" xml:space="preserve">*/
-/*                         <path fill="#AAA" d="M6.8,40.8c2.4,0.8,4.5-0.7,4.9-2.5c0.2-1.2-0.3-2.1-1.3-3.2l-0.8-0.8c-0.4-0.5-0.6-1.3-0.2-1.9*/
-/*                             c0.4-0.5,0.9-0.8,1.8-0.5c1.3,0.4,1.9,1.3,2.9,2.2c-0.4,1.4-0.7,2.9-0.9,4.2l-0.2,1c-0.7,4-1.3,6.2-2.7,7.5*/
-/*                             c-0.3,0.3-0.7,0.5-1.3,0.6c-0.3,0-0.4-0.3-0.4-0.3c0-0.3,0.2-0.3,0.3-0.4c0.2-0.1,0.5-0.3,0.4-0.8c0-0.7-0.6-1.3-1.3-1.3*/
-/*                             c-0.6,0-1.4,0.6-1.4,1.7s1,1.9,2.4,1.8c0.8,0,2.5-0.3,4.2-2.5c2-2.5,2.5-5.4,2.9-7.4l0.5-2.8c0.3,0,0.5,0.1,0.8,0.1*/
-/*                             c2.4,0.1,3.7-1.3,3.7-2.3c0-0.6-0.3-1.2-0.9-1.2c-0.4,0-0.8,0.3-1,0.8c-0.1,0.6,0.8,1.1,0.1,1.5c-0.5,0.3-1.4,0.6-2.7,0.4l0.3-1.3*/
-/*                             c0.5-2.6,1-5.7,3.2-5.8c0.2,0,0.8,0,0.8,0.4c0,0.2,0,0.2-0.2,0.5c-0.2,0.3-0.3,0.4-0.2,0.7c0,0.7,0.5,1.1,1.2,1.1*/
-/*                             c0.9,0,1.2-1,1.2-1.4c0-1.2-1.2-1.8-2.6-1.8c-1.5,0.1-2.8,0.9-3.7,2.1c-1.1,1.3-1.8,2.9-2.3,4.5c-0.9-0.8-1.6-1.8-3.1-2.3*/
-/*                             c-1.1-0.7-2.3-0.5-3.4,0.3c-0.5,0.4-0.8,1-1,1.6c-0.4,1.5,0.4,2.9,0.8,3.4l0.9,1c0.2,0.2,0.6,0.8,0.4,1.5c-0.3,0.8-1.2,1.3-2.1,1*/
-/*                             c-0.4-0.2-1-0.5-0.9-0.9c0.1-0.2,0.2-0.3,0.3-0.5s0.1-0.3,0.1-0.3c0.2-0.6-0.1-1.4-0.7-1.6c-0.6-0.2-1.2,0-1.3,0.8*/
-/*                             C4.3,38.4,4.7,40,6.8,40.8z M46.1,20.9c0-4.2-3.2-7.5-7.1-7.5h-3.8C34.8,10.8,32.7,9,30.2,9L-2.3,9.1c-2.8,0.1-4.9,2.4-4.9,5.4*/
-/*                             L-7,58.6c0,4.8,8.1,13.9,11.6,14.1l34.7-0.1c3.9,0,7-3.4,7-7.6L46.1,20.9z M-0.3,36.4c0-8.6,6.5-15.6,14.5-15.6*/
-/*                             c8,0,14.5,7,14.5,15.6S22.1,52,14.2,52C6.1,52-0.3,45-0.3,36.4z M42.1,65.1c0,1.8-1.5,3.1-3.1,3.1H4.6c-0.7,0-3-1.8-4.5-4.4h30.4*/
-/*                             c2.8,0,5-2.4,5-5.4V17.9h3.7c1.6,0,2.9,1.4,2.9,3.1V65.1L42.1,65.1z"/>*/
-/*                     </svg>*/
+/*                     Chaque Partie s'engage, par le présent Accord, à réserver un traitement confidentiel aux informations que l'autre Partie lui communique dans le cadre de leur coopération.*/
 /* */
-/*                     Read the documentation to learn*/
-/*                     <a href="http://symfony.com/doc/{{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION')[:3] }}/book/page_creation.html">*/
-/*                         How to create your first page in Symfony*/
-/*                     </a>*/
-/*                 </p>*/
-/*             </div>*/
+/*                     </p>*/
+/*                     <hr>*/
+/*                     <p>*/
+/*                         <h4><span class="label label-danger">ARTICLE 2 - DÉFINITIONS</span></h4>*/
+/* */
+/*                         Dans le présent Accord, les mots et expressions suivants ont le sens qui leur est attribué ci-dessous :*/
+/* */
+/*                         Accord : désigne le présent Accord de confidentialité.*/
+/*                         Partie : désigne les Parties au présent Accord, qui communiquent et reçoivent les informations confidentielles et sont tenues de l'obligation de confidentialité.*/
+/*                         Informations confidentielles : désigne de manière non limitative les informations de toute nature, à caractère notamment technique, commercial, de savoir-faire, plan, dessins, rapports, données informatiques et archives, échangées mutuellement par les Parties par tous moyens, et qu'elles identifient de manière expresse ou indirecte comme étant confidentielles dès leur divulgation ou au plus tard dans les trente (30) jours suivant celle-ci, pendant toute la durée du présent Accord, et le cas échéant cinq (5) ans après sa résiliation si celle-ci intervient avant échéance de l'Accord.*/
+/* */
+/*                         L'existence même du présent Accord est une information confidentielle, telle que définie ci-dessus.*/
+/*                     </p>*/
+/*                     <hr>*/
+/*                     <p>*/
+/*                     <h4><span class="label label-danger">ARTICLE 3 - DURÉE DU PRÉSENT ACCORD</span></h4>*/
+/* */
+/*                     Le présent Accord de confidentialité entre en vigueur à compter de la date de sa signature par les Parties.*/
+/* */
+/*                     Il est conclu pour la durée suivante : 5 ans*/
+/* */
+/*                     Les dispositions de confidentialité prévues au présent Accord s'appliqueront pendant toute cette durée, et le cas échéant pendant cinq (5) ans après sa résiliation si le présent Accord est résilié avant échéance, et ce quelle qu'en soit la cause.*/
+/* */
+/*                     </p>*/
+/*                     <hr>*/
+/*                     <p>*/
+/*                     <h4><span class="label label-danger">ARTICLE 4 - OBLIGATIONS DE SECRET ET DE*/
+/*                         CONFIDENTIALITÉ</span></h4>*/
+/* */
+/*                     Les Parties reconnaissent que les Informations communiquées dans le cadre de leur collaboration ont un caractère confidentiel, et elles acceptent de ne pas les divulguer.*/
+/* */
+/*                     Aucune Information Confidentielle ne pourra être communiquée à un tiers sans l'accord écrit de la Partie qui transmet ladite information.*/
+/* */
+/*                     Les Parties s'engagent à ne pas utiliser, ni à divulguer les informations confidentielles qu'elles reçoivent, pendant toute la durée du présent Accord, ainsi que, le cas échéant, pendant une période de cinq (5) ans à compter de la date de résiliation du présent Accord si celui-ci venait à être résiliée par une quelconque des Parties.*/
+/* */
+/*                     Les Parties s'engagent à prendre toutes les dispositions nécessaires pour que les informations confidentielles transmises ne soient ni divulguées, ni cédées. Elles s'engagent à apporter à toute Information Confidentielle au moins la même attention que celle avec laquelle elles protègent leurs propres informations.*/
+/* */
+/*                     Les Parties s'engagent également à veiller au respect du présent Accord par leurs collaborateurs et leurs salariés.*/
+/* */
+/*                     Les Parties s'engagent à n'utiliser les Informations Confidentielles qu'en vue de réaliser les objectifs de leur collaboration, et à ne pas les utiliser à d'autres fins et à s'assurer qu'elles ne sont portées qu'à la connaissance des personnes à qui elles sont strictement nécessaires pour la réalisation de leur collaboration. Les Informations Confidentielles ne doivent ainsi être communiquées qu'aux seuls membres du personnel ou collaborateurs ayant à les connaître pour la finalité de la collaboration des Parties. L'utilisation des Informations Confidentielles doit ainsi être limitée au déroulement du projet de collaboration entre les Parties.*/
+/* */
+/*                     </p>*/
+/*                     <hr>*/
+/*                     <p>*/
+/*                         <h4><span class="label label-danger">ARTICLE 5 - EXCEPTIONS AU PRÉSENT ACCORD</span></h4>*/
+/* */
+/*                         Les dispositions prévues au présent Accord ne s'appliquent pas aux informations suivantes :*/
+/* */
+/*                         les informations que les Parties possédaient avant la date de signature du présent Accord ;*/
+/*                         les informations relevant du domaine public, ou qui tombent par la suite dans le domaine public sans qu'il y a eu inexécution de ses obligations de la part de la Partie les ayant reçues ;*/
+/*                         les informations qui sont connues ou portées à la connaissance du public sans la faute de la Partie qui les reçoit ;*/
+/*                         les informations qui sont connues de la Partie qui les reçoit avant que la Partie qui les divulgue ne les ait communiquées, sur la foi des archives antérieures de la Partie qui les reçoit ;*/
+/*                         les informations qui sont portées à la connaissance de la Partie qui les reçoit par une divulgation d'un tiers habilité à les divulguer ;*/
+/*                         les informations bénéficiant d'une autorisation écrite de publication ou d'utilisation de la Partie qui la transmet ;*/
+/*                         les informations qui ont dû être communiquées par décision de justice ou conformément à une décision administrative.*/
+/*                         Dans le cas où une quelconque partie d'Information Confidentielle tombe dans une des exceptions mentionnées ci-dessus, l'Information Confidentielle restante continue à bénéficier de la protection du présent Accord.*/
+/* */
+/*                     </p>*/
+/*                     <hr>*/
+/*                     <p>*/
+/*                         <h4><span class="label label-danger">ARTICLE 6 - PROPRIÉTÉ INTELLECTUELLE</span></h4>*/
+/* */
+/*                         Les dispositions du présent Accord ne sauraient être interprétées comme concédant à l'une ou l'autre Partie directement ou implicitement une licence sur un brevet ou une demande de brevet ou des droits d'auteur, des dessins et modèles, secrets industriels, droits sur les marques ou savoir-faire.*/
+/* */
+/*                         La communication d'Informations Confidentielles n'implique pas la renonciation à la protection des-dites Informations par un brevet ou par tout autre droit de propriété intellectuelle, et n'implique aucun droit de licence ou de cession de quelconque droit de propriété intellectuelle.*/
+/* */
+/*                         Les Informations Confidentielles communiquées par les Parties appartiennent en tout état de cause à la Partie dont elles émanent.*/
+/*                     </p>*/
+/* */
+/*                 </div>*/
+/* */
 /* */
 /*         </div>*/
 /*     </div>*/
 /* {% endblock %}*/
 /* */
-/* {% block stylesheets %}*/
-/* */
-/* <style>*/
-/*     body { background: #F5F5F5; font: 18px/1.5 sans-serif; }*/
-/*     h1, h2 { line-height: 1.2; margin: 0 0 .5em; }*/
-/*     h1 { font-size: 36px; }*/
-/*     h2 { font-size: 21px; margin-bottom: 1em; }*/
-/*     p { margin: 0 0 1em 0; }*/
-/*     a { color: #0000F0; }*/
-/*     a:hover { text-decoration: none; }*/
-/*     code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }*/
-/*     #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }*/
-/*     #container { padding: 2em; }*/
-/*     #welcome, #status { margin-bottom: 2em; }*/
-/*     #welcome h1 span { display: block; font-size: 75%; }*/
-/*     #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }*/
-/*     #icon-book { display: none; }*/
-/* */
-/*     @media (min-width: 768px) {*/
-/*         #wrapper { width: 80%; margin: 2em auto; }*/
-/*         #icon-book { display: inline-block; }*/
-/*         #status a, #next a { display: block; }*/
-/* */
-/*         @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }*/
-/*         @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }*/
-/*         .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}*/
-/*     }*/
-/* </style>*/
-/*     {{ parent() }}*/
-/* {% endblock %}*/
 /* */

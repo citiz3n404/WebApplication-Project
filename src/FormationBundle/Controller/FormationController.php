@@ -21,13 +21,40 @@ class FormationController extends Controller
     /**
      * @Route("/", name="formation")
      */
-    public function listAction()
+    public function listAction(Request $request)
     {
+        $form = $this->createFormBuilder()
+            ->add('recherche', TextType::class, array('attr' => array
+            ('class' => 'form-control', 'style' => '')))
+            ->add('Search', SubmitType::class, array('label' => 'Search',
+                'attr' => array('class' => 'btn btn-warning', 'style' =>
+                    'margin-top: 5px; width: 100%;')))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $formation = $this->getDoctrine()->getRepository
+            ('FormationBundle:Formation')->findOneByTitle($form['recherche']->getData());
+
+            if(!empty($formation)){
+                //var_dump($formation->getId());
+                return $this->redirectToRoute('formationdetails', array
+                ('id'=> $formation->getId()));
+            }
+            else{
+                $this->addFlash('danger', 'Aucune formation ne correspond, 
+                veuillez 
+                reessayer.');
+            }
+
+        }
+
         $formations = $this->getDoctrine()->getRepository
         ('FormationBundle:Formation')
             ->findAll();
         return $this->render('FormationBundle:Default:list.html.twig', array
-            ('formations' => $formations)
+            ('formations' => $formations, 'form'=>$form->createView())
         );
     }
 

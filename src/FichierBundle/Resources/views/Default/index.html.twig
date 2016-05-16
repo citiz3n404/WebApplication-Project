@@ -2,6 +2,12 @@
 
 {% block body %}
     <h2 class="page-header">Dossiers</h2>
+    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_GESTIONNAIRE')%}
+    <a href="{{ path('createdir') }}" class="btn btn-warning"
+       style="margin-bottom: 10px;"><i class="fa fa-folder"
+                                   aria-hidden="true"></i> Ajouter
+        un dossier</a>
+    {% endif %}
     <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading" style="margin-bottom: 10px;">Fichiers</div>

@@ -22,8 +22,8 @@ class __TwigTemplate_cbffd16ca21ee3f6854f76301daad7786e63c6eb8692fd925e70dd08a1e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a8e44563b9f0968213fb61b8bb191f66198a13a025f7b4dfb92fcc2d6c4ec166 = $this->env->getExtension("native_profiler");
-        $__internal_a8e44563b9f0968213fb61b8bb191f66198a13a025f7b4dfb92fcc2d6c4ec166->enter($__internal_a8e44563b9f0968213fb61b8bb191f66198a13a025f7b4dfb92fcc2d6c4ec166_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_aa286535fe4eb62661734663009b40965efbe1459034c76c3b881af40f6440e3 = $this->env->getExtension("native_profiler");
+        $__internal_aa286535fe4eb62661734663009b40965efbe1459034c76c3b881af40f6440e3->enter($__internal_aa286535fe4eb62661734663009b40965efbe1459034c76c3b881af40f6440e3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -44,117 +44,133 @@ class __TwigTemplate_cbffd16ca21ee3f6854f76301daad7786e63c6eb8692fd925e70dd08a1e
         ";
         // line 16
         $this->displayBlock('headscript', $context, $blocks);
-        // line 26
+        // line 28
         echo "    </head>
     <body>
         ";
-        // line 28
+        // line 30
         $this->displayBlock('topbar', $context, $blocks);
-        // line 77
+        // line 83
         echo "
         ";
-        // line 78
+        // line 84
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 147
+        // line 153
         echo "
         <div class=\"wrapper\">
             <div class=\"container white-shadow\" style=\"padding-top: 10px;\">
                 ";
-        // line 150
+        // line 156
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "info"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
-            // line 152
-            echo "                    <div class=\"alert alert-info\">";
+            // line 158
+            echo "                    <div class=\"alert alert-info alert-dismissable\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                            <span aria-hidden=\"true\">&times;</span>
+                        </button>";
+            // line 161
             echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
-            // line 153
+            // line 162
             echo "</div>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 155
+        // line 164
         echo "                ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "success"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
-            // line 157
-            echo "                    <div class=\"alert alert-success\">";
+            // line 166
+            echo "                    <div class=\"alert alert-success alert-dismissable\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                            <span aria-hidden=\"true\">&times;</span>
+                        </button>";
+            // line 169
             echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
-            // line 158
+            // line 170
             echo "</div>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 160
+        // line 172
         echo "                ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "warning"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
-            // line 162
-            echo "                    <div class=\"alert alert-warning\">";
+            // line 174
+            echo "                    <div class=\"alert alert-warning alert-dismissable\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                            <span aria-hidden=\"true\">&times;</span>
+                        </button>";
+            // line 177
             echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
-            // line 163
+            // line 178
             echo "</div>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 165
+        // line 180
         echo "                ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "danger"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
-            // line 167
-            echo "                    <div class=\"alert alert-danger\">";
+            // line 182
+            echo "                    <div class=\"alert alert-danger alert-dismissable\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                            <span aria-hidden=\"true\">&times;</span>
+                        </button>";
+            // line 185
             echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
-            // line 168
+            // line 186
             echo "</div>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 170
+        // line 188
         echo "
                 ";
-        // line 171
+        // line 189
         $this->displayBlock('body', $context, $blocks);
-        // line 174
+        // line 192
         echo "            </div>
         </div>
         ";
-        // line 176
+        // line 194
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 177
+        // line 195
         echo "    </body>
 </html>";
         
-        $__internal_a8e44563b9f0968213fb61b8bb191f66198a13a025f7b4dfb92fcc2d6c4ec166->leave($__internal_a8e44563b9f0968213fb61b8bb191f66198a13a025f7b4dfb92fcc2d6c4ec166_prof);
+        $__internal_aa286535fe4eb62661734663009b40965efbe1459034c76c3b881af40f6440e3->leave($__internal_aa286535fe4eb62661734663009b40965efbe1459034c76c3b881af40f6440e3_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_cb269b44901b6c59d1e90ece54e5fefc18f589b4363f4381957b26e8e2fca49e = $this->env->getExtension("native_profiler");
-        $__internal_cb269b44901b6c59d1e90ece54e5fefc18f589b4363f4381957b26e8e2fca49e->enter($__internal_cb269b44901b6c59d1e90ece54e5fefc18f589b4363f4381957b26e8e2fca49e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_eba91ee85fe8cf3dc79a8491ba4ef2a792698ad7357820177d2dc179fd0b5a8d = $this->env->getExtension("native_profiler");
+        $__internal_eba91ee85fe8cf3dc79a8491ba4ef2a792698ad7357820177d2dc179fd0b5a8d->enter($__internal_eba91ee85fe8cf3dc79a8491ba4ef2a792698ad7357820177d2dc179fd0b5a8d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "NSZ";
         
-        $__internal_cb269b44901b6c59d1e90ece54e5fefc18f589b4363f4381957b26e8e2fca49e->leave($__internal_cb269b44901b6c59d1e90ece54e5fefc18f589b4363f4381957b26e8e2fca49e_prof);
+        $__internal_eba91ee85fe8cf3dc79a8491ba4ef2a792698ad7357820177d2dc179fd0b5a8d->leave($__internal_eba91ee85fe8cf3dc79a8491ba4ef2a792698ad7357820177d2dc179fd0b5a8d_prof);
 
     }
 
     // line 6
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_5a9871f0cd52168311f0a78c4ebc88735c1c9c4316af07410740a11e9df5399b = $this->env->getExtension("native_profiler");
-        $__internal_5a9871f0cd52168311f0a78c4ebc88735c1c9c4316af07410740a11e9df5399b->enter($__internal_5a9871f0cd52168311f0a78c4ebc88735c1c9c4316af07410740a11e9df5399b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_a2ceab0e1d04c5e0d05e90eaa23ab94361acc80ee8cb8835ba1dbade1bdcaacf = $this->env->getExtension("native_profiler");
+        $__internal_a2ceab0e1d04c5e0d05e90eaa23ab94361acc80ee8cb8835ba1dbade1bdcaacf->enter($__internal_a2ceab0e1d04c5e0d05e90eaa23ab94361acc80ee8cb8835ba1dbade1bdcaacf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 7
         echo "        <link rel=\"stylesheet\" type=\"text/css\" href=\"";
@@ -183,15 +199,15 @@ class __TwigTemplate_cbffd16ca21ee3f6854f76301daad7786e63c6eb8692fd925e70dd08a1e
         echo "\">
         ";
         
-        $__internal_5a9871f0cd52168311f0a78c4ebc88735c1c9c4316af07410740a11e9df5399b->leave($__internal_5a9871f0cd52168311f0a78c4ebc88735c1c9c4316af07410740a11e9df5399b_prof);
+        $__internal_a2ceab0e1d04c5e0d05e90eaa23ab94361acc80ee8cb8835ba1dbade1bdcaacf->leave($__internal_a2ceab0e1d04c5e0d05e90eaa23ab94361acc80ee8cb8835ba1dbade1bdcaacf_prof);
 
     }
 
     // line 16
     public function block_headscript($context, array $blocks = array())
     {
-        $__internal_9fcdd21bb7c16ab1a55a2bcb419380c4db174746cfcaecc73e3142553e52b10d = $this->env->getExtension("native_profiler");
-        $__internal_9fcdd21bb7c16ab1a55a2bcb419380c4db174746cfcaecc73e3142553e52b10d->enter($__internal_9fcdd21bb7c16ab1a55a2bcb419380c4db174746cfcaecc73e3142553e52b10d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "headscript"));
+        $__internal_d7d737bcb1bf4a066b0a0b8fe6d772a579770b752b474ad15adb51aaabd1366c = $this->env->getExtension("native_profiler");
+        $__internal_d7d737bcb1bf4a066b0a0b8fe6d772a579770b752b474ad15adb51aaabd1366c->enter($__internal_d7d737bcb1bf4a066b0a0b8fe6d772a579770b752b474ad15adb51aaabd1366c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "headscript"));
 
         // line 17
         echo "            <script type=\"text/javascript\" src=\"";
@@ -213,19 +229,24 @@ class __TwigTemplate_cbffd16ca21ee3f6854f76301daad7786e63c6eb8692fd925e70dd08a1e
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/jquery-ui.min.js"), "html", null, true);
         // line 24
         echo "\"></script>
+            <script type=\"text/javascript\" src=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
+        // line 26
+        echo "\"></script>
         ";
         
-        $__internal_9fcdd21bb7c16ab1a55a2bcb419380c4db174746cfcaecc73e3142553e52b10d->leave($__internal_9fcdd21bb7c16ab1a55a2bcb419380c4db174746cfcaecc73e3142553e52b10d_prof);
+        $__internal_d7d737bcb1bf4a066b0a0b8fe6d772a579770b752b474ad15adb51aaabd1366c->leave($__internal_d7d737bcb1bf4a066b0a0b8fe6d772a579770b752b474ad15adb51aaabd1366c_prof);
 
     }
 
-    // line 28
+    // line 30
     public function block_topbar($context, array $blocks = array())
     {
-        $__internal_83c0a2cc1567ff267692220856b71260492562230f619b42719f0495cc581a6d = $this->env->getExtension("native_profiler");
-        $__internal_83c0a2cc1567ff267692220856b71260492562230f619b42719f0495cc581a6d->enter($__internal_83c0a2cc1567ff267692220856b71260492562230f619b42719f0495cc581a6d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "topbar"));
+        $__internal_fe2e28ef4e2bb9303cfd51de981cf23e3d35f2bdb47da398387303780c4143b9 = $this->env->getExtension("native_profiler");
+        $__internal_fe2e28ef4e2bb9303cfd51de981cf23e3d35f2bdb47da398387303780c4143b9->enter($__internal_fe2e28ef4e2bb9303cfd51de981cf23e3d35f2bdb47da398387303780c4143b9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "topbar"));
 
-        // line 29
+        // line 31
         echo "        <nav class=\"navbar navbar-default navbar-fixed-top\">
             <div class=\"navbar-header\">
                 <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">
@@ -235,7 +256,7 @@ class __TwigTemplate_cbffd16ca21ee3f6854f76301daad7786e63c6eb8692fd925e70dd08a1e
                     <span class=\"icon-bar\"></span>
                 </button>
                 <img class =\"navbar-brand\" alt=\"Brand\" src=\"";
-        // line 37
+        // line 39
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("img/logoaigle.png"), "html", null, true);
         echo "\" >
                 <a class=\"navbar-brand\" href=\"#\">National Security Zero</a>
@@ -246,121 +267,128 @@ class __TwigTemplate_cbffd16ca21ee3f6854f76301daad7786e63c6eb8692fd925e70dd08a1e
                 <div class=\"nav navbar-right navbar-correct\">
 
                     ";
-        // line 45
+        // line 47
         if ( !(null === $this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()))) {
-            // line 46
-            echo "                        <p class=\"navbar-text\">
-                            <span class=\"label label-default\">";
-            // line 47
-            echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array())), "html", null, true);
             // line 48
-            echo "</span>
-                            ";
+            echo "                        <p class=\"navbar-text\">
+                            <a href=\"";
             // line 49
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($this->getAttribute(            // line 50
+(isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "id", array()))), "html", null, true);
+            echo "\"
+                               role=\"button\"><span class=\"label label-default\">";
+            // line 51
+            echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array())), "html", null, true);
+            // line 52
+            echo "</span></a>
+
+                            ";
+            // line 54
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "roles", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-                // line 50
+                // line 55
                 echo "                                ";
                 if (($context["role"] == "ROLE_ADMIN")) {
-                    // line 51
+                    // line 56
                     echo "                                    <span class=\"label label-black\">ADMIN</span>
                                 ";
-                } elseif ((                // line 52
+                } elseif ((                // line 57
 $context["role"] == "ROLE_FORMATEUR")) {
-                    // line 53
+                    // line 58
                     echo "                                    <span class=\"label label-warning\">FORMATEUR</span>
                                 ";
-                } elseif ((                // line 54
+                } elseif ((                // line 59
 $context["role"] == "ROLE_MODERATEUR")) {
-                    // line 55
+                    // line 60
                     echo "                                    <span class=\"label label-danger\">MODERATEUR</span>
                                 ";
-                } elseif ((                // line 56
+                } elseif ((                // line 61
 $context["role"] == "ROLE_RH")) {
-                    // line 57
+                    // line 62
                     echo "                                    <span class=\"label label-success\">RH</span>
                                 ";
+                } elseif ((                // line 63
+$context["role"] == "ROLE_GESTIONNAIRE")) {
+                    // line 64
+                    echo "                                    <span class=\"label
+                                    label-primary\">GESTIONNAIRE</span>
+                                ";
                 }
-                // line 59
+                // line 67
                 echo "                            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 60
+            // line 68
             echo "                        </p>
                         <img alt=\"Brand\" src=\"";
-            // line 61
+            // line 69
             echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("img/users/" . $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "salarie", array()), "img", array()))), "html", null, true);
-            // line 63
+            // line 71
             echo "\">
-                    <a class=\"btn btn-default navbar-btn btn-sm\" href=\"";
-            // line 64
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($this->getAttribute(            // line 65
-(isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "id", array()))), "html", null, true);
-            echo "\"
-                       role=\"button\">Profil</a>
+
                     <a class=\"btn btn-default navbar-btn btn-sm\" href=\"/logout\"
                        role=\"button\"><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i></a>
                     ";
         } else {
-            // line 70
+            // line 76
             echo "                    <a class=\"btn btn-default navbar-btn btn-sm\" href=\"/login\"
                        role=\"button\">Login</a>
                     ";
         }
-        // line 73
+        // line 79
         echo "                </div>
             </div><!--/.nav-collapse -->
         </nav>
         ";
         
-        $__internal_83c0a2cc1567ff267692220856b71260492562230f619b42719f0495cc581a6d->leave($__internal_83c0a2cc1567ff267692220856b71260492562230f619b42719f0495cc581a6d_prof);
+        $__internal_fe2e28ef4e2bb9303cfd51de981cf23e3d35f2bdb47da398387303780c4143b9->leave($__internal_fe2e28ef4e2bb9303cfd51de981cf23e3d35f2bdb47da398387303780c4143b9_prof);
 
     }
 
-    // line 78
+    // line 84
     public function block_sidebar($context, array $blocks = array())
     {
-        $__internal_bcc09332c47b8b12330f7f6504725ceaa9b9b5ba73b2f0ea7868779d6c7c9bcf = $this->env->getExtension("native_profiler");
-        $__internal_bcc09332c47b8b12330f7f6504725ceaa9b9b5ba73b2f0ea7868779d6c7c9bcf->enter($__internal_bcc09332c47b8b12330f7f6504725ceaa9b9b5ba73b2f0ea7868779d6c7c9bcf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sidebar"));
+        $__internal_4dd4b21252f6541bcf44ef79e88bc99baca2f73a51983b81d105e2508ca0503c = $this->env->getExtension("native_profiler");
+        $__internal_4dd4b21252f6541bcf44ef79e88bc99baca2f73a51983b81d105e2508ca0503c->enter($__internal_4dd4b21252f6541bcf44ef79e88bc99baca2f73a51983b81d105e2508ca0503c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 79
+        // line 85
         echo "            <div class=\"sidebar\">
                 <div class=\"s-container\">
                     <ul>
                         <li ><a href=\"/\" class=\"menu-selected\"><i
                                         class=\"glyphicon glyphicon-home\"></i>Accueil</a></li>
                         <li><a href=\"";
-        // line 84
+        // line 90
         echo $this->env->getExtension('routing')->getPath("formation");
         echo "\"
                                class=\"menu-unselected\"><i
                                         class=\"glyphicon glyphicon-education\"></i>Formations</a></li>
                         <li><a href=\"";
-        // line 87
+        // line 93
         echo $this->env->getExtension('routing')->getPath("forum");
         echo "\"
                                class=\"menu-unselected\"><i
                                         class=\"fa
                         fa-th-list\"></i>Forum</a></li>
                         <li><a href=\"";
-        // line 91
+        // line 97
         echo $this->env->getExtension('routing')->getPath("dossiers");
         echo "\"
                                class=\"menu-unselected\"><i
                                         class=\"fa
                         fa-folder\"></i>Fichiers</a></li>
                         <li><a href=\"";
-        // line 95
+        // line 101
         echo $this->env->getExtension('routing')->getPath("annuaireempty");
         echo "\"
                                class=\"menu-unselected\"><i
                                         class=\"fa
                         fa-users\"></i>Annuaire</a></li>
                         <li><a href=\"";
-        // line 99
+        // line 105
         echo $this->env->getExtension('routing')->getPath("stats");
         echo "\"
                                class=\"menu-unselected\"><i
@@ -374,25 +402,25 @@ $context["role"] == "ROLE_RH")) {
 
                         <ul>
                             <li><span class=\"label label-primary\">";
-        // line 110
+        // line 116
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dbInfo"]) ? $context["dbInfo"] : $this->getContext($context, "dbInfo")), "getNbUsers", array(), "method"), "html", null, true);
         echo "</span>
                                 Employés  </li>
                             <li><span class=\"label label-primary\">";
-        // line 112
+        // line 118
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dbInfo"]) ? $context["dbInfo"] : $this->getContext($context, "dbInfo")), "getNbFiles", array(), "method"), "html", null, true);
         echo "</span>
                                 Documents partagés</li>
                             <li><span class=\"label label-primary\">";
-        // line 114
+        // line 120
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dbInfo"]) ? $context["dbInfo"] : $this->getContext($context, "dbInfo")), "getNbFormations", array(), "method"), "html", null, true);
-        // line 115
+        // line 121
         echo "</span>
                                 Formations</li>
                             <li><span class=\"label label-primary\">";
-        // line 117
+        // line 123
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dbInfo"]) ? $context["dbInfo"] : $this->getContext($context, "dbInfo")), "getNbReplies", array()), "html", null, true);
-        // line 118
+        // line 124
         echo "</span>
                                  Réponses Forum</li>
                         </ul>
@@ -403,28 +431,28 @@ $context["role"] == "ROLE_RH")) {
                         <p class=\"s-title\">Top 5 des membres</p>
 
                         ";
-        // line 127
+        // line 133
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["dbInfo"]) ? $context["dbInfo"] : $this->getContext($context, "dbInfo")), "getTop5", array(), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 128
+            // line 134
             echo "                        <div class=\"s-people\">
                             <img src=\"";
-            // line 129
+            // line 135
             echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("img/users/" . $this->getAttribute($this->getAttribute($context["user"], "salarie", array()), "img", array()))), "html", null, true);
             echo "\"
                                  alt=\"img\">
                             <div class=\"s-people-desc\">
                                 <div>
                                     <a href=\"";
-            // line 133
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute(            // line 134
+            // line 139
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute(            // line 140
 $context["user"], "id", array()))), "html", null, true);
             echo "\" >";
             echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, $this->getAttribute($context["user"], "username", array())), "html", null, true);
             echo "</a>
                                     <span>(";
-            // line 135
+            // line 141
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "email", array()), "html", null, true);
             echo ")</span>
                                 </div>
@@ -435,7 +463,7 @@ $context["user"], "id", array()))), "html", null, true);
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 140
+        // line 146
         echo "                    </div>
 
                     <hr>
@@ -444,32 +472,32 @@ $context["user"], "id", array()))), "html", null, true);
             </div>
         ";
         
-        $__internal_bcc09332c47b8b12330f7f6504725ceaa9b9b5ba73b2f0ea7868779d6c7c9bcf->leave($__internal_bcc09332c47b8b12330f7f6504725ceaa9b9b5ba73b2f0ea7868779d6c7c9bcf_prof);
+        $__internal_4dd4b21252f6541bcf44ef79e88bc99baca2f73a51983b81d105e2508ca0503c->leave($__internal_4dd4b21252f6541bcf44ef79e88bc99baca2f73a51983b81d105e2508ca0503c_prof);
 
     }
 
-    // line 171
+    // line 189
     public function block_body($context, array $blocks = array())
     {
-        $__internal_5b12ad06cb3fd23ea0c91b9112b885a00bf9adc802d6a0d22fc6adb10cfaf06e = $this->env->getExtension("native_profiler");
-        $__internal_5b12ad06cb3fd23ea0c91b9112b885a00bf9adc802d6a0d22fc6adb10cfaf06e->enter($__internal_5b12ad06cb3fd23ea0c91b9112b885a00bf9adc802d6a0d22fc6adb10cfaf06e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_b82a25c71d5e4aff79068d9dd460bef54db314659e768e5ee08b2d2f5eb39a90 = $this->env->getExtension("native_profiler");
+        $__internal_b82a25c71d5e4aff79068d9dd460bef54db314659e768e5ee08b2d2f5eb39a90->enter($__internal_b82a25c71d5e4aff79068d9dd460bef54db314659e768e5ee08b2d2f5eb39a90_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 172
+        // line 190
         echo "
                 ";
         
-        $__internal_5b12ad06cb3fd23ea0c91b9112b885a00bf9adc802d6a0d22fc6adb10cfaf06e->leave($__internal_5b12ad06cb3fd23ea0c91b9112b885a00bf9adc802d6a0d22fc6adb10cfaf06e_prof);
+        $__internal_b82a25c71d5e4aff79068d9dd460bef54db314659e768e5ee08b2d2f5eb39a90->leave($__internal_b82a25c71d5e4aff79068d9dd460bef54db314659e768e5ee08b2d2f5eb39a90_prof);
 
     }
 
-    // line 176
+    // line 194
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_dd43054394b3eb92ef255dfefdfd43bb22538ce6fba07bd02172218a0a8cd705 = $this->env->getExtension("native_profiler");
-        $__internal_dd43054394b3eb92ef255dfefdfd43bb22538ce6fba07bd02172218a0a8cd705->enter($__internal_dd43054394b3eb92ef255dfefdfd43bb22538ce6fba07bd02172218a0a8cd705_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_fb8a48c1e41037e70e463eb2055afbd926bee5bb1d2a012c7d8ce734f5df22bf = $this->env->getExtension("native_profiler");
+        $__internal_fb8a48c1e41037e70e463eb2055afbd926bee5bb1d2a012c7d8ce734f5df22bf->enter($__internal_fb8a48c1e41037e70e463eb2055afbd926bee5bb1d2a012c7d8ce734f5df22bf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         
-        $__internal_dd43054394b3eb92ef255dfefdfd43bb22538ce6fba07bd02172218a0a8cd705->leave($__internal_dd43054394b3eb92ef255dfefdfd43bb22538ce6fba07bd02172218a0a8cd705_prof);
+        $__internal_fb8a48c1e41037e70e463eb2055afbd926bee5bb1d2a012c7d8ce734f5df22bf->leave($__internal_fb8a48c1e41037e70e463eb2055afbd926bee5bb1d2a012c7d8ce734f5df22bf_prof);
 
     }
 
@@ -485,7 +513,7 @@ $context["user"], "id", array()))), "html", null, true);
 
     public function getDebugInfo()
     {
-        return array (  466 => 176,  458 => 172,  452 => 171,  439 => 140,  428 => 135,  422 => 134,  421 => 133,  414 => 129,  411 => 128,  407 => 127,  396 => 118,  394 => 117,  390 => 115,  388 => 114,  383 => 112,  378 => 110,  364 => 99,  357 => 95,  350 => 91,  343 => 87,  337 => 84,  330 => 79,  324 => 78,  314 => 73,  309 => 70,  301 => 65,  300 => 64,  297 => 63,  295 => 61,  292 => 60,  286 => 59,  282 => 57,  280 => 56,  277 => 55,  275 => 54,  272 => 53,  270 => 52,  267 => 51,  264 => 50,  260 => 49,  257 => 48,  255 => 47,  252 => 46,  250 => 45,  239 => 37,  229 => 29,  223 => 28,  215 => 24,  213 => 23,  210 => 22,  208 => 21,  205 => 20,  203 => 19,  200 => 18,  197 => 17,  191 => 16,  182 => 13,  179 => 12,  177 => 11,  173 => 10,  169 => 9,  165 => 8,  160 => 7,  154 => 6,  142 => 5,  134 => 177,  132 => 176,  128 => 174,  126 => 171,  123 => 170,  116 => 168,  113 => 167,  108 => 165,  101 => 163,  98 => 162,  93 => 160,  86 => 158,  83 => 157,  78 => 155,  71 => 153,  68 => 152,  64 => 150,  59 => 147,  57 => 78,  54 => 77,  52 => 28,  48 => 26,  46 => 16,  41 => 15,  39 => 6,  35 => 5,  29 => 1,);
+        return array (  494 => 194,  486 => 190,  480 => 189,  467 => 146,  456 => 141,  450 => 140,  449 => 139,  442 => 135,  439 => 134,  435 => 133,  424 => 124,  422 => 123,  418 => 121,  416 => 120,  411 => 118,  406 => 116,  392 => 105,  385 => 101,  378 => 97,  371 => 93,  365 => 90,  358 => 85,  352 => 84,  342 => 79,  337 => 76,  330 => 71,  328 => 69,  325 => 68,  319 => 67,  314 => 64,  312 => 63,  309 => 62,  307 => 61,  304 => 60,  302 => 59,  299 => 58,  297 => 57,  294 => 56,  291 => 55,  287 => 54,  283 => 52,  281 => 51,  277 => 50,  276 => 49,  273 => 48,  271 => 47,  260 => 39,  250 => 31,  244 => 30,  236 => 26,  234 => 25,  231 => 24,  229 => 23,  226 => 22,  224 => 21,  221 => 20,  219 => 19,  216 => 18,  213 => 17,  207 => 16,  198 => 13,  195 => 12,  193 => 11,  189 => 10,  185 => 9,  181 => 8,  176 => 7,  170 => 6,  158 => 5,  150 => 195,  148 => 194,  144 => 192,  142 => 189,  139 => 188,  132 => 186,  130 => 185,  125 => 182,  120 => 180,  113 => 178,  111 => 177,  106 => 174,  101 => 172,  94 => 170,  92 => 169,  87 => 166,  82 => 164,  75 => 162,  73 => 161,  68 => 158,  64 => 156,  59 => 153,  57 => 84,  54 => 83,  52 => 30,  48 => 28,  46 => 16,  41 => 15,  39 => 6,  35 => 5,  29 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -512,6 +540,8 @@ $context["user"], "id", array()))), "html", null, true);
 /*             }}"></script>*/
 /*             <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js')*/
 /*             }}"></script>*/
+/*             <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')*/
+/*             }}"></script>*/
 /*         {% endblock %}*/
 /*     </head>*/
 /*     <body>*/
@@ -534,8 +564,11 @@ $context["user"], "id", array()))), "html", null, true);
 /* */
 /*                     {% if app.user is not null %}*/
 /*                         <p class="navbar-text">*/
-/*                             <span class="label label-default">{{ app.user*/
-/*                                 .username|upper }}</span>*/
+/*                             <a href="{{ path*/
+/*                             ('profiluser', {'id': app.user.id}) }}"*/
+/*                                role="button"><span class="label label-default">{{ app.user*/
+/*                                     .username|upper }}</span></a>*/
+/* */
 /*                             {% for role in app.user.roles %}*/
 /*                                 {% if role == "ROLE_ADMIN" %}*/
 /*                                     <span class="label label-black">ADMIN</span>*/
@@ -545,15 +578,16 @@ $context["user"], "id", array()))), "html", null, true);
 /*                                     <span class="label label-danger">MODERATEUR</span>*/
 /*                                 {% elseif role == "ROLE_RH" %}*/
 /*                                     <span class="label label-success">RH</span>*/
+/*                                 {% elseif role == "ROLE_GESTIONNAIRE" %}*/
+/*                                     <span class="label*/
+/*                                     label-primary">GESTIONNAIRE</span>*/
 /*                                 {% endif %}*/
 /*                             {% endfor %}*/
 /*                         </p>*/
 /*                         <img alt="Brand" src="{{ asset('img/users/' ~ app.user*/
 /*                         .salarie.img )*/
 /*                         }}">*/
-/*                     <a class="btn btn-default navbar-btn btn-sm" href="{{ path*/
-/*                     ('profiluser', {'id': app.user.id}) }}"*/
-/*                        role="button">Profil</a>*/
+/* */
 /*                     <a class="btn btn-default navbar-btn btn-sm" href="/logout"*/
 /*                        role="button"><i class="fa fa-sign-out" aria-hidden="true"></i></a>*/
 /*                     {% else %}*/
@@ -639,22 +673,34 @@ $context["user"], "id", array()))), "html", null, true);
 /*             <div class="container white-shadow" style="padding-top: 10px;">*/
 /*                 {% for flash_message in app.session.flashbag.get*/
 /*                 ('info') %}*/
-/*                     <div class="alert alert-info">{{ flash_message*/
+/*                     <div class="alert alert-info alert-dismissable">*/
+/*                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">*/
+/*                             <span aria-hidden="true">&times;</span>*/
+/*                         </button>{{ flash_message*/
 /*                         }}</div>*/
 /*                 {% endfor %}*/
 /*                 {% for flash_message in app.session.flashbag.get*/
 /*                 ('success') %}*/
-/*                     <div class="alert alert-success">{{ flash_message*/
+/*                     <div class="alert alert-success alert-dismissable">*/
+/*                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">*/
+/*                             <span aria-hidden="true">&times;</span>*/
+/*                         </button>{{ flash_message*/
 /*                         }}</div>*/
 /*                 {% endfor %}*/
 /*                 {% for flash_message in app.session.flashbag.get*/
 /*                 ('warning') %}*/
-/*                     <div class="alert alert-warning">{{ flash_message*/
+/*                     <div class="alert alert-warning alert-dismissable">*/
+/*                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">*/
+/*                             <span aria-hidden="true">&times;</span>*/
+/*                         </button>{{ flash_message*/
 /*                         }}</div>*/
 /*                 {% endfor %}*/
 /*                 {% for flash_message in app.session.flashbag.get*/
 /*                 ('danger') %}*/
-/*                     <div class="alert alert-danger">{{ flash_message*/
+/*                     <div class="alert alert-danger alert-dismissable">*/
+/*                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">*/
+/*                             <span aria-hidden="true">&times;</span>*/
+/*                         </button>{{ flash_message*/
 /*                         }}</div>*/
 /*                 {% endfor %}*/
 /* */

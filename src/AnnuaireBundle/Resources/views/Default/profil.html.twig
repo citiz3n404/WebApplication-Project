@@ -11,6 +11,8 @@
                 <span class="label label-danger">MODERATEUR</span>
             {% elseif role == "ROLE_RH" %}
                 <span class="label label-success">RH</span>
+            {% elseif role == "ROLE_GESTIONNAIRE" %}
+                <span class="label label-primary">GESTIONNAIRE</span>
             {% endif %}
         {% endfor %}
 
