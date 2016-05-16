@@ -1,9 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <h2 class="page-header">{{ user.salarie.prenom|capitalize
-        }} {{ user.salarie.nom|upper }} <span class="label
-        label-info">{{ user.roles|join(' | ') }}</span></h2>
+        }} {{ user.salarie.nom|upper }}
+        {% for role in user.roles %}
+            {% if role == "ROLE_ADMIN" %}
+                <span class="label label-black">ADMIN</span>
+            {% elseif role == "ROLE_FORMATEUR" %}
+                <span class="label label-warning">FORMATEUR</span>
+            {% elseif role == "ROLE_MODERATEUR" %}
+                <span class="label label-danger">MODERATEUR</span>
+            {% elseif role == "ROLE_RH" %}
+                <span class="label label-success">RH</span>
+            {% endif %}
+        {% endfor %}
 
+    </h2>
     <div class="row">
     <div class="col-md-3">
         <div class="panel panel-default">
@@ -51,8 +62,8 @@
         <a class="btn btn-default" href="{{ path('editprofil', {'id': user.id })
         }}">Editer le
             profil</a>
-        <a href="{{path('payslip', {'id': user.id })}}" class="btn btn-primary"
-           style=""><i class="glyphicon glyphicon-download-alt"></i> Fiche de paie</a>
+        <a href="{{path('payslip', {'id': user.id })}}" class="btn btn-danger"
+           style=""><i class="fa fa-file-pdf-o"></i> Fiche de paie</a>
         {% endif %}
     </div>
 

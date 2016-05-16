@@ -37,6 +37,17 @@
                                 }}</a></span>
                             <img alt="Brand" src="{{ asset('img/users/' ~ reply.user.salarie.img )
                             }}">
+                            {% for role in reply.user.roles %}
+                                {% if role == "ROLE_ADMIN" %}
+                                    <span class="label label-black">ADMIN</span>
+                                {% elseif role == "ROLE_FORMATEUR" %}
+                                    <span class="label label-warning">FORMATEUR</span>
+                                {% elseif role == "ROLE_MODERATEUR" %}
+                                    <span class="label label-danger">MODERATEUR</span>
+                                {% elseif role == "ROLE_RH" %}
+                                    <span class="label label-success">RH</span>
+                                {% endif %}
+                            {% endfor %}
                         </div>
 
                     {% else %}

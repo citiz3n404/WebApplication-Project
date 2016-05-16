@@ -14,8 +14,13 @@
     padding-left: 230px;
     margin: 0 auto;
     padding-top: 50px;
+    height: 100%;
 }
 
+
+.label-black {
+    background-color: #222;
+}
 
 body{
     background-color: #f1f1f1;
@@ -454,7 +459,7 @@ div .stripes h4 {
 .avatarForum img{
     width: 100%;
     hight: 100%;
-    max-width: 75px;
+    max-width: 100px;
 }
 
 .avatarForum span{

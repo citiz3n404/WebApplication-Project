@@ -11,13 +11,13 @@
         <div style="margin: 10px 10px;">
              <div class="row">
                  <div class="col-md-4">
-                    {{ form_start(form) }}
+                     {{ form_start(form) }}
                  </div>
                 <div class="col-md-4">
-                {{ form_widget(form) }}
+                    {{ form_widget(form) }}
                 </div>
                 <div class="col-md-4">
-                {{ form_end(form) }}
+                    {{ form_end(form) }}
                 </div>
             </div>
           </div>
@@ -32,6 +32,7 @@
         <tr>
             <th>Photo</th>
             <th>Username</th>
+            <th>Roles</th>
             <th>Nom</th>
             <th>Prénom</th>
             <th>Sexe</th>
@@ -49,6 +50,20 @@
                                                 style="margin: 0 auto;"
                         ></div></th>
                 <th scope="row"><a href="{{ path('profiluser', {'id': user.id}) }}">{{ user.username }}</a></th>
+                <td>
+                    {% for role in user.roles %}
+                        {% if role == "ROLE_USER" %}
+                        {% elseif role == "ROLE_ADMIN" %}
+                            <span class="label label-black">ADMIN</span>
+                        {% elseif role == "ROLE_FORMATEUR" %}
+                            <span class="label label-warning">FORMATEUR</span>
+                        {% elseif role == "ROLE_MODERATEUR" %}
+                            <span class="label label-danger">MODERATEUR</span>
+                        {% elseif role == "ROLE_RH" %}
+                            <span class="label label-success">RH</span>
+                        {% endif %}
+                    {% endfor %}
+                </td>
                 <td>{{ user.salarie.nom }}</td>
                 <td>{{ user.salarie.prenom }}</td>
                 <td>{{ user.salarie.sexe }}</td>

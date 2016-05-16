@@ -102,7 +102,12 @@
                     {% for inscription in inscriptions %}
                         {%  if inscription.validated == true %}
                             <tr>
-                                <th scope="row">{{ loop.index }}</th>
+                                <th scope="row"><div class="littleImg"><img src="{{ asset
+                                        ('img/users/' ~ inscription.user.salarie
+                                        .img ) }}"
+                                                                            alt="photo"
+                                                                            style="margin: 0 auto;"
+                                        ></div></th>
                                 <td><a href="{{ path('profiluser', {'id': inscription.user.id })  }}"> {{ inscription.user.username }}</a></td>
                                 {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}
                                 <td>
@@ -149,7 +154,12 @@
                     {% for inscription in inscriptions %}
                         {% if inscription.validated == false %}
                             <tr>
-                                <th scope="row">{{ loop.index }}</th>
+                                <th scope="row"><div class="littleImg"><img src="{{ asset
+                                        ('img/users/' ~ inscription.user.salarie
+                                        .img ) }}"
+                                                                            alt="photo"
+                                                                            style="margin: 0 auto;"
+                                        ></div></th>
                                 <td><a href="{{ path('profiluser', {'id': inscription
                                         .user.id })   }}"> {{ inscription.user.username
                                         }}</a></td>

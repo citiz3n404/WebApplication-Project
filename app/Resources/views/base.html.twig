@@ -43,6 +43,21 @@
                 <div class="nav navbar-right navbar-correct">
 
                     {% if app.user is not null %}
+                        <p class="navbar-text">
+                            <span class="label label-default">{{ app.user
+                                .username|upper }}</span>
+                            {% for role in app.user.roles %}
+                                {% if role == "ROLE_ADMIN" %}
+                                    <span class="label label-black">ADMIN</span>
+                                {% elseif role == "ROLE_FORMATEUR" %}
+                                    <span class="label label-warning">FORMATEUR</span>
+                                {% elseif role == "ROLE_MODERATEUR" %}
+                                    <span class="label label-danger">MODERATEUR</span>
+                                {% elseif role == "ROLE_RH" %}
+                                    <span class="label label-success">RH</span>
+                                {% endif %}
+                            {% endfor %}
+                        </p>
                         <img alt="Brand" src="{{ asset('img/users/' ~ app.user
                         .salarie.img )
                         }}">
@@ -50,7 +65,7 @@
                     ('profiluser', {'id': app.user.id}) }}"
                        role="button">Profil</a>
                     <a class="btn btn-default navbar-btn btn-sm" href="/logout"
-                       role="button">Logout</a>
+                       role="button"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                     {% else %}
                     <a class="btn btn-default navbar-btn btn-sm" href="/login"
                        role="button">Login</a>

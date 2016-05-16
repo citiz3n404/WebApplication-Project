@@ -21,20 +21,20 @@ class __TwigTemplate_b32c55bef79be04f81425ca9c6e2bf50f141913794e7982fb2a172df7ad
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_70833b2c1bc571798e50551c7bece680f03c1cc1c5de0fad3da033fe5d4ceff9 = $this->env->getExtension("native_profiler");
-        $__internal_70833b2c1bc571798e50551c7bece680f03c1cc1c5de0fad3da033fe5d4ceff9->enter($__internal_70833b2c1bc571798e50551c7bece680f03c1cc1c5de0fad3da033fe5d4ceff9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnnuaireBundle:Default:profil.html.twig"));
+        $__internal_646c39f6ba61f621541efeaf2c9f1b46e7cd5942681dddb965481249aa8f81de = $this->env->getExtension("native_profiler");
+        $__internal_646c39f6ba61f621541efeaf2c9f1b46e7cd5942681dddb965481249aa8f81de->enter($__internal_646c39f6ba61f621541efeaf2c9f1b46e7cd5942681dddb965481249aa8f81de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnnuaireBundle:Default:profil.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_70833b2c1bc571798e50551c7bece680f03c1cc1c5de0fad3da033fe5d4ceff9->leave($__internal_70833b2c1bc571798e50551c7bece680f03c1cc1c5de0fad3da033fe5d4ceff9_prof);
+        $__internal_646c39f6ba61f621541efeaf2c9f1b46e7cd5942681dddb965481249aa8f81de->leave($__internal_646c39f6ba61f621541efeaf2c9f1b46e7cd5942681dddb965481249aa8f81de_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_05a6877f3b8c2a7edee05bc351854f1d02d7b205616d1bbdf57f4dd94157d46e = $this->env->getExtension("native_profiler");
-        $__internal_05a6877f3b8c2a7edee05bc351854f1d02d7b205616d1bbdf57f4dd94157d46e->enter($__internal_05a6877f3b8c2a7edee05bc351854f1d02d7b205616d1bbdf57f4dd94157d46e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_33bd689d3ad3522ca3f447af25c1e40ade3f52f541a8cd0a61ce5a87093de22d = $this->env->getExtension("native_profiler");
+        $__internal_33bd689d3ad3522ca3f447af25c1e40ade3f52f541a8cd0a61ce5a87093de22d->enter($__internal_33bd689d3ad3522ca3f447af25c1e40ade3f52f541a8cd0a61ce5a87093de22d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "    <h2 class=\"page-header\">";
@@ -42,21 +42,52 @@ class __TwigTemplate_b32c55bef79be04f81425ca9c6e2bf50f141913794e7982fb2a172df7ad
         // line 4
         echo " ";
         echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "salarie", array()), "nom", array())), "html", null, true);
-        echo " <span class=\"label
-        label-info\">";
+        echo "
+        ";
         // line 5
-        echo twig_escape_filter($this->env, twig_join_filter($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "roles", array()), " | "), "html", null, true);
-        echo "</span></h2>
-
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "roles", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
+            // line 6
+            echo "            ";
+            if (($context["role"] == "ROLE_ADMIN")) {
+                // line 7
+                echo "                <span class=\"label label-black\">ADMIN</span>
+            ";
+            } elseif ((            // line 8
+$context["role"] == "ROLE_FORMATEUR")) {
+                // line 9
+                echo "                <span class=\"label label-warning\">FORMATEUR</span>
+            ";
+            } elseif ((            // line 10
+$context["role"] == "ROLE_MODERATEUR")) {
+                // line 11
+                echo "                <span class=\"label label-danger\">MODERATEUR</span>
+            ";
+            } elseif ((            // line 12
+$context["role"] == "ROLE_RH")) {
+                // line 13
+                echo "                <span class=\"label label-success\">RH</span>
+            ";
+            }
+            // line 15
+            echo "        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        echo "
+    </h2>
     <div class=\"row\">
     <div class=\"col-md-3\">
         <div class=\"panel panel-default\">
             <!-- Default panel contents -->
             <div class=\"panel-heading\">Photo</div>
             <img class=\"card-img-top\" src=\"";
-        // line 12
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("img/users/" . $this->getAttribute($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "salarie", array()), "img", array()))), "html", null, true);
-        // line 14
+        // line 25
         echo "\" alt=\"Card image cap\">
 
         </div>
@@ -82,31 +113,31 @@ class __TwigTemplate_b32c55bef79be04f81425ca9c6e2bf50f141913794e7982fb2a172df7ad
                 <tbody>
                 <tr>
                     <th scope=\"row\">";
-        // line 38
+        // line 49
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "username", array()), "html", null, true);
         echo "</th>
                     <td>";
-        // line 39
+        // line 50
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "email", array()), "html", null, true);
         echo "</td>
                     <td>";
-        // line 40
+        // line 51
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "salarie", array()), "nom", array()), "html", null, true);
         echo "</td>
                     <td>";
-        // line 41
+        // line 52
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "salarie", array()), "prenom", array()), "html", null, true);
         echo "</td>
                     <td>";
-        // line 42
+        // line 53
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "salarie", array()), "sexe", array()), "html", null, true);
         echo "</td>
                     <td>";
-        // line 43
+        // line 54
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "salarie", array()), "salaire", array()), "html", null, true);
         echo " €</td>
                     <td>";
-        // line 44
+        // line 55
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "salarie", array()), "typeContrat", array()), "html", null, true);
         echo "</td>
                 </tr>
@@ -114,27 +145,27 @@ class __TwigTemplate_b32c55bef79be04f81425ca9c6e2bf50f141913794e7982fb2a172df7ad
             </table>
         </div>
         ";
-        // line 49
+        // line 60
         if (((($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "username", array()) == $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array())) || $this->env->getExtension('security')->isGranted("ROLE_ADMIN")) || $this->env->getExtension('security')->isGranted("ROLE_RH"))) {
-            // line 51
+            // line 62
             echo "        <a class=\"btn btn-default\" href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("editprofil", array("id" => $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "id", array()))), "html", null, true);
-            // line 52
+            // line 63
             echo "\">Editer le
             profil</a>
         <a href=\"";
-            // line 54
+            // line 65
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("payslip", array("id" => $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "id", array()))), "html", null, true);
-            echo "\" class=\"btn btn-primary\"
-           style=\"\"><i class=\"glyphicon glyphicon-download-alt\"></i> Fiche de paie</a>
+            echo "\" class=\"btn btn-danger\"
+           style=\"\"><i class=\"fa fa-file-pdf-o\"></i> Fiche de paie</a>
         ";
         }
-        // line 57
+        // line 68
         echo "    </div>
 
 ";
         
-        $__internal_05a6877f3b8c2a7edee05bc351854f1d02d7b205616d1bbdf57f4dd94157d46e->leave($__internal_05a6877f3b8c2a7edee05bc351854f1d02d7b205616d1bbdf57f4dd94157d46e_prof);
+        $__internal_33bd689d3ad3522ca3f447af25c1e40ade3f52f541a8cd0a61ce5a87093de22d->leave($__internal_33bd689d3ad3522ca3f447af25c1e40ade3f52f541a8cd0a61ce5a87093de22d_prof);
 
     }
 
@@ -150,15 +181,26 @@ class __TwigTemplate_b32c55bef79be04f81425ca9c6e2bf50f141913794e7982fb2a172df7ad
 
     public function getDebugInfo()
     {
-        return array (  133 => 57,  127 => 54,  123 => 52,  120 => 51,  118 => 49,  110 => 44,  106 => 43,  102 => 42,  98 => 41,  94 => 40,  90 => 39,  86 => 38,  60 => 14,  58 => 12,  48 => 5,  43 => 4,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  164 => 68,  158 => 65,  154 => 63,  151 => 62,  149 => 60,  141 => 55,  137 => 54,  133 => 53,  129 => 52,  125 => 51,  121 => 50,  117 => 49,  91 => 25,  89 => 23,  80 => 16,  74 => 15,  70 => 13,  68 => 12,  65 => 11,  63 => 10,  60 => 9,  58 => 8,  55 => 7,  52 => 6,  48 => 5,  43 => 4,  40 => 3,  34 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* {% block body %}*/
 /*     <h2 class="page-header">{{ user.salarie.prenom|capitalize*/
-/*         }} {{ user.salarie.nom|upper }} <span class="label*/
-/*         label-info">{{ user.roles|join(' | ') }}</span></h2>*/
+/*         }} {{ user.salarie.nom|upper }}*/
+/*         {% for role in user.roles %}*/
+/*             {% if role == "ROLE_ADMIN" %}*/
+/*                 <span class="label label-black">ADMIN</span>*/
+/*             {% elseif role == "ROLE_FORMATEUR" %}*/
+/*                 <span class="label label-warning">FORMATEUR</span>*/
+/*             {% elseif role == "ROLE_MODERATEUR" %}*/
+/*                 <span class="label label-danger">MODERATEUR</span>*/
+/*             {% elseif role == "ROLE_RH" %}*/
+/*                 <span class="label label-success">RH</span>*/
+/*             {% endif %}*/
+/*         {% endfor %}*/
 /* */
+/*     </h2>*/
 /*     <div class="row">*/
 /*     <div class="col-md-3">*/
 /*         <div class="panel panel-default">*/
@@ -206,8 +248,8 @@ class __TwigTemplate_b32c55bef79be04f81425ca9c6e2bf50f141913794e7982fb2a172df7ad
 /*         <a class="btn btn-default" href="{{ path('editprofil', {'id': user.id })*/
 /*         }}">Editer le*/
 /*             profil</a>*/
-/*         <a href="{{path('payslip', {'id': user.id })}}" class="btn btn-primary"*/
-/*            style=""><i class="glyphicon glyphicon-download-alt"></i> Fiche de paie</a>*/
+/*         <a href="{{path('payslip', {'id': user.id })}}" class="btn btn-danger"*/
+/*            style=""><i class="fa fa-file-pdf-o"></i> Fiche de paie</a>*/
 /*         {% endif %}*/
 /*     </div>*/
 /* */

@@ -21,20 +21,20 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_31e0a91349c1a69f8a2658dc96a750364893a53b854ad389a3cbcbdeb50f1bb0 = $this->env->getExtension("native_profiler");
-        $__internal_31e0a91349c1a69f8a2658dc96a750364893a53b854ad389a3cbcbdeb50f1bb0->enter($__internal_31e0a91349c1a69f8a2658dc96a750364893a53b854ad389a3cbcbdeb50f1bb0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FormationBundle:Default:details.html.twig"));
+        $__internal_3a985423299820acca93f589585c2317dd2ebdd6d080bd4b225ce483030873eb = $this->env->getExtension("native_profiler");
+        $__internal_3a985423299820acca93f589585c2317dd2ebdd6d080bd4b225ce483030873eb->enter($__internal_3a985423299820acca93f589585c2317dd2ebdd6d080bd4b225ce483030873eb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FormationBundle:Default:details.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_31e0a91349c1a69f8a2658dc96a750364893a53b854ad389a3cbcbdeb50f1bb0->leave($__internal_31e0a91349c1a69f8a2658dc96a750364893a53b854ad389a3cbcbdeb50f1bb0_prof);
+        $__internal_3a985423299820acca93f589585c2317dd2ebdd6d080bd4b225ce483030873eb->leave($__internal_3a985423299820acca93f589585c2317dd2ebdd6d080bd4b225ce483030873eb_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_01649bb600dc0636ebde7c449e3bde1d6ee74b448459bd4ffbb4b27aa48a2ad4 = $this->env->getExtension("native_profiler");
-        $__internal_01649bb600dc0636ebde7c449e3bde1d6ee74b448459bd4ffbb4b27aa48a2ad4->enter($__internal_01649bb600dc0636ebde7c449e3bde1d6ee74b448459bd4ffbb4b27aa48a2ad4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_20e9f8e20ffb223764585a8660502042028c20838e4dd26bf9476a76ebe46647 = $this->env->getExtension("native_profiler");
+        $__internal_20e9f8e20ffb223764585a8660502042028c20838e4dd26bf9476a76ebe46647->enter($__internal_20e9f8e20ffb223764585a8660502042028c20838e4dd26bf9476a76ebe46647_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <a class=\"btn btn-default\" href=\"/formation/\">Back to  formation list</a>
@@ -188,47 +188,39 @@ class __TwigTemplate_185f3ac785256eb6fcbefca99b2de2c02a0ffef80003d3cf68510e0949c
         // line 102
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["inscriptions"]) ? $context["inscriptions"] : $this->getContext($context, "inscriptions")));
-        $context['loop'] = array(
-          'parent' => $context['_parent'],
-          'index0' => 0,
-          'index'  => 1,
-          'first'  => true,
-        );
-        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
-            $length = count($context['_seq']);
-            $context['loop']['revindex0'] = $length - 1;
-            $context['loop']['revindex'] = $length;
-            $context['loop']['length'] = $length;
-            $context['loop']['last'] = 1 === $length;
-        }
         foreach ($context['_seq'] as $context["_key"] => $context["inscription"]) {
             // line 103
             echo "                        ";
             if (($this->getAttribute($context["inscription"], "validated", array()) == true)) {
                 // line 104
                 echo "                            <tr>
-                                <th scope=\"row\">";
+                                <th scope=\"row\"><div class=\"littleImg\"><img src=\"";
                 // line 105
-                echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index", array()), "html", null, true);
-                echo "</th>
+                echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("img/users/" . $this->getAttribute($this->getAttribute($this->getAttribute(                // line 106
+$context["inscription"], "user", array()), "salarie", array()), "img", array()))), "html", null, true);
+                // line 107
+                echo "\"
+                                                                            alt=\"photo\"
+                                                                            style=\"margin: 0 auto;\"
+                                        ></div></th>
                                 <td><a href=\"";
-                // line 106
+                // line 111
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "id", array()))), "html", null, true);
                 echo "\"> ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "username", array()), "html", null, true);
                 echo "</a></td>
                                 ";
-                // line 107
+                // line 112
                 if (($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || $this->env->getExtension('security')->isGranted("ROLE_FORMATEUR"))) {
-                    // line 108
+                    // line 113
                     echo "                                <td>
 
                                     ";
-                    // line 110
+                    // line 115
                     if (($this->getAttribute($context["inscription"], "validated", array()) != true)) {
-                        // line 111
+                        // line 116
                         echo "                                        <a href=\"";
-                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                        // line 112
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                        // line 117
 $context["inscription"], "id", array()))), "html", null, true);
                         echo "\"class=\"btn
                                             btn-success btn-sm \"><span
@@ -236,33 +228,25 @@ $context["inscription"], "id", array()))), "html", null, true);
                                                     aria-hidden=\"true\"></span></a>
                                     ";
                     }
-                    // line 117
+                    // line 122
                     echo "                                    <a href=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                    // line 118
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                    // line 123
 $context["inscription"], "id", array()))), "html", null, true);
                     echo "\"class=\"btn btn-danger btn-sm\"><span class=\"fa fa-times\" aria-hidden=\"true\"></span></a>
                                 </td>
                                 ";
                 }
-                // line 121
+                // line 126
                 echo "                            </tr>
                         ";
             }
-            // line 123
+            // line 128
             echo "                    ";
-            ++$context['loop']['index0'];
-            ++$context['loop']['index'];
-            $context['loop']['first'] = false;
-            if (isset($context['loop']['length'])) {
-                --$context['loop']['revindex0'];
-                --$context['loop']['revindex'];
-                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
-            }
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['inscription'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 124
+        // line 129
         echo "                    </tbody>
                 </table>
             </div>
@@ -283,62 +267,54 @@ $context["inscription"], "id", array()))), "html", null, true);
                         <th>#</th>
                         <th>User</th>
                         ";
-        // line 143
+        // line 148
         if (($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || $this->env->getExtension('security')->isGranted("ROLE_FORMATEUR"))) {
-            // line 144
+            // line 149
             echo "                        <th>Action</th>
                         ";
         }
-        // line 146
+        // line 151
         echo "                    </tr>
                     </thead>
                     <tbody>
                     ";
-        // line 149
+        // line 154
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["inscriptions"]) ? $context["inscriptions"] : $this->getContext($context, "inscriptions")));
-        $context['loop'] = array(
-          'parent' => $context['_parent'],
-          'index0' => 0,
-          'index'  => 1,
-          'first'  => true,
-        );
-        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
-            $length = count($context['_seq']);
-            $context['loop']['revindex0'] = $length - 1;
-            $context['loop']['revindex'] = $length;
-            $context['loop']['length'] = $length;
-            $context['loop']['last'] = 1 === $length;
-        }
         foreach ($context['_seq'] as $context["_key"] => $context["inscription"]) {
-            // line 150
+            // line 155
             echo "                        ";
             if (($this->getAttribute($context["inscription"], "validated", array()) == false)) {
-                // line 151
+                // line 156
                 echo "                            <tr>
-                                <th scope=\"row\">";
-                // line 152
-                echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index", array()), "html", null, true);
-                echo "</th>
+                                <th scope=\"row\"><div class=\"littleImg\"><img src=\"";
+                // line 157
+                echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("img/users/" . $this->getAttribute($this->getAttribute($this->getAttribute(                // line 158
+$context["inscription"], "user", array()), "salarie", array()), "img", array()))), "html", null, true);
+                // line 159
+                echo "\"
+                                                                            alt=\"photo\"
+                                                                            style=\"margin: 0 auto;\"
+                                        ></div></th>
                                 <td><a href=\"";
-                // line 153
+                // line 163
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profiluser", array("id" => $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "id", array()))), "html", null, true);
-                // line 154
+                // line 164
                 echo "\"> ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["inscription"], "user", array()), "username", array()), "html", null, true);
-                // line 155
+                // line 165
                 echo "</a></td>
                             ";
-                // line 156
+                // line 166
                 if (($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || $this->env->getExtension('security')->isGranted("ROLE_FORMATEUR"))) {
-                    // line 157
+                    // line 167
                     echo "                                <td>
                                     ";
-                    // line 158
+                    // line 168
                     if (($this->getAttribute($context["inscription"], "validated", array()) != true)) {
-                        // line 159
+                        // line 169
                         echo "                                        <a href=\"";
-                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                        // line 160
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationvalidateinscription", array("id" => $this->getAttribute(                        // line 170
 $context["inscription"], "id", array()))), "html", null, true);
                         echo "\"class=\"btn
                                             btn-success btn-sm\"><span
@@ -346,33 +322,25 @@ $context["inscription"], "id", array()))), "html", null, true);
                                                     aria-hidden=\"true\"></span></a>
                                     ";
                     }
-                    // line 165
+                    // line 175
                     echo "                                    <a href=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                    // line 166
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("formationremoveinscription", array("id" => $this->getAttribute(                    // line 176
 $context["inscription"], "id", array()))), "html", null, true);
                     echo "\"class=\"btn btn-danger btn-sm\"><span class=\"fa fa-times\" aria-hidden=\"true\"></span></a>
                                 </td>
                                 ";
                 }
-                // line 169
+                // line 179
                 echo "                            </tr>
                         ";
             }
-            // line 171
+            // line 181
             echo "                    ";
-            ++$context['loop']['index0'];
-            ++$context['loop']['index'];
-            $context['loop']['first'] = false;
-            if (isset($context['loop']['length'])) {
-                --$context['loop']['revindex0'];
-                --$context['loop']['revindex'];
-                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
-            }
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['inscription'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 172
+        // line 182
         echo "                    </tbody>
                 </table>
             </div>
@@ -384,7 +352,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 
 ";
         
-        $__internal_01649bb600dc0636ebde7c449e3bde1d6ee74b448459bd4ffbb4b27aa48a2ad4->leave($__internal_01649bb600dc0636ebde7c449e3bde1d6ee74b448459bd4ffbb4b27aa48a2ad4_prof);
+        $__internal_20e9f8e20ffb223764585a8660502042028c20838e4dd26bf9476a76ebe46647->leave($__internal_20e9f8e20ffb223764585a8660502042028c20838e4dd26bf9476a76ebe46647_prof);
 
     }
 
@@ -400,7 +368,7 @@ $context["inscription"], "id", array()))), "html", null, true);
 
     public function getDebugInfo()
     {
-        return array (  376 => 172,  362 => 171,  358 => 169,  352 => 166,  350 => 165,  342 => 160,  340 => 159,  338 => 158,  335 => 157,  333 => 156,  330 => 155,  327 => 154,  325 => 153,  321 => 152,  318 => 151,  315 => 150,  298 => 149,  293 => 146,  289 => 144,  287 => 143,  266 => 124,  252 => 123,  248 => 121,  242 => 118,  240 => 117,  232 => 112,  230 => 111,  228 => 110,  224 => 108,  222 => 107,  216 => 106,  212 => 105,  209 => 104,  206 => 103,  189 => 102,  184 => 99,  180 => 97,  178 => 96,  153 => 73,  145 => 67,  143 => 66,  139 => 64,  137 => 63,  130 => 59,  125 => 56,  123 => 55,  118 => 53,  112 => 49,  108 => 48,  104 => 46,  102 => 45,  95 => 41,  88 => 37,  81 => 33,  63 => 17,  61 => 15,  52 => 8,  48 => 7,  44 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  344 => 182,  338 => 181,  334 => 179,  328 => 176,  326 => 175,  318 => 170,  316 => 169,  314 => 168,  311 => 167,  309 => 166,  306 => 165,  303 => 164,  301 => 163,  295 => 159,  293 => 158,  292 => 157,  289 => 156,  286 => 155,  282 => 154,  277 => 151,  273 => 149,  271 => 148,  250 => 129,  244 => 128,  240 => 126,  234 => 123,  232 => 122,  224 => 117,  222 => 116,  220 => 115,  216 => 113,  214 => 112,  208 => 111,  202 => 107,  200 => 106,  199 => 105,  196 => 104,  193 => 103,  189 => 102,  184 => 99,  180 => 97,  178 => 96,  153 => 73,  145 => 67,  143 => 66,  139 => 64,  137 => 63,  130 => 59,  125 => 56,  123 => 55,  118 => 53,  112 => 49,  108 => 48,  104 => 46,  102 => 45,  95 => 41,  88 => 37,  81 => 33,  63 => 17,  61 => 15,  52 => 8,  48 => 7,  44 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -507,7 +475,12 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                     {% for inscription in inscriptions %}*/
 /*                         {%  if inscription.validated == true %}*/
 /*                             <tr>*/
-/*                                 <th scope="row">{{ loop.index }}</th>*/
+/*                                 <th scope="row"><div class="littleImg"><img src="{{ asset*/
+/*                                         ('img/users/' ~ inscription.user.salarie*/
+/*                                         .img ) }}"*/
+/*                                                                             alt="photo"*/
+/*                                                                             style="margin: 0 auto;"*/
+/*                                         ></div></th>*/
 /*                                 <td><a href="{{ path('profiluser', {'id': inscription.user.id })  }}"> {{ inscription.user.username }}</a></td>*/
 /*                                 {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR')%}*/
 /*                                 <td>*/
@@ -554,7 +527,12 @@ $context["inscription"], "id", array()))), "html", null, true);
 /*                     {% for inscription in inscriptions %}*/
 /*                         {% if inscription.validated == false %}*/
 /*                             <tr>*/
-/*                                 <th scope="row">{{ loop.index }}</th>*/
+/*                                 <th scope="row"><div class="littleImg"><img src="{{ asset*/
+/*                                         ('img/users/' ~ inscription.user.salarie*/
+/*                                         .img ) }}"*/
+/*                                                                             alt="photo"*/
+/*                                                                             style="margin: 0 auto;"*/
+/*                                         ></div></th>*/
 /*                                 <td><a href="{{ path('profiluser', {'id': inscription*/
 /*                                         .user.id })   }}"> {{ inscription.user.username*/
 /*                                         }}</a></td>*/
