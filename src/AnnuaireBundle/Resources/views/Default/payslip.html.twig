@@ -125,7 +125,7 @@
                 </tr>
                 <tr>
                     <th scope="row">Rémunération nette</th>
-                    <td>{{ (user.salarie.salaire - (app.user.salarie.salaire * (maladie+retraite+chomage+vieillesse)))|round(2, 'common') }} € </td>
+                    <td>{{ (user.salarie.salaire - (user.salarie.salaire * (maladie+retraite+chomage+vieillesse)))|round(2, 'common') }} € </td>
                 </tr>
                 </tbody>
               </table>

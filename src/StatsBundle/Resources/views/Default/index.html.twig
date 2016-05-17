@@ -20,11 +20,11 @@
                     </tr>
                     <tr>
                         <th scope="row">Salaire moyen des employés</th>
-                        <td>{{ stats.Users.SalaireAVG }} euros</td>
+                        <td>{{ stats.Users.SalaireAVG|round(2, 'common') }} euros</td>
                     </tr>
                     <tr>
                         <th scope="row">Coût moyen d'une formation</th>
-                        <td>{{ stats.Formations.CoutMoyen }} euros</td>
+                        <td>{{ stats.Formations.CoutMoyen|round(2, 'common') }} euros</td>
                     </tr>
                     <tr>
                         <th scope="row">Nombre de formation disponibles</th>
