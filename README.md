@@ -146,3 +146,7 @@ Nous avons utilisé le module `html2pdf` afin de faire un rendu de la fiche de
   notre sidebar nous avons un module `TOP5Membres` ainsi qu'un module `Les
   chiffres clés`. Nous les récupérons via ce service qui se situe dans
   `Acme/GlobalBundle/DBinfo`
+
+## Auteurs
+ * Anthony CHAFFOT ([NightWolfRobot](https://github.com/NightWolfRobot))
+ * Jessica FAVIN ([JessicaFavin](https://github.com/JessicaFavin))
