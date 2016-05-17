@@ -15,9 +15,7 @@ Avant de commencer il faut télécharger le repertoire. Le mieux étant un `git
 clone https://github.com/NightWolfRobot/NationalSecurityZero.git`
 
 ###Attention
-Pour une raison encore inconnue, il semblerait que tout ne s'upload pas
-correctement sur git. Par conséquent une fois le répertoire cloné, veuillez
-suivre les instructions suivantes :<br/>
+Veuillez suivre les instructions suivantes :<br/>
 * Supprimer le dossier `vendor`.
 * Adaptez le fichier `app/config/parameters.yml` à votre base de données.
 * Entrer la commande : `composer install`.
