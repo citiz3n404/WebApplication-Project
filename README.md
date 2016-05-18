@@ -16,9 +16,8 @@ clone https://github.com/NightWolfRobot/NationalSecurityZero.git`
 
 ###Attention
 Veuillez suivre les instructions suivantes :<br/>
-* Supprimer le dossier `vendor`.
 * Adaptez le fichier `app/config/parameters.yml` à votre base de données.
-* Entrer la commande : `composer install`.
+* Entrer la commande : `composer update`.
 
 ###Base de données
 Nous avons mis à disposition un fichier nsz.sql à la racine du projet pour
